@@ -1,12 +1,12 @@
 body, html {
-    background-color: rgb(48, 47, 47);
+    background-color: rgb(eee);
     height: 100%;
 }
     
 #wrapper {
     width: 80%;
     min-height: 50%;
-    background-color: rgb(48, 47, 47);
+    background-color: rgb(248, 248, 248);
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -19,10 +19,10 @@ header {
     border-radius: 10px 10px 0 0;
     width: 100%;
     height: 100px;
-    background-color: rgb(255, 72, 72);
+    background-color: rgb(159, 225, 255);
     padding: 20px;
     box-sizing: border-box;
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Rubik', serif;
     line-height: 40px;
 }
 
@@ -36,7 +36,7 @@ header > h1 > a {
 #wrapper > nav {
     width: 100%;
     height: auto;
-    background-color: rgb(134, 134, 255);
+    background-color: rgb(255, 159, 32);
     margin-top: 10px;
     font-family: 'Nanum Brush Script', cursive;
     font-size: 24px;
@@ -58,7 +58,7 @@ header > h1 > a {
 #wrapper > nav > ul > li a {
     display: block;
     padding: 10px;
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
@@ -126,7 +126,7 @@ footer {
     width: 100%;
     margin-bottom: 5px;
     height: 75px;
-    background-color: rgb(255, 72, 72);
+    background-color: rgb(255, 159, 32);
     padding: 5px;
     box-sizing: border-box;
     border-radius: 0 0 10px 10px;
