@@ -2,7 +2,79 @@ body, html {
     background-color: rgb(75, 75, 75);
     height: 100%;
 }
+
+
+header {
+    margin-top: 5px;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 75px;
+    background-color: rgb(243, 102, 67);
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Rubik', serif;
+    line-height: 40px;
+}
+header > h1 {
+
+}
+
+header > h1 > a {
+    text-decoration: none;
+    color: rgb(75, 75, 75);
+    display: block;
+    float: left;
+    font-size: 25px;
+    top: 50%;
+    margin: 0;
+    transform: translate(0, -50%)
+}
+
+#searchbar {
+    position: relative;
+    margin: 0;
+    top: 50%;
+    left: 35%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 40px;
+    width: 50%;
+    font-size: 20px;
+}   
     
+#headnav {
+    top: 50%;
+    margin: 0;
+    transform: translate(0, -50%);
+    float: right;
+}
+#headnav > ul {
+    top: 50%;
+    margin: 0;
+    transform: translate(0, -50%);
+    list-style: none;
+    border: 3px;
+}
+
+#headnav > ul > li {
+    float: right;
+    padding: 20px;
+    height: 25px;
+    margin: 5px;
+    background-color: rgb(243, 102, 67);
+    }
+
+#headnav > ul > li a {
+    text-decoration: none;
+    color: rgb(75, 75, 75);
+    display: block;
+}
+
+#headnav > ul > li:hover {
+    background-color: rgb(189, 78, 51);
+}
+
+
 #wrapper {
     width: 80%;
     min-height: 50%;
@@ -12,24 +84,6 @@ body, html {
     margin-bottom: 10px;
     border-radius: 20px;
     padding: 10px; 
-}
-
-header {
-    margin-top: 5px;
-    border-radius: 10px 10px 0 0;
-    width: 100%;
-    height: 100px;
-    background-color: rgb(243, 102, 67);
-    padding: 20px;
-    box-sizing: border-box;
-    font-family: 'Rubik', serif;
-    line-height: 40px;
-}
-
-header > h1 > a {
-    text-decoration: none;
-    color: rgb(48, 47, 47);
-    display: block;
 }
 
 
@@ -53,6 +107,7 @@ header > h1 > a {
     float: left;
     text-align: center;
     padding-left: 30px;
+
 }
 
 #wrapper > nav > ul > li a {
@@ -121,9 +176,9 @@ header > h1 > a {
 }
 
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
-    width: 100%;
+    width: 99%;
     margin-bottom: 5px;
     height: 75px;
     background-color: rgb(243, 102, 67);
@@ -132,7 +187,6 @@ footer {
     border-radius: 0 0 10px 10px;
 }
 
-footer > p {
-    width: 100%;
+footer > p {;
     text-align: center;
 }
