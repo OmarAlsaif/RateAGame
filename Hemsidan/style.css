@@ -15,9 +15,6 @@ header {
     font-family: 'Rubik', serif;
     line-height: 40px;
 }
-header > h1 {
-
-}
 
 header > h1 > a {
     text-decoration: none;
@@ -40,6 +37,7 @@ header > h1 > a {
     height: 40px;
     width: 50%;
     font-size: 20px;
+    border-radius: 10px
 }   
     
 #headnav {
@@ -163,6 +161,11 @@ header > h1 > a {
     background-color: rgb(255, 255, 255);
 }
 
+#top10main {
+    background-color: white;
+    min-height: 500px;
+}
+
 .login-page {
     width: 360px;
     padding: 20px ;
@@ -214,7 +217,7 @@ header > h1 > a {
 footer {
     position: relative;
     bottom: 0;
-    width: 99%;
+    width: 100%;
     margin-bottom: 5px;
     height: 75px;
     background-color: rgb(243, 102, 67);
@@ -223,6 +226,6 @@ footer {
     border-radius: 0 0 10px 10px;
 }
 
-footer > p {;
+footer > p {
     text-align: center;
 }
