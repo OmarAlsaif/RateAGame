@@ -30,7 +30,8 @@ header > h1 > a {
 
 #searchbar {
     position: relative;
-    margin: 0;
+    margin-left: auto;
+    margin-right: auto; 
     top: 50%;
     left: 28%;
     -ms-transform: translate(-50%, -50%);
@@ -114,6 +115,78 @@ header > h1 > a {
     -o-transition: left 2s;
 }
 
+#img1_text{
+    position: absolute;
+    z-index: 1;
+    margin-left: 16.66%;
+    background-color: rgba(75, 75, 75, 0.5);
+    height: 100%;
+    width: 320px;
+    border-radius: 0 10px 10px 0;
+    opacity: 0;
+    word-wrap: break-word;
+    font-size: 40px;
+ }
+
+ #img1_text > p{
+     padding: 10px;   
+ }
+
+ #img1_text > button{
+     margin-top: 40%;
+     width: 80%;
+     background-color: rgb(243, 102, 67);
+     border-radius: 10px;
+     padding: 5px;
+     border-color: rgb(75, 75, 75)
+    } 
+
+
+
+#img1_text:hover{
+    opacity: 1;
+    transition: 0.5s;
+    color: white;
+    border-radius: 0 10px 10px 0;
+    overflow: hidden;
+}
+
+#img2_text{
+    position: absolute;
+    z-index: 1;
+    margin-left: 50%;
+    background-color: rgba(75, 75, 75, 0.5);
+    height: 100%;
+    width: 320px;
+    border-radius: 0 10px 10px 0;
+    opacity: 0;
+}
+
+#img2_text:hover{
+    opacity: 1;
+    transition: 0.5s;
+    color: white;
+    border-radius: 0 10px 10px 0;
+}
+
+#img3_text {
+    position: absolute;
+    z-index: 1;
+    margin-left: 83.33%;
+    background-color: rgba(75, 75, 75, 0.5);
+    height: 100%;
+    width: 320px;
+    border-radius: 0 10px 10px 0;
+    opacity: 0;
+}
+
+#img3_text:hover{
+    opacity: 1;
+    transition: 0.5s;
+    color: white;
+    border-radius: 0 10px 10px 0;
+}
+
 .slider-image {
     float: left;
     margin: 0px;
@@ -124,6 +197,7 @@ header > h1 > a {
 .button-container {
     top: -20px;
     position: relative;
+    z-index: 1;
 }
 
 .slider-button {
