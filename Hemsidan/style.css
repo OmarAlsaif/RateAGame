@@ -24,7 +24,8 @@ header > h1 > a {
     font-size: 25px;
     top: 50%;
     margin: 0;
-    transform: translate(0, -50%)
+    transform: translate(0, -50%);
+    padding-bottom: 40px;
 }
 
 #searchbar {
@@ -52,6 +53,15 @@ header > h1 > a {
     transform: translate(0, -50%);
     list-style: none;
     border: 3px;
+}
+
+#logo{
+    float: left;
+    width: 13%;
+    position: absolute;
+    padding-left: 15px;
+    top: 5px;
+
 }
 
 #headnav > ul > li {
