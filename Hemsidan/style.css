@@ -91,8 +91,60 @@ header > h1 > a {
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 20px;
+    padding-top:10px;
     
 }
+
+.slide-container {
+    width: 640px;
+    height: 360px; 
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.image-container {
+    width:1920px;
+    height: 360px;
+    position: relative;
+    transition: left 2s;
+    -webkit-transition: left 2s;
+    -moz-transition: left 2s;
+    -o-transition: left 2s;
+}
+
+.slider-image {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 10px;
+}
+
+.button-container {
+    top: -20px;
+    position: relative;
+}
+
+.slider-button {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#slider-image-1:target ~ .image-container{
+    left:0px;
+}
+
+#slider-image-2:target ~ .image-container{
+    left:-640px;
+}
+
+#slider-image-3:target ~ .image-container{
+    left:-1280px;
+} 
 
 #wrapper {
     width: 90%;
