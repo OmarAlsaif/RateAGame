@@ -72,12 +72,22 @@ header > h1 > a {
     background-color: rgb(189, 78, 51);
 }
 
+#mainwrap {
+    width: 90%;
+    background-color: white;
+    min-height: 500px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    
+}
 
 #wrapper {
     width: 90%;
     min-height: 500px;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 20px; 
 }
