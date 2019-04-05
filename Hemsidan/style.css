@@ -25,20 +25,20 @@ header > h1 > a {
     top: 50%;
     margin: 0;
     transform: translate(0, -50%);
-    padding-bottom: 40px;
+    padding-top: 40px;
 }
 
 #searchbar {
     position: relative;
     margin: 0;
     top: 50%;
-    left: 35%;
+    left: 28%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     height: 40px;
     width: 50%;
     font-size: 20px;
-    border-radius: 10px
+    border-radius: 13px
 }   
     
 #headnav {
@@ -57,25 +57,26 @@ header > h1 > a {
 
 #logo{
     float: left;
-    width: 13%;
+    width: 115px;
     position: absolute;
-    padding-left: 15px;
-    top: 5px;
+    padding-left: 20px;
+    top: 10px;
+    border-radius: 5px;
 
 }
 
 #headnav > ul > li {
     float: right;
-    padding: 20px;
-    height: 25px;
-    margin: 5px;
+    padding: 14px;
     background-color: rgb(243, 102, 67);
+    margin-bottom: 6px;
     }
 
 #headnav > ul > li a {
     text-decoration: none;
     color: rgb(75, 75, 75);
     display: block;
+    font-size: 20px;
 }
 
 #headnav > ul > li:hover {
