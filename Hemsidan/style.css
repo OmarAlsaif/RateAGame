@@ -128,7 +128,8 @@ header > h1 > a {
     width: 100%;
     background-color: white;
     border-radius: 0 0 20px 20px;
-
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
 }
 
 #titlecontain > img {
@@ -141,16 +142,18 @@ header > h1 > a {
 #titlecontent {
     padding: 10px;
     float: left;
-    width: 55%
+    width: 55%;
 }
 
 #titleinfo {
     float: right;
     height: 200px;
     width: 200px;
-    border: 1px black solid;
+    border: 1px rgb(75, 75, 75) solid;
     margin: 10px;
     padding: 10px;
+    box-shadow: 1px 1px 2px 2px rgb(75, 75, 75);
+    line-height: 10px;
 }
 
 
