@@ -104,6 +104,24 @@ header > h1 > a {
     
 }
 
+#left-container {
+    border-right: 1px solid rgba(75, 75, 75, 0.5);
+    margin-left: 10px;
+    padding: 10px;
+    width: 18%;
+    font-family: 'Rubik', serif;
+}
+
+#left-container > h2, #right-container > h2 {
+    text-align: center;
+}
+
+#middle-container {
+    display: flex;
+    flex-direction: column;
+    width: 64%
+}
+
 .slide-container {
     width: 640px;
     height: 360px; 
@@ -112,7 +130,6 @@ header > h1 > a {
     overflow: hidden;
     text-align: center;
     box-shadow:rgba(0,0,0,0.8) 0 0 10px;
-
 }
 
 .image-container {
@@ -224,20 +241,22 @@ header > h1 > a {
     left:-1280px;
 } 
 
-#left-container {
-    border-right: 1px solid rgba(75, 75, 75, 0.5);
-    margin-left: 10px;
-    padding: 10px;
-    width: 18%
+#middle-second {
+    color: black;
+    border-top: 1px solid rgba(75, 75, 75, 0.5);
+    margin-top: 10px;
+    text-align: center;
+    padding: 10px
 }
 
 #right-container {
   margin-right: 10px;
   border-left: 1px solid rgba(75, 75, 75, 0.5);
   padding: 10px;
-  width: 18%
-    
+  width: 18%;
+  font-family: 'Rubik', serif;
 }
+
 
 #wrapper {
     width: 90%;
@@ -291,9 +310,9 @@ header > h1 > a {
     min-height: 250px;
     width: 100%;
     background-color: white;
-    border-radius: 0 0 20px 20px;
     font-family: Arial, Helvetica, sans-serif;
     display: inline-block;
+    margin-bottom: 0;
 }
 
 #titlecontain > img {
@@ -320,6 +339,21 @@ header > h1 > a {
     line-height: 10px;
 }
 
+#co-titlecontent {
+    background-color: rgb(75, 75, 75);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: auto;
+    max-height: 300px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.co-titlecontent-img {
+    width: 25%;
+    padding: 1px;
+}
 
 #wrapper > main {
     width: 100%;
