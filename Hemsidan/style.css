@@ -16,9 +16,6 @@ header {
     line-height: 40px;
 }
 
-header > h1 {
-}
-
 header > h1 > a {
     text-decoration: none;
     color: rgb(75, 75, 75);
@@ -33,16 +30,15 @@ header > h1 > a {
 
 #searchbar {
     position: relative;
-    margin-left: auto;
-    margin-right: auto; 
     top: 50%;
-    left: 50%;
+    left: 29%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     height: 40px;
     width: 50%;
     font-size: 20px;
-    border-radius: 13px;    
+    border-radius: 7px;    
+    box-shadow: 2px 2px;
 
     
 }   
