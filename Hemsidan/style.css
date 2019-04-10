@@ -91,25 +91,39 @@ header > h1 > a {
 
 #mainwrap {
     width: 90%;
-    background-color: white;
-    min-height: 500px;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 20px;
     padding:10px;
+    background-color: white;
+
+}
+
+#topwrap {
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    
+    padding: 10px;
 }
 
 #left-container {
     border-right: 1px solid rgba(75, 75, 75, 0.5);
     margin-left: 10px;
+    margin-right: 10px;
     padding: 10px;
     width: 18%;
     font-family: 'Rubik', serif;
+    display: flex;
+    flex-direction: column;
+    height: 340px;
+    justify-content: space-between;
+}
+
+#left-container > p {
+    border-bottom: 1px solid rgba(75, 75, 75, 0.5);
+    padding-bottom: 5px
 }
 
 #left-container > h2, #right-container > h2 {
@@ -243,20 +257,47 @@ header > h1 > a {
 
 #middle-second {
     color: black;
-    border-top: 1px solid rgba(75, 75, 75, 0.5);
-    margin-top: 10px;
-    text-align: center;
-    padding: 10px
+
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+    white-space: nowrap;
+
+}
+
+#middle-second > p > a img {
+    height: 200px;
+    margin: 5px;
+    box-shadow:rgba(0,0,0,0.8) 0 0 10px;
 }
 
 #right-container {
-  margin-right: 10px;
-  border-left: 1px solid rgba(75, 75, 75, 0.5);
-  padding: 10px;
-  width: 18%;
-  font-family: 'Rubik', serif;
+    border-left: 1px solid rgba(75, 75, 75, 0.5);
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    width: 18%;
+    font-family: 'Rubik', serif;
+    display: flex;
+    flex-direction: column;
+    height: 340px;
+    justify-content: space-between;
 }
 
+#bottom-container{
+    color: black;
+    width: 100%;
+    min-height: 200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#bottom-container > p {
+    border-bottom: 1px solid rgba(75, 75, 75, 0.5);
+
+}
 
 #wrapper {
     width: 90%;
@@ -284,7 +325,7 @@ header > h1 > a {
       mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
-#title {
+#titlehead-text {
     width:100%;
     height:100%;
     position: absolute;
@@ -302,40 +343,49 @@ header > h1 > a {
 
 }
 
-#title:hover {
+#titlehead-text:hover {
     opacity: 1;
 }
 
-#titlecontain {
+#titlecontainer {
     min-height: 250px;
     width: 100%;
     background-color: white;
     font-family: Arial, Helvetica, sans-serif;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-bottom: 0;
 }
 
-#titlecontain > img {
-    height: 200px;
+#titlecontainer > img {
+    height: 220px;
     margin: 10px;
-    float: left;
-    box-shadow: 2px 2px 5px;
+    box-shadow: 2px 2px 5px rgb(75, 75, 75);
 }
 
 #titlecontent {
     padding: 10px;
-    float: left;
     width: 55%;
 }
 
+#titlecontent-headline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Cinzel, Arial, Helvetica, sans-serif;
+}
+
 #titleinfo {
-    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 200px;
     width: 200px;
-    border: 1px rgb(75, 75, 75) solid;
+    border: 1px rgb(75, 75, 75) ;
     margin: 10px;
     padding: 10px;
-    box-shadow: 1px 1px 2px 2px rgb(75, 75, 75);
+    box-shadow: 2px 2px 5px rgb(75, 75, 75);
     line-height: 10px;
 }
 
@@ -344,15 +394,21 @@ header > h1 > a {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    height: auto;
-    max-height: 300px;
+    max-height: 200px;
+    width: 100%;
     overflow: hidden;
-    padding: 5px;
 }
 
 .co-titlecontent-img {
-    width: 25%;
     padding: 1px;
+    width: 25% 
+}
+
+#review-section {
+    width: 100%;
+    background-color: white;
+    min-height: 300px;
+    border-radius: 0 0 20px 20px;
 }
 
 #wrapper > main {
