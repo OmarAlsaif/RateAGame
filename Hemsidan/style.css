@@ -259,7 +259,7 @@ header > h1 > a {
     white-space: nowrap;
 }
 
-#top10main {
+#top-10-main {
     display: flex;
     flex-wrap: wrap;
     width: auto;
@@ -268,13 +268,13 @@ header > h1 > a {
 
 }
 
-#top10main > figure > img {
+#top-10-main > figure > img {
     float: left;
     margin-right: 5px;
     height: calc(100% - 49px);
 }
 
-#top10main > figure {
+#top-10-main > figure {
     width: 70%;
     margin: 1%;
     box-shadow: 0 0 5px #333;
@@ -284,17 +284,17 @@ header > h1 > a {
     height: 188px;
 }
 
-#top10main > figure:hover {
+#top-10-main > figure:hover {
     width: 100%;
     box-shadow: 0 0 15px #000;
 }
 
-#top10main > figure > figcaption{
+#top-10-main > figure > figcaption{
     font-family: 'Oswald', sans-serif;
     font-size: 120%;
 }
 
-#top10main > figure > h3 {
+#top-10-main > figure > h3 {
     background-color: #000;
     color: #eee;
     margin: 0px;
