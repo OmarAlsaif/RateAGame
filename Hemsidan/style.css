@@ -180,7 +180,7 @@ header > h1 > a {
 
 
 
-#img1_text:hover{
+.image-container:hover #img1_text {
     opacity: 1;
     transition: 0.5s;
     color: white;
@@ -197,7 +197,7 @@ header > h1 > a {
     opacity: 0;
 }
 
-#img2_text:hover{
+.image-container:hover #img2_text {
     opacity: 1;
     transition: 0.5s;
     color: white;
@@ -213,7 +213,7 @@ header > h1 > a {
     opacity: 0;
 }
 
-#img3_text:hover{
+.image-container:hover #img3_text {
     opacity: 1;
     transition: 0.5s;
     color: white;
