@@ -268,7 +268,7 @@ header > h1 > a {
 
 }
 
-#top-10-main > figure > img {
+#top-10-main > figure > a > img {
     float: left;
     margin-right: 5px;
     height: calc(100% - 49px);
@@ -292,6 +292,7 @@ header > h1 > a {
 #top-10-main > figure > figcaption{
     font-family: 'Oswald', sans-serif;
     font-size: 120%;
+    padding: 5px;
 }
 
 #top-10-main > figure > h3 {
@@ -302,6 +303,13 @@ header > h1 > a {
     padding: 10px 0;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
+}
+
+#top-10-main > figure > h3 > a {
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+    display: block;
 }
 
 #middle-second > p > a img {
