@@ -163,20 +163,20 @@ header > h1 > a {
     opacity: 0;
     word-wrap: break-word;
     font-size: 40px;
- }
+}
 
- #img1_text > p{
+#img1_text > p{
      padding: 10px;   
- }
+}
 
- #img1_text > button{
+#img1_text > button{
      margin-top: 40%;
      width: 80%;
      background-color: rgb(243, 102, 67);
      border-radius: 10px;
      padding: 5px;
      border-color: rgb(75, 75, 75)
-    } 
+} 
 
 
 
@@ -253,12 +253,55 @@ header > h1 > a {
 
 #middle-second {
     color: black;
-
     display: flex;
     flex-wrap: nowrap;
     overflow: auto;
     white-space: nowrap;
+}
 
+#top10main {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    margin: auto;
+    background-color: white;
+
+}
+
+#top10main > figure > img {
+    float: left;
+    margin-right: 5px;
+    height: calc(100% - 49px);
+}
+
+#top10main > figure {
+    width: 70%;
+    margin: 1%;
+    box-shadow: 0 0 5px #333;
+    background-color: #fff;
+    transition: 0.5s all;
+    font-size: 12px;
+    height: 188px;
+}
+
+#top10main > figure:hover {
+    width: 100%;
+    box-shadow: 0 0 15px #000;
+}
+
+#top10main > figure > figcaption{
+    font-family: 'Oswald', sans-serif;
+    font-size: 120%;
+}
+
+#top10main > figure > h3 {
+    background-color: #000;
+    color: #eee;
+    margin: 0px;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
 }
 
 #middle-second > p > a img {
@@ -411,11 +454,6 @@ header > h1 > a {
     width: 100%;
     min-height: auto;
     background-color: rgb(255, 255, 255);
-}
-
-#top10main {
-    background-color: white;
-    min-height: 500px;
 }
 
 .login-page {
