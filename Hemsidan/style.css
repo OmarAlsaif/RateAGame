@@ -3,7 +3,6 @@ body, html {
     height: 100%;
 }
 
-
 header {
     margin-top: 5px;
     border-radius: 10px 10px 0 0;
@@ -38,9 +37,7 @@ header > h1 > a {
     width: 50%;
     font-size: 20px;
     border-radius: 7px;    
-    box-shadow: 2px 2px;
-
-    
+    box-shadow: 2px 2px;   
 }   
     
 #headnav {
@@ -49,6 +46,7 @@ header > h1 > a {
     transform: translate(0, -50%);
     float: right;
 }
+
 #headnav > ul {
     top: 50%;
     margin: 0;
@@ -64,7 +62,6 @@ header > h1 > a {
     padding-left: 20px;
     top: 10px;
     border-radius: 5px;
-
 }
 
 #headnav > ul > li {
@@ -72,7 +69,7 @@ header > h1 > a {
     padding: 14px;
     background-color: rgb(243, 102, 67);
     margin-bottom: 6px;
-    }
+}
 
 #headnav > ul > li a {
     text-decoration: none;
@@ -93,7 +90,6 @@ header > h1 > a {
     border-radius: 20px;
     padding:10px;
     background-color: white;
-
 }
 
 #topwrap {
@@ -150,7 +146,6 @@ header > h1 > a {
     -webkit-transition: left 2s;
     -moz-transition: left 2s;
     -o-transition: left 2s;
-
 }
 
 #img1_text{
@@ -265,7 +260,6 @@ header > h1 > a {
     width: auto;
     margin: auto;
     background-color: white;
-
 }
 
 #top-10-main > figure > a > img {
@@ -343,7 +337,6 @@ header > h1 > a {
 
 #bottom-container > p {
     border-bottom: 1px solid rgba(75, 75, 75, 0.5);
-
 }
 
 #wrapper {
@@ -369,7 +362,7 @@ header > h1 > a {
     transform: translateY(-10%);
     top: 80%;
     -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
 #titlehead-text {
@@ -387,7 +380,6 @@ header > h1 > a {
     font-size: 50px;
     opacity: 0;
     transition: 0.5s all;
-
 }
 
 #titlehead-text:hover {
@@ -508,6 +500,7 @@ header > h1 > a {
     text-decoration: none;
     color: white;
 }
+
 .form .reg-form {
     display: none;
 }
