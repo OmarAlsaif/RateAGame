@@ -413,6 +413,11 @@ header > h1 > a {
     flex-direction: row;
     justify-content: space-between;
     font-family: Cinzel, Arial, Helvetica, sans-serif;
+    width: 583px;
+
+}
+#titlecontent-headline > h2 {
+    margin: 0px;
 }
 
 #titleinfo {
@@ -443,6 +448,10 @@ header > h1 > a {
     width: 25% 
 }
 
+.discription > p{
+    margin-top: 5px;
+}
+
 #review-section {
     width: 100%;
     background-color: white;
@@ -461,6 +470,42 @@ header > h1 > a {
     padding: 20px ;
     margin: auto;
 }
+
+.rate {
+    height: 42px;
+}
+
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
 
 .form {
     position: relative;
