@@ -39,6 +39,7 @@ body > header {
     padding: 0 20px;
     transition: 0.5s all;
     font-weight: bold;
+    font-size: 20px;
 }
 
 #menu > a:hover {
@@ -139,7 +140,7 @@ body > header {
     width: 320px;
     opacity: 0;
     word-wrap: break-word;
-    font-size: 40px;
+    font-size: 20px;
 }
 
 #img1_text > p{
@@ -167,11 +168,17 @@ body > header {
 #img2_text{
     position: absolute;
     z-index: 1;
-    margin-left: 50%;
+    margin-left: 16.66%;
     background-color: rgba(75, 75, 75, 0.5);
     height: 100%;
     width: 320px;
     opacity: 0;
+    word-wrap: break-word;
+    font-size: 40px;
+}
+
+#img2_text > p{
+    padding: 10px;   
 }
 
 #img2_text:hover{
@@ -179,6 +186,15 @@ body > header {
     transition: 0.5s;
     color: white;
 }
+
+#img2_text > button{
+    margin-top: 40%;
+    width: 80%;
+    background-color: rgb(243, 102, 67);
+    border-radius: 10px;
+    padding: 5px;
+    border-color: rgb(75, 75, 75)
+} 
 
 #img3_text {
     position: absolute;
@@ -188,6 +204,11 @@ body > header {
     height: 100%;
     width: 320px;
     opacity: 0;
+    font-size: 30px;
+    word-wrap: break-word;
+}
+#img3_text > p{
+    padding: 10px;   
 }
 
 #img3_text:hover{
@@ -195,6 +216,15 @@ body > header {
     transition: 0.5s;
     color: white;
 }
+
+#img3_text > button{
+    margin-top: 40%;
+    width: 80%;
+    background-color: rgb(243, 102, 67);
+    border-radius: 10px;
+    padding: 5px;
+    border-color: rgb(75, 75, 75)
+} 
 
 .slider-image {
     float: left;
