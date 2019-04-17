@@ -13,12 +13,12 @@ Register.jsp
         try{
 //    Class.forName("com.postgresql.jdbc.Driver");
     Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","password");
-    PreparedStatement stmt = con.prepareStatement("insert into products2 values (?,?)");
+    PreparedStatement stmt = con.prepareStatement("insert into users values (?,?)");
     stmt.setString(1, uname);    stmt.setString(2, pass1);
     int row = stmt.executeUpdate();
     if(row==1) { out.println("Registration successful"); }
     else {    
-        out.println("Registration unsuccessful!!!!");
+        out.println("Registration unsuccessful!");
         %>
             <jsp:include page="login.html" ></jsp:include>
         <%

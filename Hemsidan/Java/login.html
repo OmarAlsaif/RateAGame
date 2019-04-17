@@ -51,6 +51,17 @@
                         <input type="text" name="loginName"placeholder="Användarnamn">
                         <input type="password" name="loginPass"placeholder="Lösenord">
                         <input type="submit" value="LOGIN">
+                        function writeCookie(name,value,days) {
+    var date, expires;
+    if (days) {
+        date = new Date();
+        date.setTime(date.getTime()+(days2460601000));
+        expires = "; expires=" + date.toGMTString();
+            }else{
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
                     </form>
                 </div>
             </div>

@@ -66,7 +66,7 @@ public class DatabaseConnection {
 		ctrl.connect();
 //		
 		ctrl.createTables();
-//		coffeeCornerDb.setup();
+//		.setup();
 //		
 //		List<Product> allProducts = ctrl.selectAllProducts();
 //		int i = 0;

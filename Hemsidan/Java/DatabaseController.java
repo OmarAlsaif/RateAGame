@@ -14,7 +14,7 @@ public class DatabaseController extends DatabaseConnection {
 		try {
 			stmt = conn.createStatement();
 			
-			String sql = "CREATE TABLE IF NOT EXISTS products2 (" +
+			String sql = "CREATE TABLE IF NOT EXISTS users(" +
 					"username VARCHAR(100) NOT NULL, " +
 					"password VARCHAR(100) NOT NULL)";
 			
@@ -61,11 +61,11 @@ public class DatabaseController extends DatabaseConnection {
 //		System.out.println("Insert product " + productName + "with price " + productPrice);
 //		
 //		try {
-//			PreparedStatement st = conn.prepareStatement("INSERT INTO PRODUCTS (" +
-//					 "product_name, product_price) " +
+//			PreparedStatement st = conn.prepareStatement("INSERT INTO USERS(" +
+//					 "username, password) " +
 //					 "VALUES(?,?)");
-//			st.setString(1, productName);
-//			st.setDouble(2, productPrice);
+//			st.setString(1, username);
+//			st.setDouble(2, password);
 //			st.executeUpdate();
 //			st.close();
 //		} catch (SQLException e) {
