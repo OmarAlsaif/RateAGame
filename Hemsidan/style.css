@@ -140,7 +140,7 @@ body > header {
     width: 320px;
     opacity: 0;
     word-wrap: break-word;
-    font-size: 20px;
+    font-size: 40px;
 }
 
 #img1_text > p{
@@ -202,7 +202,7 @@ body > header {
     height: 100%;
     width: 320px;
     opacity: 0;
-    font-size: 30px;
+    font-size: 40px;
     word-wrap: break-word;
 }
 #img3_text > p{
