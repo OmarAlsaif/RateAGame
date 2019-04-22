@@ -156,9 +156,7 @@ body > header {
      border-color: rgb(75, 75, 75)
 } 
 
-
-
-#img1_text:hover{
+.image-container:hover #img1_text {
     opacity: 1;
     transition: 0.5s;
     color: white;
@@ -168,7 +166,7 @@ body > header {
 #img2_text{
     position: absolute;
     z-index: 1;
-    margin-left: 16.66%;
+    margin-left: 50%;
     background-color: rgba(75, 75, 75, 0.5);
     height: 100%;
     width: 320px;
