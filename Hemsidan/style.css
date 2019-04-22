@@ -264,6 +264,26 @@ body > header {
     white-space: nowrap;
 }
 
+#middle-second>p {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 230px;
+    opacity: 0, 5;
+}
+
+#middle-second>p>a>img {
+    height: 200px;
+    margin: 5px;
+    box-shadow: rgba(0, 0, 0, 0.8) 0 0 10px;
+    filter: opacity(75%)
+}
+
+#middle-second>p>a>img:hover {
+    transition: 0.5s;
+    filter: opacity(100%)
+}
+
 #top-10-main {
     display: flex;
     flex-wrap: wrap;
