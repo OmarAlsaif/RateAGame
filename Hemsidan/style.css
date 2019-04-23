@@ -179,7 +179,7 @@ body > header {
     padding: 10px;   
 }
 
-#img2_text:hover{
+.image-container:hover #img2_text {
     opacity: 1;
     transition: 0.5s;
     color: white;
@@ -209,7 +209,7 @@ body > header {
     padding: 10px;   
 }
 
-#img3_text:hover{
+.image-container:hover #img3_text {
     opacity: 1;
     transition: 0.5s;
     color: white;
