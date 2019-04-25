@@ -40,28 +40,17 @@
         <main>
             <div class="login-page">
                 <div class="form">
-                    <form action="Register.jsp">
+                    <form action="RegisterServlet" method="post">
                         <input type="text" name="txtName"placeholder="Användarnamn" ><br>
                         <input type="password" name="txtPass1"placeholder="Lösenord" ><br>  
                         <input type="password" name="txtPass2"placeholder="Lösenord" ><br> 
-                        <input type="submit" value="REGISTER">
-                       
+                        <input type="submit" value="REGISTER">                      
                     </form>
-                    <form action="Login.jsp">
+                    <form action="LoginServlet1"> 
                         <input type="text" name="loginName"placeholder="Användarnamn">
                         <input type="password" name="loginPass"placeholder="Lösenord">
                         <input type="submit" value="LOGIN">
-                        function writeCookie(name,value,days) {
-    var date, expires;
-    if (days) {
-        date = new Date();
-        date.setTime(date.getTime()+(days2460601000));
-        expires = "; expires=" + date.toGMTString();
-            }else{
-        expires = "";
-    }
-    document.cookie = name + "=" + value + expires + "; path=/";
-}
+                        
                     </form>
                 </div>
             </div>
