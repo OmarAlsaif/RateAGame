@@ -1,6 +1,7 @@
 package sys;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -20,15 +21,15 @@ public class RatingServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+			System.out.println("doGet kallades");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("doPost kallades");
 		String rate = request.getParameter("rate");
 		
 		System.out.println(rate);
-		System.out.println("Yoooo!");
 		HttpSession session = request.getSession();
 		System.out.println(session);
 		String str = (String)session.getAttribute("loginName");
