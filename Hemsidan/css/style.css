@@ -5,6 +5,7 @@ body, html {
     font-family: 'Rubik', serif;
 }
 
+/** Header börjar **/
 body > header {
     background-color: rgb(243, 102, 67);
     height: 62px;
@@ -97,7 +98,26 @@ body > header {
     top: 2px;
     border-radius: 5px;
 }
+/** Header slutar **/
 
+/** Wrapper för övriga html-sidor **/
+#wrapper {
+    width: 90%;
+    min-height: 500px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px; 
+}
+
+#wrapper > main {
+    width: 100%;
+    min-height: auto;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px #000;
+}
+
+/** Wrapper för startsida **/
 #mainwrap {
     width: 90%;
     margin: auto;
@@ -296,7 +316,7 @@ body > header {
     white-space: nowrap;
 }
 
-#middle-second>p {
+#middle-second > p {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -304,18 +324,47 @@ body > header {
     opacity: 0, 5;
 }
 
-#middle-second>p>a>img {
+#middle-second > p > a > img {
     height: 200px;
     margin: 5px;
     box-shadow: rgba(0, 0, 0, 0.8) 0 0 10px;
     filter: opacity(75%)
 }
 
-#middle-second>p>a>img:hover {
+#middle-second > p > a > img:hover {
     transition: 0.5s;
     filter: opacity(100%)
 }
 
+#right-container {
+    border-left: 1px solid rgba(75, 75, 75, 0.5);
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    width: 18%;
+    font-family: 'Rubik', serif;
+    display: flex;
+    flex-direction: column;
+    height: 340px;
+    justify-content: space-between;
+}
+
+#bottom-container{
+    color: black;
+    width: 100%;
+    min-height: 200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#bottom-container > p {
+    border-bottom: 1px solid rgba(75, 75, 75, 0.5);
+}
+/** Wrapper startsida slutar **/
+
+/** Top 10-sida börjar **/
 #top-10-main {
     display: flex;
     flex-wrap: wrap;
@@ -367,49 +416,9 @@ body > header {
     color: white;
     display: block;
 }
+/** top 10-sida slutar **/
 
-#middle-second > p > a img {
-    height: 200px;
-    margin: 5px;
-    box-shadow:rgba(0,0,0,0.8) 0 0 10px;
-}
-
-#right-container {
-    border-left: 1px solid rgba(75, 75, 75, 0.5);
-    margin-right: 10px;
-    margin-left: 10px;
-    padding: 10px;
-    width: 18%;
-    font-family: 'Rubik', serif;
-    display: flex;
-    flex-direction: column;
-    height: 340px;
-    justify-content: space-between;
-}
-
-#bottom-container{
-    color: black;
-    width: 100%;
-    min-height: 200px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-#bottom-container > p {
-    border-bottom: 1px solid rgba(75, 75, 75, 0.5);
-}
-
-#wrapper {
-    width: 90%;
-    min-height: 500px;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 20px; 
-}
-
+/** Titelsida börjar **/
 #titlehead {
     width: 100%;
     height: 300px;
@@ -520,14 +529,9 @@ body > header {
     min-height: 300px;
     border-radius: 0 0 20px 20px;
 }
+/** Titelsida slutar **/
 
-#wrapper > main {
-    width: 100%;
-    min-height: auto;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 10px #000;
-}
-
+/** Login-sida börjar **/
 .login-page {
     width: 360px;
     padding: 20px ;
@@ -612,7 +616,9 @@ body > header {
 .form .reg-form {
     display: none;
 }
+/** Login-sida slutar **/
 
+/** Footer börjar **/
 footer {
     position: relative;
     bottom: 0;
@@ -628,3 +634,5 @@ footer {
 footer > p {
     text-align: center;
 }
+/** Footer slutar **/
+
