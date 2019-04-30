@@ -26,23 +26,55 @@ body > header {
     margin-top: 18px;
     margin-left: 8px;
 }
-
-#menu {
+#menu  {
     float: right;
+    width: 300px;
 }
+#menu > ul > li.active{
+    background: #DE5C3B;
+}
+.slide{
+    z-index: -1;
+    transition: 0.5s all;
+    opacity: 1;
 
-#menu > a {
-    display: block;
+}
+#menu > ul >li:nth-child(1).active ~ .slide {
+    left: 0;
+    opacity: 1;
+}
+#menu > ul >li:nth-child(2).active ~ .slide {
+    left: 0px;
+    opacity: 1;
+}
+#menu > ul >li:nth-child(3).active ~ .slide {
+    left: 0px;
+    opacity: 1;
+}
+#menu > ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+
+}
+#menu > ul >li {
     float: left;
+    margin: 0px;
+    padding: 0px; 
+    width: 80px,  
+}
+#menu > ul >li > a {
     color: rgb(75, 75, 75);
     text-decoration: none;
-    padding: 0 20px;
-    transition: 0.5s all;
     font-weight: bold;
     font-size: 20px;
+    padding: 0 19px;
+    font-size: 21px;
+    display: block;
+    text-align: center;
 }
 
-#menu > a:hover {
+#menu > ul > li> a:hover {
     background-color: #DE5C3B;
 }
 
