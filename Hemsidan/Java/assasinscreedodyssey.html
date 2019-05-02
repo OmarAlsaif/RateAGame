@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>RAG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../../css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="../../js/script.js"></script>
+    <script src="../js/script.js"></script>
     <link rel="shortcut icon" href="../../img/RAG logo.png">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css" />
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
@@ -22,7 +22,7 @@
     <header>
         <nav id="navigation">
             <a href="../../index.html" id="title">Rate A Game</a>
-            <a href="../../index.html"><img id="logo" src="../../img/RAG logo.png" /></a>
+            <a href="../../index.html"><img id="logo" src="../img/RAG logo.png" /></a>
             <input type="search" id="searchbar" placeholder="Search here...">
             <div id="menu">
                 <ul>
@@ -36,13 +36,13 @@
     </header>
     <div id="wrapper">
         <div id="titlehead">
-            <img src="acreed.jpg" alt="Assasins Creed Odyssey Head Cover">
+            <img src="../Titles/Assasins Creed Odyssey/acreed.jpg" alt="Assasins Creed Odyssey Head Cover">
             <div id="titlehead-text">
                 Assasins Creed Odyssey
             </div>
         </div>
         <article id="titlecontainer">
-            <img src="acreedcover.jpg" alt="Asssins Creed Odyssey Front Cover">
+            <img src="../Titles/Assasins Creed Odyssey/acreedcover.jpg" alt="Asssins Creed Odyssey Front Cover">
             <div id="titlecontent">
                 <div id="titlecontent-headline">
                     <h2>
@@ -52,41 +52,30 @@
                         Rating:
                     </h2>
                 </div>
-                
-                <div class="rate">
-                <form name="input" action="../../RatingServlet" method="post">
-                    <input type="radio" id="star10" name="rate" value="10" />
-                    <label for="star10" title="text">10 stars</label>
-                    <input type="radio" id="star9" name="rate" value="9" />
-                    <label for="star9" title="text">9 stars</label>
-                    <input type="radio" id="star8" name="rate" value="8" />
-                    <label for="star8" title="text">8 stars</label>
-                    <input type="radio" id="star7" name="rate" value="7" />
-                    <label for="star7" title="text">7 stars</label>
-                    <input type="radio" id="star6" name="rate" value="6" />
-                    <label for="star6" title="text">6 star</label>
-                    <input type="radio" id="star5" name="rate" value="5" />
-                    <label for="star5" title="text">5 stars</label>
-                    <input type="radio" id="star4" name="rate" value="4" />
-                    <label for="star4" title="text">4 stars</label>
-                    <input type="radio" id="star3" name="rate" value="3" />
-                    <label for="star3" title="text">3 stars</label>
-                    <input type="radio" id="star2" name="rate" value="2" />
-                    <label for="star2" title="text">2 stars</label>
-                    <input type="radio" id="star1" name="rate" value="1" />
-                    <label for="star1" title="text">1 star</label>
-                    <input type ="submit" value ="Submit">
-					</form> 
+
+                <div class="rating">
+                    <span><input type="radio" name="rating" id="str10" value="10"><label for="str10">★</label></span>
+                    <span><input type="radio" name="rating" id="str9" value="9"><label for="str9">★</label></span>
+                    <span><input type="radio" name="rating" id="str8" value="8"><label for="str8">★</label></span>
+                    <span><input type="radio" name="rating" id="str7" value="7"><label for="str7">★</label></span>
+                    <span><input type="radio" name="rating" id="str6" value="6"><label for="str6">★</label></span>
+                    <span><input type="radio" name="rating" id="str5" value="5"><label for="str5">★</label></span>
+                    <span><input type="radio" name="rating" id="str4" value="4"><label for="str4">★</label></span>
+                    <span><input type="radio" name="rating" id="str3" value="3"><label for="str3">★</label></span>
+                    <span><input type="radio" name="rating" id="str2" value="2"><label for="str2">★</label></span>
+                    <span><input type="radio" name="rating" id="str1" value="1"><label for="str1">★</label></span>   
                 </div>
                 <div class="discription">
                     <p>
-                        Live the epic odyssey of a legendary Spartan hero, write your own epic odyssey and become a legendary Spartan hero in Assassin's
+                        Live the epic odyssey of a legendary Spartan hero, write your own epic odyssey and become a
+                        legendary Spartan hero in Assassin's
                         Creed Odyssey, an inspiring adventure where you must forge your destiny and define your own path
                         in a world on the brink of tearing itself apart. Influence how history unfolds as you experience
                         a rich and ever-changing world shaped by your decisions.
                     </p>
                     <p>
-                        Link to official site: <a href="https://assassinscreed.ubisoft.com/game/en-gb/home" target="_blank">Assasins
+                        Link to official site: <a href="https://assassinscreed.ubisoft.com/game/en-gb/home"
+                            target="_blank">Assasins
                             Creed Odyssey</a>
                     </p>
                 </div>
@@ -103,9 +92,11 @@
             </div>
         </article>
         <div id="co-titlecontent">
-            <iframe src="https://www.youtube.com/embed/jiX2Xo6gzwo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen class="co-titlecontent-img"></iframe>
-            <img src="https://gematsu.com/wp-content/uploads/2018/08/ACO_08-21-18.jpg" class="co-titlecontent-img" alt="">
+            <iframe src="https://www.youtube.com/embed/jiX2Xo6gzwo" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                class="co-titlecontent-img"></iframe>
+            <img src="https://gematsu.com/wp-content/uploads/2018/08/ACO_08-21-18.jpg" class="co-titlecontent-img"
+                alt="">
             <img src="https://www.pcgamesn.com/wp-content/uploads/2018/10/assassins-creed-odyssey-historically-accurate-900x507.png"
                 class="co-titlecontent-img">
             <img src="https://static.trueachievements.com/customimages/087640.jpg" class="co-titlecontent-img">
@@ -121,8 +112,8 @@
                 <textarea rows="5" cols="30" id="bodytext"></textarea><br>
                 <input type="button" id="addComment" value="Add Comment">
             </div>
-            <div id="container">    
-                
+            <div id="container">
+
             </div>
         </div>
     </div>
@@ -131,6 +122,8 @@
             Projektgrupp 6<br> Copyright 2019
         </p>
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </body>
 

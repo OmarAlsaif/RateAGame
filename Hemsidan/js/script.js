@@ -40,10 +40,22 @@ $(document).ready(function(){
     });
 });
 
-<<<<<<< HEAD
-=======
+//Rating system
+
+$(document).ready(function(){
+    // Check Radio-box
+    $(".rating input:radio").attr("checked", false);
+
+    $('.rating input').click(function () {
+        $(".rating span").removeClass('checked');
+        $(this).parent().addClass('checked');
+    });
+
+    $('input:radio').change(
+      function(){
+        var userRating = this.value;
+    }); 
+});
 
 
 
-
->>>>>>> e5adb1082aa3dd7163972df0177934c229f2ef9a
