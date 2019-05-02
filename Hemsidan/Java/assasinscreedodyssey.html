@@ -52,7 +52,9 @@
                         Rating:
                     </h2>
                 </div>
+                
                 <div class="rate">
+                <form name="input" action="../../RatingServlet" method="post">
                     <input type="radio" id="star10" name="rate" value="10" />
                     <label for="star10" title="text">10 stars</label>
                     <input type="radio" id="star9" name="rate" value="9" />
@@ -73,6 +75,8 @@
                     <label for="star2" title="text">2 stars</label>
                     <input type="radio" id="star1" name="rate" value="1" />
                     <label for="star1" title="text">1 star</label>
+                    <input type ="submit" value ="Submit">
+					</form> 
                 </div>
                 <div class="discription">
                     <p>

@@ -421,7 +421,6 @@ body > header {
 /** Titelsida börjar **/
 #titlehead {
     width: 100%;
-    height: 300px;
     overflow: hidden;
     border-radius: 20px 20px 0 0;
     position: relative;
@@ -429,10 +428,8 @@ body > header {
 
 #titlehead > img {
     width: 100%;
-    object-fit: contain;
-    transform: translateY(-10%);
     top: 80%;
-    -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,2)), to(rgba(0,0,0,0)));
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
@@ -528,6 +525,57 @@ body > header {
     background-color: white;
     min-height: 300px;
     border-radius: 0 0 20px 20px;
+}
+
+#review-section > h2 {
+    margin: 0;
+    padding: 10px;
+}
+
+.titleform {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.titleform input[type="text"], .titleform textarea, .titleform input[type="date"] {
+    border: 1px solid black;
+    padding: 2px;
+    width: 300px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+label {
+    float: left;
+    width: 50px;
+}
+
+#addComment {
+    margin-left: 50px;
+}
+
+.commentBox {
+    width: 90%;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: auto;
+    padding: 1%;
+    justify-content: space-between;
+    border-top: 1px solid black
+}
+
+.leftPanelImg {
+    width: 10%;
+}
+
+.leftPanelImg img{
+    border-radius: 100%
+}
+
+.rightPanel {
+    width: 85%; 
 }
 /** Titelsida slutar **/
 
