@@ -40,6 +40,7 @@ $(document).ready(function(){
     });
 });
 
+<<<<<<< HEAD
 // Slideshow Börjar här: 
 
 const slideContainer = document.querySelector('.slide-container');
@@ -92,7 +93,24 @@ slideContainer.addEventListener('transitionend', ()=>{
 
 
 
+=======
+//Rating system
+>>>>>>> 0278709694e639d187bebe33ad5e04e49e0f5d22
 
+$(document).ready(function(){
+    // Check Radio-box
+    $(".rating input:radio").attr("checked", false);
+
+    $('.rating input').click(function () {
+        $(".rating span").removeClass('checked');
+        $(this).parent().addClass('checked');
+    });
+
+    $('input:radio').change(
+      function(){
+        var userRating = this.value;
+    }); 
+});
 
 
 

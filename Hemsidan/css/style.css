@@ -438,7 +438,6 @@ body > header {
 /** Titelsida börjar **/
 #titlehead {
     width: 100%;
-    height: 300px;
     overflow: hidden;
     border-radius: 20px 20px 0 0;
     position: relative;
@@ -446,10 +445,8 @@ body > header {
 
 #titlehead > img {
     width: 100%;
-    object-fit: contain;
-    transform: translateY(-10%);
     top: 80%;
-    -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,2)), to(rgba(0,0,0,0)));
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
@@ -501,11 +498,12 @@ body > header {
     flex-direction: row;
     justify-content: space-between;
     font-family: Cinzel, Arial, Helvetica, sans-serif;
-    width: 583px;
+    width: 713px;
 
 }
 #titlecontent-headline > h2 {
     margin: 0px;
+/**    margin-right: 92px  **/
 }
 
 #titleinfo {
@@ -537,7 +535,7 @@ body > header {
 }
 
 .discription > p{
-    margin-top: 5px;
+    margin-top: 43px;
 }
 
 #review-section {
@@ -598,6 +596,40 @@ label {
     width: 85%; 
 }
 /** Titelsida slutar **/
+
+/** betyg systemet börjar **/
+.rating {
+    float:right;
+}
+.rating span { float:right; position:relative; }
+.rating span input {
+    position:absolute;
+    top:0px;
+    left:0px;
+    opacity:0;
+}
+.rating span label {
+    display:inline-block;
+    width:30px;
+    height:30px;
+    text-align:center;
+    color:#FFF;
+    background:#ccc;
+    font-size:30px;
+    margin-right:2px;
+    line-height:30px;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+}
+.rating span:hover ~ span label,
+.rating span:hover label,
+.rating span.checked label,
+.rating span.checked ~ span label {
+    background:#F90;
+    color:#FFF;
+}
+
+/** betyg systemet slutar **/
 
 /** Login-sida börjar **/
 .login-page {
