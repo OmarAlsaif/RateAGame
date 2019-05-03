@@ -120,6 +120,8 @@ body > header {
 /** Wrapper för startsida **/
 #mainwrap {
     width: 90%;
+    display: flex;
+    flex-wrap: wrap;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -127,24 +129,15 @@ body > header {
     background-color: white;
 }
 
-#topwrap {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding: 10px;
-}
-
 #left-container {
     border-right: 1px solid rgba(75, 75, 75, 0.5);
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 10px;
-    width: 18%;
+    width: 15%;
+    margin-right: 5px;
     font-family: 'Rubik', serif;
     display: flex;
     flex-direction: column;
     height: 340px;
+    padding: 10px;
     justify-content: space-between;
 }
 
@@ -157,81 +150,131 @@ body > header {
     text-align: center;
 }
 
+#right-container {
+    border-left: 1px solid rgba(75, 75, 75, 0.5);
+    margin-left: 5px;
+    padding: 0 0 0  10px;
+    width: 18%;
+    font-family: 'Rubik', serif;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: 340px;
+}
+
 #middle-container {
     display: flex;
     flex-direction: column;
-    width: 64%
-}
-
-.slide-container {
-    width: 640px;
-    height: 360px; 
-    margin-left: auto;
-    margin-right: auto;
+    width: 60%;
+    border: 2px solid black;
     overflow: hidden;
+    position: relative;
+    margin-bottom: 40px;
+}
+.slide-container {
+    display: flex;
+    height: 400px; 
     text-align: center;
     box-shadow:rgba(0,0,0,0.8) 0 0 10px;
 }
 
-.image-container {
-    width:1920px;
-    height: 360px;
-    position: relative;
-    transition: left 2s;
-    -webkit-transition: left 2s;
-    -moz-transition: left 2s;
-    -o-transition: left 2s;
+#prevBtn{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    left: 5%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+#nextBtn{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    right: 5%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
 }
 
 #img1_text{
     position: absolute;
     z-index: 1;
-    margin-left: 16.66%;
+    cursor: pointer;
+    font-family: 'Gugi', cursive, Arial, Helvetica, sans-serif;
+    margin: auto;
     background-color: rgba(75, 75, 75, 0.5);
     height: 100%;
-    width: 320px;
+    width: 300px;
     opacity: 0;
     word-wrap: break-word;
     font-size: 40px;
 }
 
 #img1_text > p{
-     padding: 10px;   
+     padding: 10px;  
+     background-color: rgb(243, 102, 67); 
 }
 
 #img1_text > button{
      margin-top: 40%;
      width: 80%;
+     cursor: pointer;
+     font-family: 'Gugi', cursive, Arial, Helvetica, sans-serif;
      background-color: rgb(243, 102, 67);
      border-radius: 10px;
      padding: 5px;
      border-color: rgb(75, 75, 75)
 } 
 
-.image-container:hover #img1_text {
-    opacity: 1;
-    transition: 0.5s;
-    color: white;
-    overflow: hidden;
+#imgx_text{
+    position: absolute;
+    z-index: 1;
+    margin: auto;
+    background-color: rgba(75, 75, 75, 0.5);
+    height: 100%;
+    width: 300px;
+    opacity: 0;
+    cursor: pointer;
+    word-wrap: break-word;
+    font-family: 'Gugi', cursive, Arial, Helvetica, sans-serif;
+    font-size: 40px;
 }
+#imgx_text > p{
+    padding: 10px;
+    background-color: rgb(243, 102, 67);
+}
+#imgx_text > button{
+    margin-top: 40%;
+    width: 80%;
+    background-color: rgb(243, 102, 67);
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+    font-family: 'Gugi', cursive, Arial, Helvetica, sans-serif;
+    border-color: rgb(75, 75, 75)
+} 
 
 #img2_text{
     position: absolute;
     z-index: 1;
-    margin-left: 50%;
+    margin: auto;
     background-color: rgba(75, 75, 75, 0.5);
     height: 100%;
-    width: 320px;
+    width: 300px;
+    cursor: pointer;
     opacity: 0;
+    font-family: 'Gugi', cursive, Arial, Helvetica, sans-serif;
     word-wrap: break-word;
     font-size: 40px;
 }
 
 #img2_text > p{
-    padding: 10px;   
+    padding: 10px; 
+    background-color: rgb(243, 102, 67);  
 }
 
-.image-container:hover #img2_text {
+.slide-container:hover #img2_text {
     opacity: 1;
     transition: 0.5s;
     color: white;
@@ -240,80 +283,67 @@ body > header {
 #img2_text > button{
     margin-top: 40%;
     width: 80%;
+    cursor: pointer;
     background-color: rgb(243, 102, 67);
     border-radius: 10px;
     padding: 5px;
+    font-family: 'Gugi', cursive, Arial, Helvetica, sans-serif;
     border-color: rgb(75, 75, 75)
 } 
 
 #img3_text {
     position: absolute;
     z-index: 1;
-    margin-left: 83.33%;
+    cursor: pointer;
+    margin:auto;
     background-color: rgba(75, 75, 75, 0.5);
     height: 100%;
-    width: 320px;
+    width: 300px;
     opacity: 0;
+    font-family: 'Gugi', cursive, Arial, Helvetica, sans-serif;
     font-size: 40px;
     word-wrap: break-word;
 }
 #img3_text > p{
     padding: 10px;   
-}
-
-.image-container:hover #img3_text {
-    opacity: 1;
-    transition: 0.5s;
-    color: white;
+    background-color: rgb(243, 102, 67);
 }
 
 #img3_text > button{
     margin-top: 40%;
     width: 80%;
+    cursor: pointer;
     background-color: rgb(243, 102, 67);
     border-radius: 10px;
     padding: 5px;
+    font-family: 'Gugi', cursive, Arial, Helvetica, sans-serif;
     border-color: rgb(75, 75, 75)
 } 
 
-.slider-image {
-    float: left;
-    margin: 0px;
-    padding: 0px;
+.slide-container:hover #img3_text {
+    opacity: 1;
+    transition: 0.5s;
+    color: white;
 }
 
-.button-container {
-    top: -20px;
-    position: relative;
-    z-index: 1;
+.slide-container:hover #img1_text {
+    opacity: 1;
+    transition: 0.5s;
+    color: white;
+    overflow: hidden;
 }
-
-.slider-button {
-    display: inline-block;
-    height: 10px;
-    width: 10px;
-    border-radius: 5px;
-    background-color: white;
+.slide-container:hover #imgx_text {
+    opacity: 1;
+    transition: 0.5s;
+    color: white;
+    overflow: hidden;
 }
-
-#slider-image-1:target ~ .image-container{
-    left:0px;
-}
-
-#slider-image-2:target ~ .image-container{
-    left:-640px;
-}
-
-#slider-image-3:target ~ .image-container{
-    left:-1280px;
-} 
 
 #middle-second {
     color: black;
     display: flex;
-    flex-wrap: nowrap;
     overflow: auto;
-    white-space: nowrap;
+    flex-direction: row;
 }
 
 #middle-second > p {
@@ -334,19 +364,6 @@ body > header {
 #middle-second > p > a > img:hover {
     transition: 0.5s;
     filter: opacity(100%)
-}
-
-#right-container {
-    border-left: 1px solid rgba(75, 75, 75, 0.5);
-    margin-right: 10px;
-    margin-left: 10px;
-    padding: 10px;
-    width: 18%;
-    font-family: 'Rubik', serif;
-    display: flex;
-    flex-direction: column;
-    height: 340px;
-    justify-content: space-between;
 }
 
 #bottom-container{
@@ -686,4 +703,6 @@ footer > p {
     text-align: center;
 }
 /** Footer slutar **/
+
+
 
