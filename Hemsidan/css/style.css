@@ -1,8 +1,12 @@
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:700';
+
 body, html {
     background-color: rgb(75, 75, 75);
     height: 100%;
-    margin: 0px;
+    width: 100%;
+    margin: auto;
     font-family: 'Rubik', serif;
+
 }
 
 /** Header börjar **/
@@ -560,7 +564,8 @@ body > header {
 }
 #titlecontent-headline > h2 {
     margin: 0px;
-/**    margin-right: 92px  **/
+
+    margin-right: 18px
 }
 
 #titleinfo {
@@ -652,6 +657,57 @@ label {
 .rightPanel {
     width: 85%; 
 }
+
+.containerbtn {
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left: -65px;
+    margin-top: -20px;
+    height: 40px;
+    text-align: center;
+  }
+  #votebutton {
+    display: inline-block;
+    background-color: rgb(243, 102, 67);
+    border-radius: 20px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+    height: 30px;
+    margin-left: 410%;
+    margin-top: 94%;
+    font-weight: bold;
+}
+#votebutton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+#votebutton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+#votebutton:hover span {
+    padding-right: 25px;
+}
+  
+#votebutton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
 /** Titelsida slutar **/
 
 /** betyg systemet börjar **/
@@ -697,6 +753,7 @@ label {
 
 .rate {
     height: 42px;
+    margin-right: 40px;
 }
 
 .rate:not(:checked) > input {

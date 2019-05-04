@@ -6,23 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>RAG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../../css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="../../js/script.js"></script>
-    <link rel="shortcut icon" href="../../img/RAG logo.png">
-    <link rel="stylesheet" type="text/css" media="screen" href="../../css/animate.css" />
+    <script src="../js/script.js"></script>
+    <link rel="shortcut icon" href="../img/RAG logo.png">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css" />
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <body>
     <header>
         <nav id="navigation">
-            <a href="../../index.html" id="title">Rate A Game</a>
-            <a href="../../index.html"><img id="logo" src="../../img/RAG logo.png" /></a>
+            <a href="../index.html" id="title">Rate A Game</a>
+            <a href="../index.html"><img id="logo" src="../img/RAG logo.png" /></a>
             <input type="search" id="searchbar" placeholder="Search here...">
             <div id="menu">
                 <ul>
@@ -36,13 +36,13 @@
     </header>
     <div id="wrapper">
         <div id="titlehead">
-            <img src="acreed.jpg" alt="Assasins Creed Odyssey Head Cover">
+            <img src="../Titles/Assasins Creed Odyssey/acreed.jpg" alt="Assasins Creed Odyssey Head Cover">
             <div id="titlehead-text">
                 Assasins Creed Odyssey
             </div>
         </div>
         <article id="titlecontainer">
-            <img src="acreedcover.jpg" alt="Asssins Creed Odyssey Front Cover">
+            <img src="../Titles/Assasins Creed Odyssey/acreedcover.jpg" alt="Asssins Creed Odyssey Front Cover">
             <div id="titlecontent">
                 <div id="titlecontent-headline">
                     <h2>
@@ -52,7 +52,7 @@
                         Rating:
                     </h2>
                 </div>
-                <form action="../../RatingServlet" method="post">
+                <form action="../RatingServlet" method="post">
                 <div class="rate">
                     <input type="radio" id="star10" name="rate" value="10" />
                     <label for="star10" title="text">10 stars</label>
@@ -74,9 +74,16 @@
                     <label for="star2" title="text">2 stars</label>
                     <input type="radio" id="star1" name="rate" value="1" />
                     <label for="star1" title="text">1 star</label>
+                    <div class="containerbtn">
+                        <button type="submit" id="votebutton" value="Vote">
+                            <span>
+                                Vote!    
+                            </span>
+                        </button>
+                    </div>
                 </div>
-                <input type="submit" value="Vote">
                 </form>
+
                 <div class="discription">
                     <p>
                         Live the epic odyssey of a legendary Spartan hero, write your own epic odyssey and become a legendary Spartan hero in Assassin's
