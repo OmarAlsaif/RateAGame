@@ -1,9 +1,8 @@
-package com.login;
+package sys;
 
 import java.sql.*;
 import java.util.List;
 
-import domain.Product;
 
 public class DatabaseConnection {
 
