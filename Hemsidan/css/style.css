@@ -151,21 +151,24 @@ body > header {
 }
 
 #right-container {
-    border-left: 1px solid rgba(75, 75, 75, 0.5);
     margin-left: 5px;
     padding: 0 0 0  10px;
-    width: 18%;
+    width: 100%;
     font-family: 'Rubik', serif;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    height: 340px;
+    height: 200px;
+    font-size: 21px;
 }
+#right-container > h2{
+    text-align: left;
+} 
 
 #middle-container {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 82%;
     border: 2px solid black;
     overflow: hidden;
     position: relative;
@@ -175,9 +178,61 @@ body > header {
     display: flex;
     height: 400px; 
     text-align: center;
-    box-shadow:rgba(0,0,0,0.8) 0 0 10px;
 }
 
+
+#rdr2{
+    object-fit: cover;
+    height: 620px;
+    width:100%;
+}
+#horizon{
+    object-fit: cover;
+    height: 620px;
+    width:100%;
+}
+#fallout{
+    object-fit: cover;
+    height: 620px;
+    width:100%;
+}
+#firstClone {
+    object-fit: cover;
+    height: 620px;
+    width:100%;
+}
+#lastClone {
+    object-fit: cover;
+    height: 620px;
+    width:100%;
+}
+@media screen and (max-width: 1920px) {
+    #rdr2{
+    object-fit: cover;
+    height: 600px;
+    width:100%;
+    }
+    #horizon{
+    object-fit: cover;
+    height: 600px;
+    width:100%;
+    }
+    #fallout{
+    object-fit: cover;
+    height: 600px;
+    width:100%;
+    }
+    #firstClone {
+    object-fit: cover;
+    height: 600px;
+    width:100%;
+    }
+    #lastClone {
+    object-fit: cover;
+    height: 600px;
+    width:100%;
+    }
+}
 #prevBtn{
     position: absolute;
     top: 50%;
@@ -186,6 +241,7 @@ body > header {
     font-size: 30px;
     color: white;
     cursor: pointer;
+    background-color: black;
 }
 #nextBtn{
     position: absolute;
@@ -195,6 +251,7 @@ body > header {
     font-size: 30px;
     color: white;
     cursor: pointer;
+    background-color: black;
 }
 
 #img1_text{
@@ -686,7 +743,6 @@ label {
 
 .form input {
     outline: 1;
-    background: rgb(190, 190, 190);
     width: 100%;
     border: 0;
     margin: 0 0 15px;
@@ -695,7 +751,7 @@ label {
     font-size: 14px;
 }
 
-.form button {
+.button {
     text-transform: uppercase;
     outline: 0;
     background: rgb(255, 72, 72);
@@ -708,9 +764,13 @@ label {
     color: white;
 }
 
-.message, message > a {
+.message {
     text-decoration: none;
     color: white;
+}
+
+.message > a {
+    color: rgb(255, 72, 72);
 }
 
 .form .reg-form {
