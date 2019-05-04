@@ -1,4 +1,4 @@
-package com.login;
+package sys;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import domain.Product;
 
 public class DatabaseController extends DatabaseConnection {
 	
@@ -19,7 +18,13 @@ public class DatabaseController extends DatabaseConnection {
 					"password VARCHAR(25) NOT NULL" +
 					 ")";
 			
+			String sql2 = "CREATE TABLE IF NOT EXISTS ACOdyssey (" +
+					"username VARCHAR(25) UNIQUE, " +
+					"rating REAL NOT NULL" +
+					 ")";
+			
 			stmt.executeUpdate(sql);
+			stmt.executeUpdate(sql2);
 			stmt.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
