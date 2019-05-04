@@ -27,29 +27,44 @@ public class RatingServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("doPost kallades");
-		String rate = request.getParameter("rate");
-		
-		System.out.println(rate);
+		String rating = request.getParameter("rate");
+		String rating2 = request.getParameter("rating");
+		System.out.println(rating);
+		System.out.println(rating2);
 		HttpSession session = request.getSession();
 		System.out.println(session);
-		String str = (String)session.getAttribute("loginName");
-		System.out.println(str);
+		String userr = (String)session.getAttribute("loginName");
+		System.out.println(userr);
+		int result = Integer.parseInt(rating);
+		System.out.println(rating);
+	
+		
 //		try {
 //			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres",
 //					"password");
-//			PreparedStatement stmt = con.prepareStatement("select password from users where username=?");
-//			stmt.setString(1, loginName);
-//			ResultSet rs = stmt.executeQuery();
-//			if (rs.next()) {
-//				if (loginPass.equals(rs.getString(1))) {
-//					response.sendRedirect("index.html");
-//				}
-//			} else {
-//				response.sendRedirect("login.html");
-//			}
-//		} catch (Exception e) {
-//			System.out.println(e);
+//			PreparedStatement stmt = con.prepareStatement("insert into ACOdyssey values (?,?)");
+//			stmt.setString(1, userr);
+//			stmt.setString(2, rating);
 //		}
+		
+		try {
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres",
+					"password");
+			PreparedStatement stmt = con.prepareStatement("insert into ACOdyssey values (?,?)");
+			stmt.setString(1, userr);
+			stmt.setInt(2, result);
+			int row = stmt.executeUpdate();
+			
+			if (row != 0) {
+				System.out.println("Rating submitted");
+			}
+			 else{
+//			idk	 response.sendRedirect("index.html");
+			 }
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
 
 	}
 
