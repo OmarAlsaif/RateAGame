@@ -42,9 +42,9 @@
             <div class="login-page">
                 <div class="form">
                     <form class="reg-form">
-                        <input type="text" minlength="5" maxlength="15" pattern="" placeholder="Användarnamn">
-                        <input type="password" name="Lösenord" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters">
-                        <input type="email"  placeholder="E-post" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <input type="text" minlength="5" maxlength="15" pattern="[a-zA-Z0-9]+" placeholder="Användarnamn" title="5 - 15 characters, letters and numbers only" required>
+                        <input type="password" name="Lösenord" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters" required>
+                        <input type="email"  placeholder="E-post" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Invalid email" required>
                         <button>Skapa</button>
                         <p class="message">Already Registered? <a href="#">Log In</a></p>
                     </form>
