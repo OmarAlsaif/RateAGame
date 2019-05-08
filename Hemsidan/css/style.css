@@ -843,13 +843,21 @@ footer {
     margin-bottom: 5px;
     height: 75px;
     background-color: rgb(243, 102, 67);
-    padding: 5px;
+    padding: 10px 30px;
     box-sizing: border-box;
     border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 footer > p {
     text-align: center;
+    vertical-align: center;
+}
+
+footer > p > a {
+    color: white;
 }
 /** Footer slutar **/
 
