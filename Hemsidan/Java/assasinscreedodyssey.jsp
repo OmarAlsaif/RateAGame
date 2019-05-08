@@ -69,7 +69,24 @@
                     </h2>
                     <h2>
                     
-                        Rating: 
+                        Rating: <% 
+                        
+                        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres",
+            					"password");
+                        Statement st = con.createStatement();
+            			ResultSet rs = st.executeQuery("select * from acodyssey");
+
+						int columnName2 = 0;
+						int i = 0;
+            			 while(rs.next())
+            		        {
+            	        columnName2+= rs.getInt("rating");
+						i++;
+            		        }
+   
+              	        out.print(columnName2/i + "/10");
+                        
+                        %>
                     </h2>
                 </div>
                 
