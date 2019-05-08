@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,11 +15,6 @@ import javax.servlet.http.HttpSession;
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String uname = request.getParameter("txtName");
@@ -26,34 +22,43 @@ public class RegisterServlet extends HttpServlet {
 		String pass2 = request.getParameter("txtPass2");
 		String email = request.getParameter("txtEmail");
 		String ctry = request.getParameter("txtCon");
-		
+
 		HttpSession session = request.getSession();
 
-		session.setAttribute(uname, uname);
-
+//        session.setAttribute(uname, uname);
+//kalla login-servlet istället
 		if (pass1.equals(pass2)) {
+			System.out.println("kom hit");
 			try {
 				Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres",
 						"password");
-				PreparedStatement stmt = con.prepareStatement("insert into users values (?,?)");
+				PreparedStatement stmt = con.prepareStatement("select username from users where username=?");
 				stmt.setString(1, uname);
-				stmt.setString(2, pass1);
-				int row = stmt.executeUpdate();
-				if (row != 0) {
-					System.out.println("Registration successful!");
-					// l�gg till redirect
-					session.setAttribute("uname", uname);
-					response.sendRedirect("index.html");
+				ResultSet rs = stmt.executeQuery();
+				if (rs.next()) {
+					if (uname.equals(rs.getString(1))) {
+						System.out.println("username exists!");
+						System.out.println(rs.next());
+						response.sendRedirect("login.html");
+					}
 				} else {
-					System.out.println("Registration unsuccessful!");
-					// l�gg till redirect
-					response.sendRedirect("register.html");
+					System.out.println("username free like dobby, but not for long...");
+					System.out.println("registering user...");
+					PreparedStatement stmt2 = con.prepareStatement("insert into users values (?,?)");
+					stmt2.setString(1, uname);
+					stmt2.setString(2, pass1);
+					stmt2.executeUpdate();
+
+					// loggar in användare och skickar till index
+					session.setAttribute("loginName", uname);
+					response.sendRedirect("index.jsp");
 				}
 			} catch (Exception e) {
 				System.out.println(e);
 			}
 		} else {
-			System.out.println("<h1>Password not same</h1>");
+			System.out.println("kom hit");
+			response.sendRedirect("login.html");
 		}
 	}
 
