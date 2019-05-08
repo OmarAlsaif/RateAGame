@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>RAG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../js/script.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/animate.css" />
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
@@ -19,8 +19,8 @@
 <body>
     <header>
         <nav id="navigation">
-            <a href="index.html" id="title">Rate A Game</a>
-            <a href="index.html"><img id="logo" src="img/RAG logo.png"/></a>
+            <a href="index.jsp" id="title">Rate A Game</a>
+            <a href="index.jsp"><img id="logo" src="img/RAG logo.png"/></a>
             <input type="search" id="searchbar" placeholder="Search here...">
             <div id="menu"> 
                 <ul>
@@ -36,18 +36,16 @@
         <main>
             <div class="login-page">
                 <div class="form">
-                    <form action="RegisterServlet" method="post" class="reg-form">
-                        <input type="text" name="txtName"placeholder="Username..." ><br>
-                        <input type="password" name="txtPass1"placeholder="Password..." ><br>  
-                        <input type="password" name="txtPass2"placeholder="Re-Enter Password..." ><br> 
-                        <input type="submit" value="REGISTER" class="button">
-                        <p class="message">Already Registered? <a href="#">Sign In</a></p>                      
+                    <form action="RegisterServlet" method="post">
+                        <input type="text" name="txtName"placeholder="Username"pattern="[A-Za-z0-9_]{3,15}" required title="3 to 15 characters, text and numbers only"><br>
+                        <input type="password" name="txtPass1"placeholder="Re-Enter Password..."pattern="[A-Za-z0-9_]{5,15}" required title="5 to 15 characters, text and numbers only"><br>
+                        <input type="password" name="txtPass2"placeholder="Re-Enter Password..."pattern="[A-Za-z0-9_]{5,15}"  required title="5 to 15 characters, text and numbers only"><br>
+                        <input type="submit" value="REGISTER" class="button">                   
                     </form>
-                    <form action="LoginServlet1" class="login-form"> 
-                        <input type="text" name="loginName"placeholder="Unsername...">
-                        <input type="password" name="loginPass"placeholder="Password...">
-                        <input type="submit" value="Sign In" class="button">
-                        <p class="message">Not Signed Up? <a href="#">Sign Up</a></p>            
+                    <form action="LoginServlet1"> 
+                        <input type="text" name="loginName"placeholder="Username..."pattern="[A-Za-z0-9_]{3,15}" required title="3 to 15 characters"><br>
+                        <input type="password" name="loginPass"placeholder="Password..."pattern="[A-Za-z0-9_]{5,15}"  required title="5 to 15 characters"><br>
+                        <input type="submit" value="Sign In" class="button">        
                     </form>
                 </div>
             </div>
