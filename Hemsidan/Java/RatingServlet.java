@@ -51,6 +51,7 @@ public class RatingServlet extends HttpServlet {
 					stmt3.setInt(1, result);
 					stmt3.setString(2, userr);
 					stmt3.executeUpdate();
+					response.sendRedirect(request.getContextPath() + "/Titles/Assasins Creed Odyssey/assasinscreedodyssey.jsp");
 				}
 			} else {
 				System.out.println("Inserting rating into database");
