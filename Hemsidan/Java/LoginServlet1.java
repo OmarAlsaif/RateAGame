@@ -39,14 +39,15 @@ public class LoginServlet1 extends HttpServlet {
 				if (loginPass.equals(rs.getString(1))) {
 					System.out.println(session);
 					session.setAttribute("loginName", loginName);
-					response.sendRedirect("index.html");
+					response.sendRedirect("index.jsp");
 					String str = (String) session.getAttribute(loginName);
 					System.out.println(str);
 				}
+				else{
+					 response.sendRedirect("login.html");
+				 }
 			}
-			 else{
-				 response.sendRedirect("login.html");
-			 }
+			 
 		} catch (Exception e) {
 			System.out.println(e);
 		}

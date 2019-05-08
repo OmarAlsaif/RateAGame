@@ -37,35 +37,31 @@ public class RatingServlet extends HttpServlet {
 		System.out.println(userr);
 		int result = Integer.parseInt(rating);
 		System.out.println(rating);
-	
-		
-//		try {
-//			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres",
-//					"password");
-//			PreparedStatement stmt = con.prepareStatement("insert into ACOdyssey values (?,?)");
-//			stmt.setString(1, userr);
-//			stmt.setString(2, rating);
-//		}
 		
 		try {
 			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres",
 					"password");
-			PreparedStatement stmt = con.prepareStatement("insert into ACOdyssey values (?,?)");
+			PreparedStatement stmt = con.prepareStatement("select username from acodyssey where username=?");
 			stmt.setString(1, userr);
-			stmt.setInt(2, result);
-			int row = stmt.executeUpdate();
-			
-			if (row != 0) {
-				System.out.println("Rating submitted");
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				if (userr.equals(rs.getString(1))) {
+					System.out.println("username already rated, lets update it");
+					PreparedStatement stmt3 = con.prepareStatement("UPDATE acodyssey SET rating=? WHERE username=?");				
+					stmt3.setInt(1, result);
+					stmt3.setString(2, userr);
+					stmt3.executeUpdate();
+				}
+			} else {
+				System.out.println("Inserting rating into database");
+				PreparedStatement stmt2 = con.prepareStatement("insert into acodyssey values (?,?)");
+				stmt2.setString(1, userr);
+				stmt2.setInt(2, result);
+				stmt2.executeUpdate();
 			}
-			 else{
-//			idk	 response.sendRedirect("index.html");
-			 }
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-
-
 	}
-
 }
+
