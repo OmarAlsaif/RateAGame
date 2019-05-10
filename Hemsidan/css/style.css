@@ -20,19 +20,20 @@ body > header {
 #navigation {
     width: auto;
     margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #title {
     text-decoration: none;
     color: rgb(75, 75, 75);
     display: block;
-    float: left;
     font-size: 22px;
     margin-top: 18px;
     margin-left: 8px;
 }
 #menu  {
-    float: right;
     width: 300px;
 }
 #menu > ul > li.active{
@@ -88,10 +89,10 @@ body > header {
     border-radius: 5px;
     border: 0px;
     padding-left: 10px;
-    margin-left: 200px;
     width: 50%;
     font-size: 17px;
     font-family: 'Rubik', serif;
+    margin-top:12px;
 }
 
 #logo{
@@ -559,8 +560,6 @@ body > header {
     flex-direction: row;
     justify-content: space-between;
     font-family: Cinzel, Arial, Helvetica, sans-serif;
-    width: 713px;
-
 }
 #titlecontent-headline > h2 {
     margin: 0px;
