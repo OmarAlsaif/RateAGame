@@ -509,7 +509,7 @@ body > header {
 }
 
 #news > figure > figcaption {
-    padding: 7px;
+    padding: 5px;
 }
 
 #news > figure {
@@ -519,7 +519,7 @@ body > header {
     background-color: #fff;
     transition: 0.5s all;
     font-size: 14px;
-    height: 50%;
+
 }
 
 
@@ -555,6 +555,17 @@ body > header {
     padding: 0 5px;
     color: #222;
     list-style: none;
+
+}
+
+#pub{
+    color: #858585;
+    float: left;
+}
+abbr[title] {
+    color: #858585;
+    text-decoration: none;
+    float: right;
 }
 /** Nyhetssida slutar **/
 
