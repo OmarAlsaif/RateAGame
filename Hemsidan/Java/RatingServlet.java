@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
  */
 public class RatingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	DatabaseLogin login = new DatabaseLogin();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -39,8 +40,8 @@ public class RatingServlet extends HttpServlet {
 		System.out.println(rating);
 		
 		try {
-			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres",
-					"password");
+			Connection con = DriverManager.getConnection(login.getJdbUrl(), login.getUsername(),
+					login.getPassword());
 			PreparedStatement stmt = con.prepareStatement("select username from acodyssey where username=?");
 			stmt.setString(1, userr);
 			ResultSet rs = stmt.executeQuery();
@@ -59,6 +60,7 @@ public class RatingServlet extends HttpServlet {
 				stmt2.setString(1, userr);
 				stmt2.setInt(2, result);
 				stmt2.executeUpdate();
+				response.sendRedirect(request.getContextPath() + "/Titles/Assasins Creed Odyssey/assasinscreedodyssey.jsp");
 			}
 		} catch (Exception e) {
 			System.out.println(e);

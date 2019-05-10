@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
  */
 public class LoginServlet1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	DatabaseLogin login = new DatabaseLogin();
  
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -30,8 +31,8 @@ public class LoginServlet1 extends HttpServlet {
 		session.setAttribute(loginName, loginName);
 
 		try {
-			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres",
-					"password");
+			Connection con = DriverManager.getConnection(login.getJdbUrl(), login.getUsername(),
+					login.getPassword());
 			PreparedStatement stmt = con.prepareStatement("select password from users where username=?");
 			stmt.setString(1, loginName);
 			ResultSet rs = stmt.executeQuery();
@@ -46,6 +47,8 @@ public class LoginServlet1 extends HttpServlet {
 				else{
 					 response.sendRedirect("login.html");
 				 }
+			} else {
+				response.sendRedirect("login.html");
 			}
 			 
 		} catch (Exception e) {
