@@ -459,7 +459,7 @@ body > header {
 }
 
 #top-10-main > figure {
-    width: 70%;
+    width: 100%;
     margin: 1%;
     box-shadow: 0 0 5px #333;
     background-color: #fff;
@@ -468,10 +468,7 @@ body > header {
     height: 188px;
 }
 
-#top-10-main > figure:hover {
-    width: 100%;
-    box-shadow: 0 0 15px #000;
-}
+
 
 #top-10-main > figure > figcaption{
     font-family: 'Oswald', sans-serif;
@@ -496,6 +493,71 @@ body > header {
     display: block;
 }
 /** top 10-sida slutar **/
+
+/** Nyhetssida börjar **/
+
+#news > h2 {
+    width: 100%;
+    border-bottom: 2px solid #000;
+    padding: 15px 0;
+}
+
+#news > figure > a > img {
+    margin-right: 5px;
+    height: 146.391px;
+    width: 100%;
+}
+
+#news > figure > figcaption {
+    padding: 7px;
+}
+
+#news > figure {
+    width: 23%;
+    margin: 1%;
+    box-shadow: 0 0 5px #333;
+    background-color: #fff;
+    transition: 0.5s all;
+    font-size: 14px;
+    height: 50%;
+}
+
+
+
+#news > figure > h3 {
+    background-color: #000;
+    color: #eee;
+    margin: 0px;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+    font-family: 'Gugi', cursive, Arial, Helvetica, sans-serif;
+}
+
+#news {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    margin: auto;
+    background-color: white;
+}
+
+#news > figure > h3 > a {
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+    display: block;
+}
+
+#usage li {
+    position: relative;
+    margin: 5px 0;
+    padding: 0 5px;
+    color: #222;
+    list-style: none;
+}
+/** Nyhetssida slutar **/
+
 
 /** Titelsida börjar **/
 #titlehead {
