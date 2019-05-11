@@ -6,7 +6,7 @@ var DateString = date.toDateString();
 var ISOString = date.toISOString();
 var timestamp = (date.getTime() / 1000) >> 0;
 var temps = [
-    '<abbr class="timeago" title="' + DateString + '">' + DateString + '</abbr>'];
+    '<span class="timeago" title="' + timestamp + '">' + timestamp + '</span>'];
 var elements = document.getElementsByClassName('usage'), j = 0;
 function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
