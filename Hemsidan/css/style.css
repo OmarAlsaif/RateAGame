@@ -555,18 +555,16 @@ body > header {
     padding: 0 5px;
     color: #222;
     list-style: none;
-
+    color: #858585;
+    text-decoration: none;
+    float: right;
 }
 
 #pub{
     color: #858585;
     float: left;
 }
-abbr[title] {
-    color: #858585;
-    text-decoration: none;
-    float: right;
-}
+
 /** Nyhetssida slutar **/
 
 
