@@ -26,25 +26,12 @@ import static spark.Spark.*;
 public final class Controller {
     
     public static void main(final String[] args) {
+    	
     	staticFileLocation("/public"); 
-
+    	
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            
-            
-            
-            model.put("name", "Anton");
-            model.put("lastName", request.queryParams("lastname"));
-            
-            String q = "SELECT * FROM games WHERE genre='" + request.queryParams("filter") + "' ORDER BY " + request.queryParams("sort");
-            model.put("dbQuery", q);
-            
-            List<Game> games = new ArrayList<>();            
-
-            
-            model.put("games", games);
-            
-            // The vm files are located under the resources directory
+            System.out.println("funkar detta?");
             return new ModelAndView(model, "templates/index.html");
         }, new VelocityTemplateEngine());
         
@@ -97,10 +84,8 @@ public final class Controller {
 			} catch (Exception e) {
 				System.out.println(e);
 			}
-//			if (Integer.parseInt(request.params("id")) == 1) {
 				model.put("game", new Game(i, str1, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12,
 						str13, str14));
-//			}
 			return new ModelAndView(model, "templates/Template.html");
 		}, new VelocityTemplateEngine());
         
@@ -122,22 +107,17 @@ public final class Controller {
         get("/index.html", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             
-            String str2 = request.session().attribute("loginName");
-            System.out.println(str2 + "fr�n login till index");
+            String user = request.session().attribute("loginName");
+            System.out.println(user + "från login till index");
+            if (null != user) {
+            	model.put("loggedIn", "true");
+            } else {
+            	model.put("loggedIn", "false");
+            }
             
             return new ModelAndView(model, "templates/index.html");
         }, new VelocityTemplateEngine());
-        
-        get("/index.jsp", (request, response) -> {
-            Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model, "templates/index.html");
-        }, new VelocityTemplateEngine());
-        
-        get("/top10.jsp", (request, response) -> {
-            Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model, "templates/top10.html");
-        }, new VelocityTemplateEngine());
-        
+       
         get("/RegisterServlet", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             String uname = request.queryParams("txtName");
@@ -194,7 +174,7 @@ public final class Controller {
 					if (loginPass.equals(rs.getString(1))) {
 						request.session(true);
 						request.session().attribute("loginName", loginName);
-						System.out.println("L�senord st�mmer, loggar in anv�ndare");
+						System.out.println("Lösenord stämmer, loggar in användare");
 						request.session().attribute("loginName");      
 						response.redirect("index.html");
 					}
@@ -208,8 +188,20 @@ public final class Controller {
     		} catch (Exception e) {
     			System.out.println(e);
     		}
-            return new ModelAndView(model, "templates/index.jsp");
+            return new ModelAndView(model, "templates/index.html");
         }, new VelocityTemplateEngine());
+        
+        get("/logout", (request, response) -> {
+            
+			String userID = request.session().attribute("loginName");
+			
+            if (null != userID) {
+            	request.session().removeAttribute("loginName");
+            }
+            
+            response.redirect("index.html");
+            return "templates/index.html";
+        });
         
 		get("/game/:id/RatingServlet", (request, response) -> {
 			Map<String, Object> model = new HashMap<>();
@@ -227,10 +219,27 @@ public final class Controller {
 				stmt.setInt(2, gameID);
 				ResultSet rs = stmt.executeQuery();
 				if (rs.next()) {
-					System.out.println("Already voted");
+					System.out.println("Already voted, updating vote");
+					PreparedStatement stmt3 = con.prepareStatement("UPDATE ratings SET vote=? WHERE username=? and gameID=?");				
+					stmt3.setInt(1, rate);
+					stmt3.setString(2, userID);
+					stmt3.setInt(3, gameID);
+					stmt3.executeUpdate();
+					response.redirect("../Template.html");
 				}
 					 else {
+						 if (userID != null) {
 						System.out.println("Insert to db");
+						PreparedStatement stmt2 = con.prepareStatement("insert into ratings values (?,?,?)");
+						stmt2.setString(1, userID);
+						stmt2.setInt(2, rate);
+						stmt2.setInt(3, gameID);
+						stmt2.executeUpdate();
+						response.redirect("../../game/"+gameID);
+						 } else {					 
+							 System.out.println("Ej inloggad, logga in först innan du röstar");
+								response.redirect("../../game/"+gameID);
+						 }
 					}
 				}  catch (Exception e) {
 				System.out.println(e);

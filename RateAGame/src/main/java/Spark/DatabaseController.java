@@ -18,10 +18,6 @@ public class DatabaseController extends DatabaseConnection {
 					"password VARCHAR(25) NOT NULL" +
 					 ")";
 			
-			String sql2 = "CREATE TABLE IF NOT EXISTS ACOdyssey (" +
-					"username VARCHAR(25) UNIQUE, " +
-					"rating REAL NOT NULL" +
-					 ")";
 			
 			String sql3 = "CREATE TABLE IF NOT EXISTS games (" +
 					"GameID INT PRIMARY KEY, " +
@@ -49,12 +45,8 @@ public class DatabaseController extends DatabaseConnection {
 					"FOREIGN KEY (Username) REFERENCES users(username), " + 
 					"PRIMARY KEY (GameID, Username)" +
 					 ")";
-			
-		
-			
-			
+
 			stmt.executeUpdate(sql);
-			stmt.executeUpdate(sql2);
 			stmt.executeUpdate(sql3);
 			stmt.executeUpdate(sql4);
 			stmt.close();

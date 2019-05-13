@@ -30,7 +30,18 @@
             <input type="search" id="searchbar" placeholder="Search here...">
             <div id="menu">
                 <ul>
-                    <li><a href="login.html">Sign in</a></li>
+                    <li>  
+                    #if($loggedIn == "true")
+                    <a href="logout">
+                    #else
+                    <a href="login.html">
+                    #end
+                    
+					#if($loggedIn == "true")
+   						 Sign Out
+					#else
+  						  Sign In
+					#end</a></li>
                     <li><a href="top10.html">Top 10</a></li>
                     <li><a href="news.html">News</a></li>
                     <li class="slide"></li>
@@ -111,7 +122,7 @@
                 Diablo 3
             </p>
             <p>
-                <a href="titles/gta5/gta5.html"><img src="titles/gta5/gta5cover.jpg" alt="GTA 5 Cover"></a>
+                <a href="game/3"><img src="titles/gta5/gta5cover.jpg" alt="GTA 5 Cover"></a>
                 GTA 5
             </p>
             <p>
