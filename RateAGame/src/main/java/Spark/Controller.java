@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,22 +26,52 @@ import static spark.Spark.*;
  */
 public final class Controller {
     
+    /**
+     * @param args
+     */
+    /**
+     * @param args
+     */
+    /**
+     * @param args
+     */
     public static void main(final String[] args) {
-    	
     	staticFileLocation("/public"); 
-    	
+    
+        
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            System.out.println("funkar detta?");
             return new ModelAndView(model, "templates/index.html");
         }, new VelocityTemplateEngine());
         
-        
+//      get("*", (request, response) -> {
+//      Map<String, Object> model = new HashMap<>();
+//      String user = request.session().attribute("loginName");
+//      if (null != user) {
+//      	model.put("loggedIn", "true");
+//      } else {
+//      	model.put("loggedIn", "false");
+//      }
+//      if(request.pathInfo().equals("/LoginServlet1") || request.pathInfo().equals("/RatingServlet") || request.pathInfo().equals("/RegisterServlet")) {
+//    	  return new ModelAndView(model, request.pathInfo());
+//      } else {
+//    	  return new ModelAndView(model, "templates" + request.pathInfo());
+//      }
+//  }, new VelocityTemplateEngine());
         
 		get("/game/:id", (request, response) -> {
 			Map<String, Object> model = new HashMap<>();
 			int id = Integer.parseInt(request.params("id"));
 			model.put("id", request.params("id"));
+			
+			String userID = request.session().attribute("loginName");
+            if (null != userID) {
+            	model.put("loggedIn", "true");
+            } else {
+            	model.put("loggedIn", "false");
+            }
+            
+
 			int i = 0;
 			String str1 = "";
 			String str2 = "";
@@ -56,7 +87,7 @@ public final class Controller {
 			String str12 = "";
 			String str13 = "";
 			String str14 = "";
-
+			
 			try {
 				Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres",
 						"password");
@@ -64,6 +95,29 @@ public final class Controller {
 				stmt.setInt(1, id);
 				ResultSet rs = stmt.executeQuery();
 
+	            Connection con2 = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres",
+						"password");
+	            PreparedStatement st = con2.prepareStatement("select * from ratings where gameID=?");
+				st.setInt(1, id);
+				ResultSet rs2 = st.executeQuery();
+				
+				int column2 = 0;
+				int increment = 0;
+				int rating = 0;
+				while (rs2.next()) {
+					column2 += rs2.getInt(2);
+					increment++;
+					}
+				
+				//Ser till att värde inte delas med noll
+				if (increment != 0) {
+				rating = column2 / increment;
+				} else {
+					rating = 0;
+				}
+
+
+				model.put("rating", rating);
 				while (rs.next()) {
 					i = rs.getInt(1);
 					str1 = rs.getString(2);
@@ -91,6 +145,8 @@ public final class Controller {
         
         get("/news.html", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
+            System.out.println(request.pathInfo());
+            
             return new ModelAndView(model, "templates/news.html");
         }, new VelocityTemplateEngine());
 
@@ -108,7 +164,6 @@ public final class Controller {
             Map<String, Object> model = new HashMap<>();
             
             String user = request.session().attribute("loginName");
-            System.out.println(user + "från login till index");
             if (null != user) {
             	model.put("loggedIn", "true");
             } else {
@@ -189,7 +244,7 @@ public final class Controller {
     			System.out.println(e);
     		}
             return new ModelAndView(model, "templates/index.html");
-        }, new VelocityTemplateEngine());
+        }, new VelocityTemplateEngine());	
         
         get("/logout", (request, response) -> {
             
@@ -225,7 +280,7 @@ public final class Controller {
 					stmt3.setString(2, userID);
 					stmt3.setInt(3, gameID);
 					stmt3.executeUpdate();
-					response.redirect("../Template.html");
+					response.redirect("../../game/"+gameID);
 				}
 					 else {
 						 if (userID != null) {
