@@ -49,7 +49,7 @@
                         $game.getGameTitle()
                     </h2>
                     <h2>
-                        $game.getRating()
+                        $rating/10
                     </h2>
                 </div>
                 <form action="/game/$game.getGameID()/RatingServlet">
@@ -75,7 +75,10 @@
                     <input type="radio" id="star1" name="rate" value="1" />
                     <label for="star1" title="text">1 star</label>
                     <div class="containerbtn">
-                    <button type="submit" id="votebutton" value="Vote">
+                    <button type="submit" id="votebutton" value="Vote" 
+                    #if($loggedIn == "false")
+                    disabled
+                    #end>              
                             <span>
                                 Vote!    
                             </span>
@@ -89,7 +92,7 @@
                         $game.getGameInfo()
                     </p>
                     <p>
-                        Link to official site: <a href="$games.getLinkOfficialSite()" target="_blank">$game.getLinkOfficialSite()</a>
+                        Link to official site: <a href="$game.getLinkOfficialSite()" target="_blank">$game.getLinkOfficialSite()</a>
                     </p>
                 </div>
 
