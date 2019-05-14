@@ -626,16 +626,20 @@ body > header {
     width: 55%;
 }
 
-#titlecontent-headline {
+.titlecontent-headline {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-family: Cinzel, Arial, Helvetica, sans-serif;
 }
-#titlecontent-headline > h2 {
+.titlecontent-headline > h2 {
     margin: 0px;
+	display: flex;
+}
 
-    margin-right: 18px
+#viewrating{
+	margin-right: 194px;
+
 }
 
 #titleinfo {
@@ -736,9 +740,11 @@ label {
     margin-top: -20px;
     height: 40px;
     text-align: center;
+    dispaly: flex;
   }
+  
   #votebutton {
-    display: inline-block;
+
     background-color: rgb(243, 102, 67);
     border-radius: 20px;
     border: none;
@@ -749,13 +755,17 @@ label {
     transition: all 0.5s;
     cursor: pointer;
     height: 30px;
-    margin-left: 410%;
-    margin-top: 94%;
+    margin-left: 375%;
+    margin-top: 65%;
     font-weight: bold;
+	display: flex;
+    flex-flow: row-reverse;
+    text-align: center;
+    justify-content: center;
 }
+
 #votebutton span {
     cursor: pointer;
-    display: inline-block;
     position: relative;
     transition: 0.5s;
 }

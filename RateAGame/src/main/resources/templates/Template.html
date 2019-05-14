@@ -44,12 +44,12 @@
         <article id="titlecontainer">
             <img src="$game.getLinkCover()" alt="Game picture">
             <div id="titlecontent">
-                <div id="titlecontent-headline">
+                <div class="titlecontent-headline">
                     <h2>
                         $game.getGameTitle()
                     </h2>
-                    <h2>
-                        $rating/10
+                    <h2 id="viewrating">
+                        Rating: $rating/10
                     </h2>
                 </div>
                 <form action="/game/$game.getGameID()/RatingServlet">
