@@ -10,11 +10,21 @@ body, html {
 }
 
 /** Header börjar **/
-body > header {
+.header {
     background-color: rgb(243, 102, 67);
     height: 62px;
     line-height: 62px;
     box-shadow: 0 0 10px #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.header.hide{
+    transform: translateY(-100%);
 }
 
 #navigation {
@@ -110,7 +120,7 @@ body > header {
     width: 90%;
     min-height: 500px;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 70px;
     margin-bottom: 10px;
     border-radius: 20px; 
 }
@@ -449,7 +459,9 @@ body > header {
     flex-wrap: wrap;
     width: auto;
     margin: auto;
+    margin-top: 70px;
     background-color: white;
+
 }
 
 #top-10-main > figure > a > img {
