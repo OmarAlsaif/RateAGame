@@ -21,6 +21,8 @@ body, html {
     width: 100%;
     box-sizing: border-box;
     transition: 0.5s;
+	z-index: 1;
+    
 }
 
 .header.hide{
@@ -138,7 +140,7 @@ body, html {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 70px;
     margin-bottom: 10px;
     padding:10px;
     background-color: white;

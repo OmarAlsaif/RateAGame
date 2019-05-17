@@ -218,6 +218,8 @@
 	<script>window.jQuery || document.write('<script src="js/js libary/jquery-1.9.1.min.js"><\/script>')</script>
     <script src="js/preload.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/headerFunction.js"></script>
+
     
 </body>
 
