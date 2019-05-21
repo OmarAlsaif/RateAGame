@@ -770,7 +770,7 @@ label {
     cursor: pointer;
     height: 30px;
     margin-left: 375%;
-    margin-top: 65%;
+    margin-top: 63%;
     font-weight: bold;
 	display: flex;
     flex-flow: row-reverse;
@@ -800,6 +800,59 @@ label {
 #votebutton:hover span:after {
     opacity: 1;
     right: 0;
+}
+
+.errorVote {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.errorVote-content {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  padding-left: 8px;
+  width: 45%;
+  border-radius: 10px;
+  padding-right: 8px;
+  box-shadow: 0 0 10px #000;
+  font-family: 'Rubik', serif;
+}
+
+.errorVote-content > p {
+  padding-top: 20px;
+}
+
+.errorVote-content > p > a {
+  text-decoration-line: none;
+  color: rgb(243, 102, 67);
+}
+
+.errorVote-content > p > a:hover {
+  color: #DE5C3B;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /** Titelsida slutar **/
@@ -847,7 +900,7 @@ label {
 
 .rate {
     height: 42px;
-    margin-right: 40px;
+    margin-right: 48px;
 }
 
 .rate:not(:checked) > input {
@@ -955,4 +1008,25 @@ footer > p > a {
 }
 /** Footer slutar **/
 
+
+@media screen and (max-width: 1679px){
+	#votebutton {
+    	margin-left: 320%;
+	}
+
+@media screen and (max-width: 1630px){
+	#votebutton {
+    	margin-left: 305%;
+	}
+
+@media screen and (max-width: 1560px){
+	#votebutton {
+    	margin-left: 290%;
+	}
+
+@media screen and (max-width: 1536px){
+	#votebutton {
+    	margin-left: 286%;
+	}
+	
 
