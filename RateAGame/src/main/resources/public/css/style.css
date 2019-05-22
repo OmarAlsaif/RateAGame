@@ -10,11 +10,23 @@ body, html {
 }
 
 /** Header börjar **/
-body > header {
+.header {
     background-color: rgb(243, 102, 67);
     height: 62px;
     line-height: 62px;
     box-shadow: 0 0 10px #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.5s;
+	z-index: 1;
+    
+}
+
+.header.hide{
+    transform: translateY(-100%);
 }
 
 #navigation {
@@ -110,7 +122,7 @@ body > header {
     width: 90%;
     min-height: 500px;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 70px;
     margin-bottom: 10px;
     border-radius: 20px; 
 }
@@ -128,7 +140,7 @@ body > header {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 70px;
     margin-bottom: 10px;
     padding:10px;
     background-color: white;
@@ -440,6 +452,29 @@ body > header {
 
 #bottom-container > p {
     border-bottom: 1px solid rgba(75, 75, 75, 0.5);
+    display: flex;
+    display: row;
+    justify-content: flex-start;
+
+}
+#bottom-container > p:hover {
+    background-color: rgb(235, 235, 235);
+    transition: 0.4s;
+}
+
+#bottom-container > p > a {
+    text-decoration: none;
+    color: black;
+    vertical-align: middle;
+}
+
+
+
+.LatestNewsImg {
+    height: 50px;
+    width: 50px;
+    margin-right: 30px;
+    margin-left: 15px;
 }
 /** Wrapper startsida slutar **/
 
@@ -449,7 +484,9 @@ body > header {
     flex-wrap: wrap;
     width: auto;
     margin: auto;
+    margin-top: 70px;
     background-color: white;
+
 }
 
 #top-10-main > figure > a > img {
@@ -499,7 +536,11 @@ body > header {
 #news > h2 {
     width: 100%;
     border-bottom: 2px solid #000;
-    padding: 15px 0;
+    padding: 15px;
+	background-image: linear-gradient(#ECECEC, transparent),linear-gradient(#ECECEC, transparent);
+    background-size: 1px 100%;
+    border-top: 1px solid #e5e5e5;
+	background-repeat: no-repeat;
 }
 
 #news > figure > a > img {
@@ -510,15 +551,22 @@ body > header {
 
 #news > figure > figcaption {
     padding: 5px;
+    font-size: 17px;
+    font-weight: normal;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
 #news > figure {
-    width: 23%;
+    width: 20%;
     margin: 1%;
-    box-shadow: 0 0 5px #333;
-    background-color: #fff;
-    transition: 0.5s all;
-    font-size: 14px;
+    padding: 15px;
+    background-image: linear-gradient(#ECECEC, transparent),linear-gradient(#ECECEC, transparent);
+    background-size: 1px 100%;
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+    border-top: 1px solid #e5e5e5;
+    display: block;
+    margin-bottom: 15px;
 
 }
 
@@ -529,7 +577,7 @@ body > header {
     text-align: center;
     padding: 10px 0;
     cursor: pointer;
-    font-family: 'Gugi', cursive, Arial, Helvetica, sans-serif;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
 #news {
@@ -756,7 +804,7 @@ label {
     cursor: pointer;
     height: 30px;
     margin-left: 375%;
-    margin-top: 65%;
+    margin-top: 63%;
     font-weight: bold;
 	display: flex;
     flex-flow: row-reverse;
@@ -786,6 +834,59 @@ label {
 #votebutton:hover span:after {
     opacity: 1;
     right: 0;
+}
+
+.errorVote {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.errorVote-content {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  padding-left: 8px;
+  width: 45%;
+  border-radius: 10px;
+  padding-right: 8px;
+  box-shadow: 0 0 10px #000;
+  font-family: 'Rubik', serif;
+}
+
+.errorVote-content > p {
+  padding-top: 20px;
+}
+
+.errorVote-content > p > a {
+  text-decoration-line: none;
+  color: rgb(243, 102, 67);
+}
+
+.errorVote-content > p > a:hover {
+  color: #DE5C3B;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /** Titelsida slutar **/
@@ -833,7 +934,7 @@ label {
 
 .rate {
     height: 42px;
-    margin-right: 40px;
+    margin-right: 48px;
 }
 
 .rate:not(:checked) > input {
@@ -942,4 +1043,24 @@ footer > p > a {
 /** Footer slutar **/
 
 
+@media screen and (max-width: 1679px){
+	#votebutton {
+    	margin-left: 320%;
+	}
+
+@media screen and (max-width: 1630px){
+	#votebutton {
+    	margin-left: 305%;
+	}
+
+@media screen and (max-width: 1560px){
+	#votebutton {
+    	margin-left: 290%;
+	}
+
+@media screen and (max-width: 1536px){
+	#votebutton {
+    	margin-left: 286%;
+	}
+	
 

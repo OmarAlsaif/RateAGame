@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../js/script.js"></script>
     <link rel="shortcut icon" href="../img/RAG logo.png">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="../css/animate.css" />
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <nav id="navigation">
             <a href="../index.html" id="title">Rate A Game</a>
             <a href="../index.html"><img id="logo" src="../img/RAG logo.png" /></a>
@@ -52,7 +52,9 @@
                         Rating: $rating/10
                     </h2>
                 </div>
+                #if($loggedIn == "true")
                 <form action="/game/$game.getGameID()/RatingServlet">
+                #end
                 <div class="rate">
                     <input type="radio" id="star10" name="rate" value="10" />
                     <label for="star10" title="text">10 stars</label>
@@ -75,15 +77,22 @@
                     <input type="radio" id="star1" name="rate" value="1" />
                     <label for="star1" title="text">1 star</label>
                     <div class="containerbtn">
-                    <button type="submit" id="votebutton" value="Vote" 
-                    #if($loggedIn == "false")
-                    disabled
-                    #end>              
+                    
+                            <button type="submit" id="votebutton" value="Vote" >
                             <span>
                                 Vote!    
                             </span>
                         </button>
-                    </div>
+						#if($loggedIn == "false")
+	                    <div id="myErrorVote" class="errorVote">                        
+						  <div class="errorVote-content">
+						    <span class="close">&times;</span>
+						    <h3>You need to be signed in to be able to vote!</h3>
+						    <p>Have an account?<a href="../../login.html"> Sign in</a></p>
+						  </div>
+						</div>
+						#end
+                   </div>
                 </div>
                 </form>
 
@@ -100,11 +109,11 @@
             <div id="titleinfo">
 
                 <p>Publishers: $game.getPublishers() </p>
-                <p>Releasedate: $game.getReleaseDate()</p>
+                <p>Release date: $game.getReleaseDate()</p>
                 <p>Genre: $game.getGenre() </p>
                 <p>Game Modes: $game.getGameModes()</p>
                 <p>Player Perspectives: $game.getPlayerPerspective() </p>
-                </p>
+
             </div>
         </article>
         <div id="co-titlecontent">
@@ -133,9 +142,18 @@
     </div>
     <footer>
         <p>
-            Projektgrupp 6<br> Copyright 2019
+            Projektgrupp 6
+        </p>
+        <p>
+            Copyright 2019
+        </p>
+        <p>
+            Contact admin: <br>
+            <a href="mailto:simon.gustafsson@gmail.com">Click to send Email</a>
         </p>
     </footer>
+    <script src="../js/headerFunction.js"></script>
+	<script src="../js/error.js"></script>
 
 </body>
 
