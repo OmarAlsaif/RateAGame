@@ -43,13 +43,15 @@
 					#else
   						  Sign In
 					#end</a></li>
-                    <li><a href="top10.html">Top 10</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li class="slide"></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+					<li class="active"><a href="top10.html">Top 10</a></li>
+					<li><a href="news.html">News</a></li>
+					<li class="slide"></li>
+
+				</ul>
+
+			</div>
+		</nav>
+	</header>
     <div id="wrapper">
         <main>
             <div class="login-page">
@@ -58,13 +60,13 @@
                         <input type="text" name="txtName"placeholder="Username"pattern="[A-Za-z0-9_]{3,15}" required title="3 to 15 characters, text and numbers only"><br>
                         <input type="password" id="txtPass1" name="txtPass1" placeholder="Enter Password..." pattern="[A-Za-z0-9_]{5,15}" required title="5 to 15 characters, text and numbers only"><br>
                         <input type="password" id="txtPass2" name="txtPass2" placeholder="Re-Enter Password..." pattern="[A-Za-z0-9_]{5,15}" required title="5 to 15 characters, text and numbers only"><br>
-                        <input type="submit" value="REGISTER" class="button" id="registerButton">
+                        <input type="submit" value="REGISTER" class="button">
                         <p class="message">Already Registered? <a href="#">Log In</a></p>                  
                     </form>
                     <form action="LoginServlet1" class="login-form"> 
                         <input type="text" name="loginName"placeholder="Username..."pattern="[A-Za-z0-9_]{3,15}" required title="3 to 15 characters"><br>
-                        <input type="password" name="loginPass"placeholder="Password..."pattern="[A-Za-z0-9_]{5,15}"  required title="5 to 15 characters"><br>
-                        <input type="submit" value="Sign In" class="button" id="signInButton" >
+                        <input type="password" id = "testbutton" name="loginPass"placeholder="Password..."pattern="[A-Za-z0-9_]{5,15}"  required title="5 to 15 characters"><br>
+                        <input type="submit" value="Sign In" class="button">
                         <p class="message">Not Signed Up? <a href="#">Sign Up</a></p>        
                     </form>
                 </div>
@@ -77,25 +79,16 @@
     
     <footer>
         <p>
-            Projektgrupp 6
-        </p>
-        <p>
+            Rate A Game<br>
             Copyright 2019
         </p>
-        <p>
-            Contact admin: <br>
-            <a href="mailto:simon.gustafsson@gmail.com">Click to send Email</a>
-        </p>
     </footer>
-    <script src="js/headerFunction.js"></script>
-    <script src="js/userexist.js"></script>
-    	<script type="text/javascript">
-      	  if("$userExists" == "true") {
-        	alert("Användare finns redan");
-      	}
-  		</script>
-
-
+  <script src="js/headerFunction.js"></script>
+  <script type="text/javascript">
+	  if("$userExists" == "true") {
+	  	alert("User already exists");
+	  }
+  </script>
 </body>
 
 </html>
