@@ -185,17 +185,23 @@
                 </h2>
             </div>
             <div id="bottom-container">
-                    <h2>Latest news: </h2>
-                    <p>
-                        112
-                    </p>
-                    <p>
-                        2
-                    </p>
-                    <p>
-                        3
-                    </p>
-                </div>
+                <h2>Latest news: </h2>
+                <p>
+                    <a href="https://www.cyberockk.com/2019/05/hitman-hd-pack-now-available-to-xbox-one-backward-compatibility/">
+                        <img class="LatestNewsImg" src="img/Hitman-HD-Pack.jpg">
+                        Hitman HD Pack Now Available to Xbox One Backward Compatibility</a>
+                </p>
+                <p>
+                    <a href="https://twinfinite.net/2019/05/this-video-gives-detective-pikachu-a-retro-game-boy-color-de-make/">
+                        <img class="LatestNewsImg" src="img/DetectivePikachu_Logo_Final_EN_BlkTM.png">
+                        This Video Gives Detective Pikachu a Retro Game Boy Color De-Make</a>
+                </p>
+                <p>
+                    <a href="https://www.rockpapershotgun.com/2019/05/09/life-is-strange-2-episode-3-released/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+RockPaperShotgun+%28Rock%2C+Paper%2C+Shotgun%29">
+                        <img class="LatestNewsImg" src="img/lis2.png">
+                        Life Is Strange 2 episode 3 now rumbling in the redwoods</a>
+                </p>
+            </div>
         </div>
 
     
