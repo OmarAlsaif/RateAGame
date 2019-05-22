@@ -58,7 +58,7 @@
                         <input type="text" name="txtName"placeholder="Username"pattern="[A-Za-z0-9_]{3,15}" required title="3 to 15 characters, text and numbers only"><br>
                         <input type="password" id="txtPass1" name="txtPass1" placeholder="Enter Password..." pattern="[A-Za-z0-9_]{5,15}" required title="5 to 15 characters, text and numbers only"><br>
                         <input type="password" id="txtPass2" name="txtPass2" placeholder="Re-Enter Password..." pattern="[A-Za-z0-9_]{5,15}" required title="5 to 15 characters, text and numbers only"><br>
-                        <input type="submit" value="REGISTER" class="button" id="registerButton" onclick="test()">
+                        <input type="submit" value="REGISTER" class="button" id="registerButton">
                         <p class="message">Already Registered? <a href="#">Log In</a></p>                  
                     </form>
                     <form action="LoginServlet1" class="login-form"> 
@@ -89,6 +89,11 @@
     </footer>
     <script src="js/headerFunction.js"></script>
     <script src="js/userexist.js"></script>
+    	<script type="text/javascript">
+      	  if("$userExists" == "true") {
+        	alert("Användare finns redan");
+      	}
+  		</script>
 
 
 </body>
