@@ -43,19 +43,29 @@
 
 			<form action="Search" id="searchbar">
 				<input type="text" name="searchbar" placeholder="Search here...">
-				<input type="submit" value="Search" class="Search">
+				<button type="submit" value="Search" class="Search"><i class="fa fa-search"></i></button>
 			</form>
+			
+			
 			<div id="menu">
-				<ul>
-
-					<li><a href="login.html">Sign in</a></li>
-					<li class="active"><a href="top10.html">Top 10</a></li>
-					<li><a href="news.html">News</a></li>
-					<li class="slide"></li>
-
-				</ul>
-
-			</div>
+                <ul>
+                    <li>  
+                    #if($loggedIn == "true")
+                    <a href="logout">
+                    #else
+                    <a href="login.html">
+                    #end
+                    
+					#if($loggedIn == "true")
+   						 Sign Out
+					#else
+  						  Sign In
+					#end</a></li>
+                    <li><a href="top10.html">Top 10</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li class="slide"></li>
+                </ul>
+            </div>
 		</nav>
 	</header>
 	<div id="wrapper">
@@ -65,7 +75,7 @@
 				<a href="/game/$game.getGameID()">$game.getGameTitle()</a>
 			</h3>
 			<a href="/game/$game.getGameID()"><img class="top10pics"
-				src="$game.getLinkPoster()" /></a>
+				src="$game.getLinkCover()" /></a>
 			<figcaption>
 				<strong>$game.getGameTitle()</strong> $game.getGameInfo()
 			</figcaption>

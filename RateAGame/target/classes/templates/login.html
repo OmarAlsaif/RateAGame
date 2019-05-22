@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/js libary/modernizr-2.6.2.min.js"></script>
 
 </head>
 
@@ -24,15 +26,27 @@
             
 			<form action="Search" id="searchbar">
 				<input type="text" name="searchbar" placeholder="Search here...">
-				<input type="submit" value="Search" class="Search">
+				<button type="submit" value="Search" class="Search"><i class="fa fa-search"></i></button>
 			</form>
-            <div id="menu"> 
+			
+            <div id="menu">
                 <ul>
-                    <li class="active"><a href="login.html">Sign in</a></li>
+                    <li>  
+                    #if($loggedIn == "true")
+                    <a href="logout">
+                    #else
+                    <a href="login.html">
+                    #end
+                    
+					#if($loggedIn == "true")
+   						 Sign Out
+					#else
+  						  Sign In
+					#end</a></li>
                     <li><a href="top10.html">Top 10</a></li>
                     <li><a href="news.html">News</a></li>
                     <li class="slide"></li>
-                </ul>   
+                </ul>
             </div>
         </nav>
     </header>
@@ -44,13 +58,13 @@
                         <input type="text" name="txtName"placeholder="Username"pattern="[A-Za-z0-9_]{3,15}" required title="3 to 15 characters, text and numbers only"><br>
                         <input type="password" id="txtPass1" name="txtPass1" placeholder="Enter Password..." pattern="[A-Za-z0-9_]{5,15}" required title="5 to 15 characters, text and numbers only"><br>
                         <input type="password" id="txtPass2" name="txtPass2" placeholder="Re-Enter Password..." pattern="[A-Za-z0-9_]{5,15}" required title="5 to 15 characters, text and numbers only"><br>
-                        <input type="submit" value="REGISTER" class="button">
+                        <input type="submit" value="REGISTER" class="button" id="registerButton" onclick="test()">
                         <p class="message">Already Registered? <a href="#">Log In</a></p>                  
                     </form>
                     <form action="LoginServlet1" class="login-form"> 
                         <input type="text" name="loginName"placeholder="Username..."pattern="[A-Za-z0-9_]{3,15}" required title="3 to 15 characters"><br>
                         <input type="password" name="loginPass"placeholder="Password..."pattern="[A-Za-z0-9_]{5,15}"  required title="5 to 15 characters"><br>
-                        <input type="submit" value="Sign In" class="button">
+                        <input type="submit" value="Sign In" class="button" id="signInButton" >
                         <p class="message">Not Signed Up? <a href="#">Sign Up</a></p>        
                     </form>
                 </div>
@@ -73,8 +87,8 @@
             <a href="mailto:simon.gustafsson@gmail.com">Click to send Email</a>
         </p>
     </footer>
-	<script src="js/error.js"></script>
-    <script src="../public/js/headerFunction.js"></script>
+    <script src="js/headerFunction.js"></script>
+    <script src="js/userexist.js"></script>
 
 
 </body>

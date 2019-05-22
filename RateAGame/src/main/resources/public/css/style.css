@@ -46,7 +46,7 @@ body, html {
     margin-left: 8px;
 }
 #menu  {
-    width: 300px;
+    width: 314px;
 }
 #menu > ul > li.active{
     background: #DE5C3B;
@@ -96,15 +96,45 @@ body, html {
     background-color: #DE5C3B;
 }
 
-#searchbar {
-    height: 40px;
-    border-radius: 5px;
-    border: 0px;
-    padding-left: 10px;
-    width: 50%;
-    font-size: 17px;
-    font-family: 'Rubik', serif;
-    margin-top:12px;
+form#searchbar input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+
+form#searchbar button {
+  float: left;
+  width: 10%;
+  padding: 10px;
+  background: rgb(75, 75, 75);
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form#searchbar button:hover {
+  background: #1E1310;
+}
+
+.fa-search:before {
+    color: rgb(243, 102, 67);
+}
+
+form#searchbar::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#searchbar{
+	width: 50%;
+	margin-top: 0.5%;
 }
 
 #logo{

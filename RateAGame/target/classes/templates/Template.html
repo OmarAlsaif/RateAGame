@@ -24,15 +24,26 @@
             <a href="../index.html" id="title">Rate A Game</a>
             <a href="../index.html"><img id="logo" src="../img/RAG logo.png" /></a>
             
-			<form action="/Search" id="searchbar">
+			<form action="Search" id="searchbar">
 				<input type="text" name="searchbar" placeholder="Search here...">
-				<input type="submit" value="Search" class="Search">
+				<button type="submit" value="Search" class="Search"><i class="fa fa-search"></i></button>
 			</form>
 			
             <div id="menu">
                 <ul>
-                    <li><a href="../login.html">Sign in</a></li>
-                    <li class="active"><a href="../top10.html">Top 10</a></li>
+                    <li>  
+                    #if($loggedIn == "true")
+                    <a href="../logout">
+                    #else
+                    <a href="../login.html">
+                    #end
+                    
+					#if($loggedIn == "true")
+   						 Sign Out
+					#else
+  						  Sign In
+					#end</a></li>
+                    <li><a href="../top10.html">Top 10</a></li>
                     <li><a href="../news.html">News</a></li>
                     <li class="slide"></li>
                 </ul>
@@ -94,6 +105,14 @@
 						    <span class="close">&times;</span>
 						    <h3>You need to be signed in to be able to vote!</h3>
 						    <p>Have an account?<a href="../../login.html"> Sign in</a></p>
+						  </div>
+						</div>
+						#end
+						#if($loggedIn == "true")
+	                    <div id="myErrorVote" class="errorVote">                        
+						  <div class="errorVote-content">
+						    <span class="close">&times;</span>
+						    <h3>Thank you for your vote!</h3>
 						  </div>
 						</div>
 						#end

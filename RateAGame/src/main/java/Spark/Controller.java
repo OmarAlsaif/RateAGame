@@ -147,6 +147,12 @@ public final class Controller {
 
 		get("/login.html", (request, response) -> {
 			Map<String, Object> model = new HashMap<>();
+			String userID = request.session().attribute("loginName");
+            if (null != userID) {
+                model.put("loggedIn", "true");
+            } else {
+                model.put("loggedIn", "false");
+            }
 			return new ModelAndView(model, "templates/login.html");
 		}, new VelocityTemplateEngine());
 
@@ -168,77 +174,77 @@ public final class Controller {
 			return new ModelAndView(model, "templates/index.html");
 		}, new VelocityTemplateEngine());
 
-		get("/RegisterServlet", (request, response) -> {
-			Map<String, Object> model = new HashMap<>();
-			String uname = request.queryParams("txtName");
-			String pass1 = request.queryParams("txtPass1");
-			String pass2 = request.queryParams("txtPass2");
-
-			if (pass1.equals(pass2)) {
-				try {
-					Connection con = DriverManager.getConnection(login.getJdbUrl(), login.getUsername(),
-							login.getPassword());
-					PreparedStatement stmt = con.prepareStatement("select username from users where username=?");
-					stmt.setString(1, uname);
-					ResultSet rs = stmt.executeQuery();
-					if (rs.next()) {
-						if (uname.equals(rs.getString(1))) {
-							System.out.println("username exists!");
-							System.out.println(rs.next());
-							response.redirect("login.html");
-						}
-					} else {
-						System.out.println("username free like dobby, but not for long...");
-						System.out.println("registering user...");
-						PreparedStatement stmt2 = con.prepareStatement("insert into users values (?,?)");
-						stmt2.setString(1, uname);
-						stmt2.setString(2, pass1);
-						stmt2.executeUpdate();
-						request.session(true);
-						request.session().attribute("loginName", uname);
-						response.redirect("index.html");
-					}
-				} catch (Exception e) {
-					System.out.println(e);
-				}
-			} else {
-				System.out.println("kom hit");
-				response.redirect("login.html");
-			}
-			response.redirect("index.html");
-			return "templates/index.html";
-		});
+        get("/RegisterServlet", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            String uname = request.queryParams("txtName");
+            String pass1 = request.queryParams("txtPass1");
+            String pass2 = request.queryParams("txtPass2");
+ 
+            if (pass1.equals(pass2)) {
+                try {
+                    Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres",
+                            "password");
+                    PreparedStatement stmt = con.prepareStatement("select username from users where username=?");
+                    stmt.setString(1, uname);
+                    ResultSet rs = stmt.executeQuery();
+                    if (rs.next()) {
+                        if (uname.equals(rs.getString(1))) {
+                            System.out.println("username exists!");
+                            System.out.println(rs.next());
+                            model.put("userExists", "true");
+                            return new ModelAndView(model, "templates/login.html");
+                        }
+                    } else {
+                        System.out.println("registering user...");
+                        PreparedStatement stmt2 = con.prepareStatement("insert into users values (?,?)");
+                        stmt2.setString(1, uname);
+                        stmt2.setString(2, pass1);
+                        stmt2.executeUpdate();
+                        request.session(true);  
+                        request.session().attribute("loginName", uname);
+                        response.redirect("index.html");
+                    }
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            } else {
+                System.out.println("kom hit");
+                response.redirect("login.html");
+            }
+            response.redirect("index.html");
+            return new ModelAndView(model, "templates/index.html");
+        }, new VelocityTemplateEngine());
 
 		get("/LoginServlet1", (request, response) -> {
-			Map<String, Object> model = new HashMap<>();
-			String loginName = request.queryParams("loginName");
-			String loginPass = request.queryParams("loginPass");
-			System.out.println("test");
-			try {
-				Connection con = DriverManager.getConnection(login.getJdbUrl(), login.getUsername(),
-						login.getPassword());
-				PreparedStatement stmt = con.prepareStatement("select password from users where username=?");
-				stmt.setString(1, loginName);
-				ResultSet rs = stmt.executeQuery();
-				if (rs.next()) {
-					if (loginPass.equals(rs.getString(1))) {
-						request.session(true);
-						request.session().attribute("loginName", loginName);
-						System.out.println("Lösenord stämmer, loggar in användare");
-						request.session().attribute("loginName");
-						response.redirect("index.html");
-					} else {
-						response.redirect("login.html");
-					}
-				} else {
-					response.redirect("login.html");
-				}
-
-			} catch (Exception e) {
-				System.out.println(e);
-			}
-			return new ModelAndView(model, "templates/index.html");
-		}, new VelocityTemplateEngine());
+            Map<String, Object> model = new HashMap<>();
+            String loginName = request.queryParams("loginName");
+            String loginPass = request.queryParams("loginPass");
+            System.out.println("test");
+            try {
+                Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres",
+                        "password");
+                PreparedStatement stmt = con.prepareStatement("select password from users where username=?");
+                stmt.setString(1, loginName);
+                ResultSet rs = stmt.executeQuery();
+                if (rs.next()) {
+                    if (loginPass.equals(rs.getString(1))) {
+                        request.session(true);
+                        request.session().attribute("loginName", loginName);
+                        System.out.println("Lösenord stämmer, loggar in användare");
+                        request.session().attribute("loginName");
+                        response.redirect("index.html");
+                    }
+                    else{
+                         response.redirect("login.html");
+                     }
+                } else {
+                    response.redirect("login.html");
+                } 
+            } catch (Exception e) {
+                System.out.println(e);
+            } 
+            return new ModelAndView(model, "templates/index.html");
+        }, new VelocityTemplateEngine());
 
 		get("/logout", (request, response) -> {
 
