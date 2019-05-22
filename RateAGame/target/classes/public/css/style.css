@@ -452,6 +452,29 @@ body, html {
 
 #bottom-container > p {
     border-bottom: 1px solid rgba(75, 75, 75, 0.5);
+    display: flex;
+    display: row;
+    justify-content: flex-start;
+
+}
+#bottom-container > p:hover {
+    background-color: rgb(235, 235, 235);
+    transition: 0.4s ease-out;
+}
+
+#bottom-container > p > a {
+    text-decoration: none;
+    color: black;
+    vertical-align: middle;
+}
+
+
+
+.LatestNewsImg {
+    height: 50px;
+    width: 50px;
+    margin-right: 30px;
+    margin-left: 15px;
 }
 /** Wrapper startsida slutar **/
 

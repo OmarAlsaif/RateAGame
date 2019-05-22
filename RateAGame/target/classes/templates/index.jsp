@@ -187,7 +187,7 @@
             <div id="bottom-container">
                     <h2>Latest news: </h2>
                     <p>
-                        1
+                        112
                     </p>
                     <p>
                         2
