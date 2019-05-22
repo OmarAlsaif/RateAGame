@@ -458,8 +458,8 @@ body, html {
 
 }
 #bottom-container > p:hover {
-    background-color: rgb(235, 235, 235);
-    transition: 0.4s ease-out;
+    background-color: rgba(75, 75, 75, 0.5);
+    transition: 0.4s;
 }
 
 #bottom-container > p > a {
