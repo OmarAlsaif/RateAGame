@@ -72,8 +72,9 @@ public final class Controller {
 				
 				int column2 = 0;
 				int increment = 0;
-				int rating = 0;
+				double rating = 0;
 				
+				// Samlar ihop spelets betyg
 				while (rs2.next()) {
 					column2 += rs2.getInt(2);
 					increment++;
@@ -122,12 +123,6 @@ public final class Controller {
         
         get("/news.html", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            String userID = request.session().attribute("loginName");
-            if (null != userID) {
-            	model.put("loggedIn", "true");
-            } else {
-            	model.put("loggedIn", "false");
-            }
             System.out.println(request.pathInfo());
             
             return new ModelAndView(model, "templates/news.html");
@@ -142,26 +137,24 @@ public final class Controller {
             } else {
             	model.put("loggedIn", "false");
             }
-            
 
             String userExists = request.session().attribute("userExists");
-
-            if (null != userExists) {
+            if (userExists == "true") {
             	model.put("userExists", "true");
             }
             
-            
+            String wrongPassword = request.session().attribute("wrongPassword");
+            if (wrongPassword == "true") {
+            	model.put("wrongPassword", "true");
+            }
+
+            request.session().attribute("wrongPassword","false");
+            request.session().attribute("userExists","false");
             return new ModelAndView(model, "templates/login.html");
         }, new VelocityTemplateEngine());
         
         get("/top10.html", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            String userID = request.session().attribute("loginName");
-            if (null != userID) {
-            	model.put("loggedIn", "true");
-            } else {
-            	model.put("loggedIn", "false");
-            }
             
             try {
             	String query = "SELECT gameID, (SELECT gameTitle FROM games games WHERE gameid = ratings.gameid) as query2, (SELECT gameInfo FROM games games WHERE gameid = ratings.gameid) as query3, (SELECT linkcover FROM games games WHERE gameid = ratings.gameid) as query4, AVG(CAST(vote AS FLOAT)) AS avg_score FROM ratings GROUP BY gameID ORDER BY avg_score DESC;";
@@ -173,16 +166,25 @@ public final class Controller {
 				ArrayList<Game> games = new ArrayList<Game>();
 
 				while (rs.next()) {
-					Game game = new Game(
-							rs.getFloat("avg_score"),
-							rs.getInt(1),
-							rs.getString("query2"),
-							rs.getString("query3"),
-        					rs.getString("query4")
-							);
-					games.add(game);
+					System.out.println("hello?");
+					float test = rs.getFloat("avg_score") + 0;
+					System.out.println(test);
+					System.out.println(test);
+					System.out.println(rs.getFloat("avg_score"));
+					System.out.println(rs.getInt(1));
+					System.out.println(rs.getString("query2"));
+					System.out.println(rs.getString("query3"));
+					System.out.println(rs.getString("query4"));
+//					Game game = new Game(
+//							rs.getFloat("avg_score"),
+//							rs.getInt(1),
+//							rs.getString("query2"),
+//							rs.getString("query3"),
+//        					rs.getString("query4")
+//							);
+//					games.add(game);
 				}
-				model.put("games", games);
+//				model.put("games", games);
 				con.close();
 				rs.close();
 				
@@ -203,6 +205,20 @@ public final class Controller {
             	model.put("loggedIn", "false");
             }
             
+            Connection con = DriverManager.getConnection(login.getJdbUrl(), login.getUsername(),
+					login.getPassword());
+            
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery("select * from games");
+			ArrayList<Game> games = new ArrayList<Game>();
+			while (rs.next()) {
+				Game game = new Game(
+						rs.getInt("gameid"), 
+						rs.getString("linkcover"), 
+						rs.getString("gametitle"));
+				games.add(game);
+			}
+            model.put("games", games);
             return new ModelAndView(model, "templates/index.html");
         }, new VelocityTemplateEngine());
        
@@ -236,7 +252,7 @@ public final class Controller {
     					stmt2.executeUpdate();
     					request.session(true);  
     					request.session().attribute("loginName", username);
-    					return render(model, "templates/index.html");
+    					response.redirect("index.html");
     				}
     				con.close();
     				rs.close();
@@ -273,6 +289,9 @@ public final class Controller {
     					 response.redirect("login.html");
     				 }
     			} else {
+					System.out.println("Lösenord stämmer inte");
+					model.put("wrongPassword", "true");
+					request.session().attribute("wrongPassword","true");
     				response.redirect("login.html");
     			} 
     			con.close();
