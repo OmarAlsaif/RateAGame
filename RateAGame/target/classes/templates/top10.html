@@ -72,7 +72,7 @@
 		#foreach($game in $games)
 		<figure>
 			<h3>
-				<a href="/game/$game.getGameID()"> #set($count = $count + 1) $count. $game.getGameTitle()</a>
+				<a id="top10titel" href="/game/$game.getGameID()"> #set($count = $count + 1) $count. $game.getGameTitle()</a>
 				<a id="top10Rating">$game.getRating()/10</a>
 			</h3>
 			<a href="/game/$game.getGameID()"><img class="top10pics"

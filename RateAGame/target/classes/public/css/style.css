@@ -558,10 +558,14 @@ form#searchbar::after {
 
 }
 
+.top10pics{
+	width: 110px;
+}
+
 #top-10-main > figure > a > img {
     float: left;
     margin-right: 5px;
-    height: calc(100% - 49px);
+    height: calc(100% - 50px);
 }
 
 #top-10-main > figure {
@@ -595,18 +599,22 @@ form#searchbar::after {
 
 #top10Rating{
     display: inline-block;
-	float: left;
-	padding-left: 25px;
-	margin: 0px;
+    float: right;
+    margin: 0px;
+    padding-right: 10px;
 }
 
-
+#top10titel{
+	padding-left: 190px;
+    margin: auto;
+    text-align: left;
+    width: 20%;
+}
 #top-10-main > figure > h3 > a {
     text-decoration: none;
     list-style-type: none;
     color: white;
     display: inline-block;
-    padding-right: 102px;
 }
 /** top 10-sida slutar **/
 
