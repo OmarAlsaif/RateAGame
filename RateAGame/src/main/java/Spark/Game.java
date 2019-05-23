@@ -16,9 +16,14 @@ public class Game {
 	String LinkPicture2;
 	String LinkPicture3;
 	String LinkPicture1;
+	float rating;
 	
 	public int getGameID() {
 		return GameID;
+	}
+	
+	public float getRating() {
+		return rating;
 	}
 	public void setGameID(int gameID) {
 		GameID = gameID;
@@ -124,6 +129,15 @@ public class Game {
 		LinkPicture1 = linkPicture1;
 		LinkPicture2 = linkPicture2;
 		LinkPicture3 = linkPicture3;
+	}
+	
+	//en andra konstruktor som skickar ett objekt som används av top10.html
+	public Game(float rating, int GameID, String GameTitle, String GameInfo, String LinkCover) {
+		this.rating = rating;
+		this.GameID = GameID;
+		this.GameTitle = GameTitle;
+		this.GameInfo = GameInfo;
+		this.LinkCover = LinkCover;
 	}
     
 
