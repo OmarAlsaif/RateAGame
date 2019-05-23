@@ -24,26 +24,26 @@
         <nav id="navigation">
             <a href="index.html" id="title">Rate A Game</a>
             <a href="index.html"><img id="logo" src="img/RAG logo.png" /></a>
-            
-			<form action="Search" id="searchbar">
-				<input type="text" name="searchbar" placeholder="Search here...">
-				<button type="submit" value="Search" class="Search"><i class="fa fa-search"></i></button>
-			</form>
-			
+
+            <form action="Search" id="searchbar">
+                <input type="text" name="searchbar" placeholder="Search here...">
+                <button type="submit" value="Search" class="Search"><i class="fa fa-search"></i></button>
+            </form>
+
             <div id="menu">
                 <ul>
-                    <li>  
-                    #if($loggedIn == "true")
-                    <a href="logout">
-                    #else
-                    <a href="login.html">
-                    #end
-                    
-					#if($loggedIn == "true")
-   						 Sign Out
-					#else
-  						  Sign In
-					#end</a></li>
+                    <li>
+                        #if($loggedIn == "true")
+                        <a href="logout">
+                            #else
+                            <a href="login.html">
+                                #end
+
+                                #if($loggedIn == "true")
+                                Sign Out
+                                #else
+                                Sign In
+                                #end</a></li>
                     <li><a href="top10.html">Top 10</a></li>
                     <li class="active"><a href="news.html">News</a></li>
                     <li class="slide"></li>
@@ -114,10 +114,9 @@
             </figure>
             <figure>
                 <h3>
-                    <a
-                        href="https://gematsu.com/2019/05/bigben-interactive-announces-e3-2019-lineup">Bigben</a>
+                    <a href="https://gematsu.com/2019/05/bigben-interactive-announces-e3-2019-lineup">Bigben</a>
                 </h3>
-            
+
 
                 <figcaption>
                     Bigben Interactive announces E3 2019 lineup
@@ -128,9 +127,8 @@
 
                     </li>
                 </ul>
-                <a
-                    href="https://gematsu.com/2019/05/bigben-interactive-announces-e3-2019-lineup"><img
-                        class="top10pics" src="img/Bigben-E3-2019_05-07-19.jpg" /></a>
+                <a href="https://gematsu.com/2019/05/bigben-interactive-announces-e3-2019-lineup"><img class="top10pics"
+                        src="img/Bigben-E3-2019_05-07-19.jpg" /></a>
             </figure>
         </main>
     </div>

@@ -122,6 +122,12 @@ public final class Controller {
         
         get("/news.html", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
+            String userID = request.session().attribute("loginName");
+            if (null != userID) {
+            	model.put("loggedIn", "true");
+            } else {
+            	model.put("loggedIn", "false");
+            }
             System.out.println(request.pathInfo());
             
             return new ModelAndView(model, "templates/news.html");
@@ -150,6 +156,12 @@ public final class Controller {
         
         get("/top10.html", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
+            String userID = request.session().attribute("loginName");
+            if (null != userID) {
+            	model.put("loggedIn", "true");
+            } else {
+            	model.put("loggedIn", "false");
+            }
             
             try {
             	String query = "SELECT gameID, (SELECT gameTitle FROM games games WHERE gameid = ratings.gameid) as query2, (SELECT gameInfo FROM games games WHERE gameid = ratings.gameid) as query3, (SELECT linkcover FROM games games WHERE gameid = ratings.gameid) as query4, AVG(CAST(vote AS FLOAT)) AS avg_score FROM ratings GROUP BY gameID ORDER BY avg_score DESC;";

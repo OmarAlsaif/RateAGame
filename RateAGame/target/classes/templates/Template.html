@@ -15,7 +15,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <body>
@@ -23,26 +24,26 @@
         <nav id="navigation">
             <a href="../index.html" id="title">Rate A Game</a>
             <a href="../index.html"><img id="logo" src="../img/RAG logo.png" /></a>
-            
-			<form action="Search" id="searchbar">
-				<input type="text" name="searchbar" placeholder="Search here...">
-				<button type="submit" value="Search" class="Search"><i class="fa fa-search"></i></button>
-			</form>
-			
+
+            <form action="Search" id="searchbar">
+                <input type="text" name="searchbar" placeholder="Search here...">
+                <button type="submit" value="Search" class="Search"><i class="fa fa-search"></i></button>
+            </form>
+
             <div id="menu">
                 <ul>
-                    <li>  
-                    #if($loggedIn == "true")
-                    <a href="../logout">
-                    #else
-                    <a href="../login.html">
-                    #end
-                    
-					#if($loggedIn == "true")
-   						 Sign Out
-					#else
-  						  Sign In
-					#end</a></li>
+                    <li>
+                        #if($loggedIn == "true")
+                        <a href="../logout">
+                            #else
+                            <a href="../login.html">
+                                #end
+
+                                #if($loggedIn == "true")
+                                Sign Out
+                                #else
+                                Sign In
+                                #end</a></li>
                     <li><a href="../top10.html">Top 10</a></li>
                     <li><a href="../news.html">News</a></li>
                     <li class="slide"></li>
@@ -70,54 +71,54 @@
                 </div>
                 #if($loggedIn == "true")
                 <form action="/game/$game.getGameID()/RatingServlet">
-                #end
-                <div class="rate">
-                    <input type="radio" id="star10" name="rate" value="10" />
-                    <label for="star10" title="text">10 stars</label>
-                    <input type="radio" id="star9" name="rate" value="9" />
-                    <label for="star9" title="text">9 stars</label>
-                    <input type="radio" id="star8" name="rate" value="8" />
-                    <label for="star8" title="text">8 stars</label>
-                    <input type="radio" id="star7" name="rate" value="7" />
-                    <label for="star7" title="text">7 stars</label>
-                    <input type="radio" id="star6" name="rate" value="6" />
-                    <label for="star6" title="text">6 star</label>
-                    <input type="radio" id="star5" name="rate" value="5" />
-                    <label for="star5" title="text">5 stars</label>
-                    <input type="radio" id="star4" name="rate" value="4" />
-                    <label for="star4" title="text">4 stars</label>
-                    <input type="radio" id="star3" name="rate" value="3" />
-                    <label for="star3" title="text">3 stars</label>
-                    <input type="radio" id="star2" name="rate" value="2" />
-                    <label for="star2" title="text">2 stars</label>
-                    <input type="radio" id="star1" name="rate" value="1" />
-                    <label for="star1" title="text">1 star</label>
-                    <div class="containerbtn">
-                    
-                            <button type="submit" id="votebutton" value="Vote" >
-                            <span>
-                                Vote!    
-                            </span>
-                        </button>
-						#if($loggedIn == "false")
-	                    <div id="myErrorVote" class="errorVote">                        
-						  <div class="errorVote-content">
-						    <span class="close">&times;</span>
-						    <h3>You need to be signed in to be able to vote!</h3>
-						    <p>Have an account?<a href="../../login.html"> Sign in</a></p>
-						  </div>
-						</div>
-						#end
-						#if($loggedIn == "true")
-	                    <div id="myErrorVote" class="errorVote">                        
-						  <div class="errorVote-content">
-						    <span class="close">&times;</span>
-						    <h3>Thank you for your vote!</h3>
-						  </div>
-						</div>
-						#end
-                   </div>
-                </div>
+                    #end
+                    <div class="rate">
+                        <input type="radio" id="star10" name="rate" value="10" />
+                        <label for="star10" title="text">10 stars</label>
+                        <input type="radio" id="star9" name="rate" value="9" />
+                        <label for="star9" title="text">9 stars</label>
+                        <input type="radio" id="star8" name="rate" value="8" />
+                        <label for="star8" title="text">8 stars</label>
+                        <input type="radio" id="star7" name="rate" value="7" />
+                        <label for="star7" title="text">7 stars</label>
+                        <input type="radio" id="star6" name="rate" value="6" />
+                        <label for="star6" title="text">6 star</label>
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                        <div class="containerbtn">
+
+                            <button type="submit" id="votebutton" value="Vote">
+                                <span>
+                                    Vote!
+                                </span>
+                            </button>
+                            #if($loggedIn == "false")
+                            <div id="myErrorVote" class="errorVote">
+                                <div class="errorVote-content">
+                                    <span class="close">&times;</span>
+                                    <h3>You need to be signed in to be able to vote!</h3>
+                                    <p>Have an account?<a href="../../login.html"> Sign in</a></p>
+                                </div>
+                            </div>
+                            #end
+                            #if($loggedIn == "true")
+                            <div id="myErrorVote" class="errorVote">
+                                <div class="errorVote-content">
+                                    <span class="close">&times;</span>
+                                    <h3>Thank you for your vote!</h3>
+                                </div>
+                            </div>
+                            #end
+                        </div>
+                    </div>
                 </form>
 
                 <div class="discription">
@@ -125,7 +126,8 @@
                         $game.getGameInfo()
                     </p>
                     <p>
-                        Link to official site: <a href="$game.getLinkOfficialSite()" target="_blank">$game.getLinkOfficialSite()</a>
+                        Link to official site: <a href="$game.getLinkOfficialSite()"
+                            target="_blank">$game.getLinkOfficialSite()</a>
                     </p>
                 </div>
 
@@ -141,11 +143,11 @@
             </div>
         </article>
         <div id="co-titlecontent">
-            <iframe src="$game.getLinkTrailer()" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen class="co-titlecontent-img"></iframe>
+            <iframe src="$game.getLinkTrailer()"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                class="co-titlecontent-img"></iframe>
             <img src="$game.getLinkPoster()" alt="" class="co-titlecontent-img">
-            <img src="$game.getLinkPicture2()"
-                class="co-titlecontent-img">
+            <img src="$game.getLinkPicture2()" class="co-titlecontent-img">
             <img src="$game.getLinkPicture3()" class="co-titlecontent-img">
         </div>
         <div id="review-section">
@@ -159,8 +161,8 @@
                 <textarea rows="5" cols="30" id="bodytext"></textarea><br>
                 <input type="button" id="addComment" value="Add Comment">
             </div>
-            <div id="container">    
-                
+            <div id="container">
+
             </div>
         </div>
     </div>
@@ -177,12 +179,8 @@
         </p>
     </footer>
     <script src="../js/headerFunction.js"></script>
-	<script src="../js/error.js"></script>
-	<script type="text/javascript">
-      if("$userExists" == "true") {
-          alert("Användare finns redan");
-      }
-  </script>
+    <script src="../js/error.js"></script>
+
 </body>
 
 </html>
