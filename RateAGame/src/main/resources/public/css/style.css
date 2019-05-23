@@ -46,7 +46,7 @@ body, html {
     margin-left: 8px;
 }
 #menu  {
-    width: 313px;
+    width: 358px;
 }
 #menu > ul > li.active{
     background: #DE5C3B;
@@ -726,7 +726,7 @@ form#searchbar::after {
 }
 
 #viewrating{
-	margin-right: 194px;
+	margin-right: 177px;
 
 }
 
