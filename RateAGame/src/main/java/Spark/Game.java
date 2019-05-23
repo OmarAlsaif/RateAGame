@@ -1,5 +1,6 @@
 package Spark;
 
+
 public class Game {
 	int GameID;
 	String GameTitle;
@@ -16,13 +17,13 @@ public class Game {
 	String LinkPicture2;
 	String LinkPicture3;
 	String LinkPicture1;
-	float rating;
+	double rating = 0;
 	
 	public int getGameID() {
 		return GameID;
 	}
 	
-	public float getRating() {
+	public double getRating() {
 		return rating;
 	}
 	public void setGameID(int gameID) {
@@ -132,12 +133,21 @@ public class Game {
 	}
 	
 	//en andra konstruktor som skickar ett objekt som används av top10.html
+	//typkonverterar float rating för att visa rating med två decimaltecken (typen Double går inte att använda i databasen, endast float)
 	public Game(float rating, int GameID, String GameTitle, String GameInfo, String LinkCover) {
-		this.rating = rating;
+		this.rating += (double)rating;
 		this.GameID = GameID;
 		this.GameTitle = GameTitle;
 		this.GameInfo = GameInfo;
 		this.LinkCover = LinkCover;
+	}
+
+	
+	//konstruktor för att skicka ett objekt till index.html
+	public Game(int gameID, String linkCover, String gameTitle) {
+		this.GameID = gameID;
+		this.LinkCover = linkCover;
+		this.GameTitle = gameTitle;
 	}
     
 

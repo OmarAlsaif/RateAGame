@@ -70,7 +70,7 @@ public final class Controller {
 				st.setInt(1, id);
 				ResultSet rs2 = st.executeQuery();
 				
-				int column2 = 0;
+				double column2 = 0;
 				int increment = 0;
 				double rating = 0;
 				
@@ -164,27 +164,18 @@ public final class Controller {
 				ResultSet rs = stmt.executeQuery();
 
 				ArrayList<Game> games = new ArrayList<Game>();
-
 				while (rs.next()) {
-					System.out.println("hello?");
-					float test = rs.getFloat("avg_score") + 0;
-					System.out.println(test);
-					System.out.println(test);
-					System.out.println(rs.getFloat("avg_score"));
-					System.out.println(rs.getInt(1));
-					System.out.println(rs.getString("query2"));
-					System.out.println(rs.getString("query3"));
-					System.out.println(rs.getString("query4"));
-//					Game game = new Game(
-//							rs.getFloat("avg_score"),
-//							rs.getInt(1),
-//							rs.getString("query2"),
-//							rs.getString("query3"),
-//        					rs.getString("query4")
-//							);
-//					games.add(game);
+					Game game = new Game(
+							rs.getFloat("avg_score"),
+							rs.getInt(1),
+							rs.getString("query2"),
+							rs.getString("query3"),
+        					rs.getString("query4")
+							);
+					games.add(game);
 				}
-//				model.put("games", games);
+				
+				model.put("games", games);
 				con.close();
 				rs.close();
 				
@@ -286,7 +277,9 @@ public final class Controller {
 						response.redirect("index.html");
 					}
     				else{
-    					 response.redirect("login.html");
+    					model.put("wrongPassword", "true");
+    					request.session().attribute("wrongPassword","true");
+        				response.redirect("login.html");
     				 }
     			} else {
 					System.out.println("Lösenord stämmer inte");

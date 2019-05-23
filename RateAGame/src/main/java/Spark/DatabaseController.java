@@ -1,5 +1,6 @@
 package Spark;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -92,7 +93,7 @@ public class DatabaseController extends DatabaseConnection {
 			String LinkPoster, String LinkCover, String LinkPicture1, String LinkPicture2, String LinkPicture3) {
 
 		try {
-			PreparedStatement st = conn.prepareStatement("UPDATE games SET GameTitle=?, GameInfo=?, ReleaseDate=?, Publishers=?, Genre=?, GameModes=?, PlayerPerspective=?, LinkOfficialSite=?, LinkTrailer=?, LinkPoster=?, LinkCover=?, LinkPicture1=?, LinkPicture2=?, LinkPicture3=?, WHERE gameid=?");
+			PreparedStatement st = conn.prepareStatement("UPDATE games SET GameTitle=?, GameInfo=?, ReleaseDate=?, Publishers=?, Genre=?, GameModes=?, PlayerPerspective=?, LinkOfficialSite=?, LinkTrailer=?, LinkPoster=?, LinkCover=?, LinkPicture1=?, LinkPicture2=?, LinkPicture3=? WHERE gameid=?");
 			st.setString(1, GameTitle);
 			st.setString(2, GameInfo);
 			st.setString(3, ReleaseDate);
@@ -111,6 +112,45 @@ public class DatabaseController extends DatabaseConnection {
 			st.executeUpdate();
 			st.close();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	public void initializeGames() {
+
+		try {
+			PreparedStatement st = conn.prepareStatement("INSERT INTO ratings (" +
+					 "vote, gameid) " +
+					 "VALUES(?,?)");
+			
+			st.setInt(1, 0);
+			st.setInt(2, 1); //gameid 1
+			
+			st.setInt(1, 0);
+			st.setInt(2, 2); //gameid 2
+			
+			st.setInt(1, 0);
+			st.setInt(2, 3); //gameid 2
+			
+			st.setInt(1, 0);
+			st.setInt(2, 4); //gameid 2
+			
+			st.setInt(1, 0);
+			st.setInt(2, 5); //gameid 2
+			
+			st.setInt(1, 0);
+			st.setInt(2, 6); //gameid 2
+			
+			st.setInt(1, 0);
+			st.setInt(2, 7); //gameid 2
+			
+			st.setInt(1, 0);
+			st.setInt(2, 8); //gameid 2
+			st.executeUpdate();
+			st.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
