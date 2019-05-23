@@ -87,35 +87,33 @@ public class DatabaseController extends DatabaseConnection {
 		
 	}
 	
-	public void updateItem(long rating, int pos, String gameInfo) {
-		
-		System.out.println("Updating item number " + rating + " with name = " + pos + 
-				" price = " + gameInfo);
-		
-		try {
-			
+	public void updateGame(int GameID, String GameTitle, String GameInfo, String ReleaseDate, String Publishers,
+			String Genre, String GameModes, String PlayerPerspective, String LinkOfficialSite, String LinkTrailer,
+			String LinkPoster, String LinkCover, String LinkPicture1, String LinkPicture2, String LinkPicture3) {
 
-					
-			PreparedStatement st = conn.prepareStatement("UPDATE games SET gameinfo=? WHERE game=?");
-			
-//			st.setString(1, productName);
-			st.setString(3, gameInfo);
+		try {
+			PreparedStatement st = conn.prepareStatement("UPDATE games SET GameTitle=?, GameInfo=?, ReleaseDate=?, Publishers=?, Genre=?, GameModes=?, PlayerPerspective=?, LinkOfficialSite=?, LinkTrailer=?, LinkPoster=?, LinkCover=?, LinkPicture1=?, LinkPicture2=?, LinkPicture3=?, WHERE gameid=?");
+			st.setString(1, GameTitle);
+			st.setString(2, GameInfo);
+			st.setString(3, ReleaseDate);
+			st.setString(4, Publishers);
+			st.setString(5, Genre);
+			st.setString(6, GameModes);
+			st.setString(7, PlayerPerspective);
+			st.setString(8, LinkOfficialSite);
+			st.setString(9, LinkTrailer);
+			st.setString(10, LinkPoster);
+			st.setString(11, LinkCover);
+			st.setString(12, LinkPicture1);
+			st.setString(13, LinkPicture2);
+			st.setString(14, LinkPicture3);
+			st.setInt(15, GameID);
 			st.executeUpdate();
 			st.close();
-			
-//			if(productPrice != -1.0) {
-//				PreparedStatement st = conn.prepareStatement("UPDATE products SET product_price=? WHERE product_id=?");
-//
-//						st.setDouble(1, productPrice);
-//						st.setLong(2, productId);
-//						st.executeUpdate();
-//						st.close();
-//			}
-//			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 }
