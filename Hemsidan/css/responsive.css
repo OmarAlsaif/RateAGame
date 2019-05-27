@@ -1,0 +1,235 @@
+/** Responsivitet av webbplats börjar här **/ 
+
+/** Första Brytpunkt **/ 
+@media all and (min-width: 885px) and (max-width: 1690px) {
+    #left-container {
+        width: 100%;
+    }
+    #middle-container {
+        width: 100%;
+
+    }
+    
+    /** Bildspel **/
+    #rdr2{
+    object-fit: cover;
+    height: 600px;
+    width:100%;
+    }
+    #horizon{
+    object-fit: cover;
+    height: 600px;
+    width:100%;
+    }
+    #fallout{
+    object-fit: cover;
+    height: 600px;
+    width:100%;
+    }
+    #firstClone {
+    object-fit: cover;
+    height: 600px;
+    width:100%;
+    }
+    #lastClone {
+    object-fit: cover;
+    height: 600px;
+    width:100%;
+    }
+}
+#prevBtn{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    left: 5%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    background-color: black;
+}
+#nextBtn{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    right: 5%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    background-color: black;
+    /** Bildspel avslutas **/
+}
+/** Första Brytpunkt AVSLUTAS **/ 
+
+/** Andra Brytpunkt **/ 
+@media all and (min-width:1200px){ 
+   
+   
+    /** Bildspel **/
+    #rdr2{
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #horizon{
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #fallout{
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #firstClone {
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #lastClone {
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+    }
+    #prevBtn{
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        left: 5%;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        background-color: black;
+    }
+    #nextBtn{
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        right: 5%;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        background-color: black;
+     /** Bildspel avslutas **/
+
+}
+/** Andra Brytpunk AVSLUTAS **/ 
+
+/** Tredje Brytpunkt **/ 
+@media all and (min-width: 768px) and (max-width: 959px) { 
+    
+    
+    /** Bildspel **/
+    #rdr2{
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #horizon{
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #fallout{
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #firstClone {
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #lastClone {
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+    }
+    #prevBtn{
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        left: 5%;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        background-color: black;
+    }
+    #nextBtn{
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        right: 5%;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        background-color: black;
+        /** Bildspel avslutas **/
+    }
+    /** Tredje Brytpunkt AVSLUTAS **/ 
+
+/** Fjärde Brytpunkt **/ 
+@media all and (max-width: 479px) { 
+    
+
+
+
+    
+    
+    /** Bildspel **/
+    #rdr2{
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #horizon{
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #fallout{
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #firstClone {
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #lastClone {
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+    }
+    #prevBtn{
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        left: 5%;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        background-color: black;
+    }
+    #nextBtn{
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        right: 5%;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        background-color: black;
+        /** Bildspel avslutas **/
+    }
+/** Fjärde Brytpunk AVSLUTAS **/ 
+
+
+
+
+
+
+

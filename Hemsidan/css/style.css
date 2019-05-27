@@ -211,53 +211,6 @@ body > header {
     height: 620px;
     width:100%;
 }
-@media screen and (max-width: 1920px) {
-    #rdr2{
-    object-fit: cover;
-    height: 600px;
-    width:100%;
-    }
-    #horizon{
-    object-fit: cover;
-    height: 600px;
-    width:100%;
-    }
-    #fallout{
-    object-fit: cover;
-    height: 600px;
-    width:100%;
-    }
-    #firstClone {
-    object-fit: cover;
-    height: 600px;
-    width:100%;
-    }
-    #lastClone {
-    object-fit: cover;
-    height: 600px;
-    width:100%;
-    }
-}
-#prevBtn{
-    position: absolute;
-    top: 50%;
-    z-index: 10;
-    left: 5%;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    background-color: black;
-}
-#nextBtn{
-    position: absolute;
-    top: 50%;
-    z-index: 10;
-    right: 5%;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    background-color: black;
-}
 
 #img1_text{
     position: absolute;
@@ -930,6 +883,3 @@ footer > p > a {
     color: white;
 }
 /** Footer slutar **/
-
-
-
