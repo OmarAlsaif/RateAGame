@@ -63,18 +63,25 @@
             <h2>
                 Top games right now:
             </h2>
-            <p>
-                Apex Legends
-            </p>
-            <p>
-                Resident Evil 2
-            </p>
-            <p>
-                Devil May Cry 5
-            </p>
-            <p>
-                Mortal Combat 11
-            </p>
+            <div class="holder">
+  				<ul id="ticker01">
+					<li><p><a href="game/1">Star Wars Battlefront</a></p></li>
+					<li><p><a href="game/2">Anthem</a></p></li>
+					<li><p><a href="game/3">GTA V</a></p></li>
+					<li><p><a href="game/4">Diablo III</a></p></li>
+					<li><p><a href="game/5">Far Cry New Dawn"</a></p></li>
+					<li><p><a href="game/6">Battlefield V</a></p></li>
+					<li><p><a href="game/7">Apex Legends</a></p></li>
+					<li><p><a href="game/8">Mortal Combat XI</a></p></li>
+					<li><p><a href="game/9">Metro Exodus</a></p></li>
+					<li><p><a href="game/10">Halo</a></p></li>
+					<li><p><a href="game/11">Horizon Zero Dawn</a></p></li>
+					<li><p><a href="game/12">Red Dead Redemption 2</a></p></li>
+					<li><p><a href="game/13">Fallout 76</a></p></li>
+					<li><p><a href="game/14">God of War</a></p></li>
+					<li><p><a href="game/15">League Of Legends</a></p></li>
+				</ul>
+</div>
         </div>
 
         <div id="middle-container">
@@ -87,7 +94,7 @@
                         <p>
                             "Re-live the wild west!"
                         </p>
-                        <button>
+                        <button onclick="window.location.href='game/12'">
                             Read more
                         </button>
                     </div>
@@ -99,7 +106,7 @@
                         <p>
                             "Earth is ours no more!"
                         </p>
-                        <button>
+                        <button onclick="window.location.href='game/11'">
                             Read more
                         </button>
                     </div>
@@ -110,7 +117,7 @@
                         <p>
                             "Welcome to wild Appalachia!"
                         </p>
-                        <button>
+                        <button onclick="window.location.href='game/10'">
                             Read more
                         </button>
                     </div>
@@ -161,9 +168,49 @@
                         alt="metroexodus cover"></a>
                 Metro Exodus
             </p>
+            <p>
+                <a href="game/11"><img src="$games[10].getLinkCover()"></a>
+                $games[10].getGameTitle()
+            </p>
+            <p>
+                <a href="game/10"><img src="$games[9].getLinkCover()"></a>
+                $games[9].getGameTitle()
+            </p>
+            <p>
+                <a href="game/12"><img src="$games[11].getLinkCover()"></a>
+                $games[11].getGameTitle()
+            </p>
+            <p>
+                <a href="game/13"><img src="$games[12].getLinkCover()"></a>
+                $games[12].getGameTitle()
+            </p>
+            <p>
+                <a href="game/14"><img src="$games[13].getLinkCover()"></a>
+                $games[13].getGameTitle()
+            </p>
+            <p>
+                <a href="game/15"><img src="$games[14].getLinkCover()"></a>
+                $games[14].getGameTitle()
+            </p>
+            <p>
+                <a href="game/16"><img src="$games[15].getLinkCover()"></a>
+                $games[15].getGameTitle()
+            </p>
+            <p>
+                <a href="game/17"><img src="$games[16].getLinkCover()"></a>
+                $games[16].getGameTitle()
+            </p>
+            <p>
+                <a href="game/1"><img src="$games[0].getLinkCover()"></a>
+                $games[0].getGameTitle()
+            </p>
+            
+            
+            
         </div>
 
-        <div id="right-container">
+        <div id="right-container" onload='checkHistory("recentPageViews")'>
+        	<h2>Recently viewed: </h2>
 
         </div>
         <div id="bottom-container">
@@ -214,6 +261,7 @@
     <script src="js/preload.js"></script>
     <script src="js/script.js"></script>
     <script src="js/headerFunction.js"></script>
+    <script src="js/newsScroller.js"></script>
 
 
 </body>

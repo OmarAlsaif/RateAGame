@@ -197,6 +197,45 @@ form#searchbar::after {
     text-align: center;
 }
 
+#left-container > h2{
+    margin-top: 0px;
+    background-color: rgb(243, 102, 67);
+    font-family: 'Gugi', cursive, Arial, Helvetica, sans-serif;
+    color:white;
+}
+
+.holder { 
+  background-color:white;
+  width:100%px;
+  height:250px;
+  overflow:hidden;
+  font-family:Helvetica;
+}
+
+.holder .mask {
+  position: relative;
+  left: 0px;
+  top: 10px;
+  width:300px;
+  height:300px;
+  overflow: hidden;
+}
+
+.holder ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+  position: relative;
+
+}
+.holder ul li {
+  border-bottom: 1px solid rgba(75, 75, 75, 0.5);
+}
+.holder ul li a {
+  color:#000;
+  text-decoration:none;
+}
+
 #right-container {
     margin-left: 5px;
     padding: 0 0 0  10px;
@@ -519,10 +558,14 @@ form#searchbar::after {
 
 }
 
+.top10pics{
+	width: 110px;
+}
+
 #top-10-main > figure > a > img {
     float: left;
     margin-right: 5px;
-    height: calc(100% - 49px);
+    height: calc(100% - 50px);
 }
 
 #top-10-main > figure {
@@ -556,18 +599,22 @@ form#searchbar::after {
 
 #top10Rating{
     display: inline-block;
-	float: left;
-	padding-left: 25px;
-	margin: 0px;
+    float: right;
+    margin: 0px;
+    padding-right: 10px;
 }
 
-
+#top10titel{
+	padding-left: 190px;
+    margin: auto;
+    text-align: left;
+    width: 20%;
+}
 #top-10-main > figure > h3 > a {
     text-decoration: none;
     list-style-type: none;
     color: white;
     display: inline-block;
-    padding-right: 102px;
 }
 /** top 10-sida slutar **/
 

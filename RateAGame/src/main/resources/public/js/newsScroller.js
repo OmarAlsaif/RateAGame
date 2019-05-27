@@ -13,10 +13,10 @@ $(document).ready(function() {
 					});
 					var $mask = $strip.wrap("<div class='mask'></div>");
 					var $tickercontainer = $strip.parent().wrap("<div class='tickercontainer'></div>");								
-					var containerHeight = $strip.parent().parent().height();	//a.k.a. 'mask' width 	
+					var containerHeight = $strip.parent().parent().height();
 					$strip.height(stripHeight);			
 					var totalTravel = stripHeight;
-					var defTiming = totalTravel/settings.travelocity;	// thanks to Scott Waye		
+					var defTiming = totalTravel/settings.travelocity;	
 					function scrollnews(spazio, tempo){
 					$strip.animate({top: '-='+ spazio}, tempo, "linear", function(){$strip.css("top", containerHeight); scrollnews(totalTravel, defTiming);});
 					}
