@@ -2,9 +2,9 @@ package Spark;
 
 public class DatabaseLogin {
 	
-	private String jdbUrl = "jdbc:postgresql://localhost:5432/postgres";
-	private String username = "postgres";
-	private String password = "password";
+	private String jdbUrl = "jdbc:postgresql://pgserver.mah.se/";
+	private String username = "ah1681";
+	private String password = "oc2bpr6g";
 	
 	public String getJdbUrl() {
 		return jdbUrl;

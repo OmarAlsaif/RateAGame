@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <script src="js/js libary/modernizr-2.6.2.min.js"></script>
 
 </head>
@@ -50,6 +51,27 @@
 				</ul>
 
 			</div>
+			
+		 <div id="topNav" class="resNavigation">
+		  		<span id="closebtn" onclick="navToggle()">
+		      <span class="line1"></span>
+		      <span class="line2"></span>
+		      <span class="line3"></span>
+		  </span>
+		<div class="resLogo">
+		  <img src=""/>
+		</div>
+		
+		<ul class="menulist">
+		  <li><a class="menuitems" href="login.html">Sign In</a></li>		
+		  <li><a class="menuitems" href="top10.html">Top Games</a></li>				
+		  <li><a class="menuitems" href="news.html">News</a></li>
+		  <li><a class="menuitems" href="#">About</a></li>
+		</ul>			
+	</div>
+
+<div id="main">
+</div>
 		</nav>
 	</header>
     <div id="wrapper">
@@ -97,6 +119,7 @@
 				swal("Oops", "Incorrect username or password", "error");
 			}
 		</script>
+		<script src="js/hamburger.js"></script>
 </body>
 
 </html>
