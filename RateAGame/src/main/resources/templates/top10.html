@@ -45,20 +45,21 @@
 				
 			<div id="menu">
                 <ul>
-                    <li>  
-                    #if($loggedIn == "true")
-                    <a href="logout">
-                    #else
-                    <a href="login.html">
-                    #end
-                    
-					#if($loggedIn == "true")
-   						 Sign Out
-					#else
-  						  Sign In
-					#end</a></li>
+                    <li>
+                        #if($loggedIn == "true")
+                        <a href="logout">
+                            #else
+                            <a href="login.html">
+                                #end
+
+                                #if($loggedIn == "true")
+                                Sign Out
+                                #else
+                                Sign In
+                                #end</a></li>
                         <li class="active"><a href="top10.html">Top Games</a></li>
-                        <li><a href="news.html">News</a></li>
+						<li><a href="news1.html">News</a></li>
+						<li><a href="about.html">About</a></li>
                         <li class="slide"></li>
           
                 </ul>
@@ -78,7 +79,7 @@
 			<a href="/game/$game.getGameID()"><img class="top10pics"
 				src="$game.getLinkCover()" /></a>
 			<figcaption>
-				<strong>$game.getGameTitle()</strong> $game.getGameInfo()
+			 $game.getGameInfo()
 			</figcaption>
 		</figure>
 		#end 

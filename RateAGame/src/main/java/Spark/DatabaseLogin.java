@@ -4,7 +4,7 @@ public class DatabaseLogin {
 	
 	private String jdbUrl = "jdbc:postgresql://localhost:5432/postgres";
 	private String username = "postgres";
-	private String password = "password";
+	private String password = "blink123ems";
 	
 	public String getJdbUrl() {
 		return jdbUrl;
