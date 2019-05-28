@@ -121,11 +121,11 @@ public final class Controller {
 			return new ModelAndView(model, "templates/Template.html");
 		}, new VelocityTemplateEngine());
         
-        get("/news.html", (request, response) -> {
+        get("/news1.html", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             System.out.println(request.pathInfo());
             
-            return new ModelAndView(model, "templates/news.html");
+            return new ModelAndView(model, "templates/news1.html");
         }, new VelocityTemplateEngine());
 
         get("/login.html", (request, response) -> {
@@ -400,6 +400,13 @@ public final class Controller {
 					}
 					return render(model, "templates/search.html");
 				});
+				
+		        get("/about.html", (request, response) -> {
+		            Map<String, Object> model = new HashMap<>();
+		            System.out.println(request.pathInfo());
+		            
+		            return new ModelAndView(model, "templates/about.html");
+		        }, new VelocityTemplateEngine());
 		
     }
 }
