@@ -1250,6 +1250,7 @@ label {
 .aboutPersonInfo {
     word-wrap: break-word;
     padding: 3px;
+    font-size: 13px;
 }
 
 

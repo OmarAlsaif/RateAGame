@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="../js/script.js"></script>
     <link rel="shortcut icon" href="../img/RAG logo.png">
     <link rel="stylesheet" type="text/css" href="../css/animate.css" />
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
@@ -157,7 +156,7 @@
                 <label for="name">Name: </label>
                 <input type="text" id="name"><br>
                 <label for="bodytext">Text: </label>
-                <textarea rows="5" cols="30" id="bodytext"></textarea><br>
+                <textarea rows="5" cols="30" id="bodytext" maxlength="100" placeholder="(maximum 100 characters)"></textarea><br>
                 <input type="button" id="addComment" value="Add Comment">
             </div>
             <div id="container">
@@ -178,7 +177,9 @@
         </p>
     </footer>
     <script src="../js/headerFunction.js"></script>
-    <script src="../js/error.js"></script>
+    <script src="../js/error.js"></script>   
+    <script src="../js/commentFunction.js"></script>
+
 
 </body>
 
