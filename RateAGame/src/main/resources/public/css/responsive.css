@@ -1,0 +1,213 @@
+/** Responsivitet av webbplats börjar här **/ 
+
+/** Första Brytpunkt **/ 
+
+@media screen and (min-width: 1000px){
+	#topNav {
+		display: none;
+	}
+}
+@media screen and (max-width: 600px){
+    #left-container {
+        width: 100%;
+    }
+    #middle-container {
+        width: 100%;
+
+    }
+    .header{
+    	 line-height: 20px;
+    }
+   
+    #title{
+    	display: none;
+    
+    }
+    #menu {
+    	display: none;
+    
+    
+    }
+    #navigation {
+    	display: flex;
+    	flex-direction: row-reverse;
+    }
+    #searchbar {
+    	width: 70%;
+    
+    }
+    
+    .holder {
+    	text-align: center;
+    
+    }
+    .tickercontainer {
+    	display: inline-block;
+    
+    }
+    .resNavigation {
+    	margin-left: 14%;
+    }
+    #menuitems {
+    	margin-right: 50px;
+    	
+    }
+  
+    /** Bildspel **/
+    #rdr2{
+    object-fit: cover;
+    height: 600px;
+    width:100%;
+    }
+    #horizon{
+    object-fit: cover;
+    height: 600px;
+    width:100%;
+    }
+    #fallout{
+    object-fit: cover;
+    height: 600px;
+    width:100%;
+    }
+    #firstClone {
+    object-fit: cover;
+    height: 600px;
+    width:100%;
+    }
+    #lastClone {
+    object-fit: cover;
+    height: 600px;
+    width:100%;
+    }
+}
+#prevBtn{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    left: 5%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    background-color: black;
+}
+#nextBtn{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    right: 5%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    background-color: black;
+    /** Bildspel avslutas **/
+}
+/** Första Brytpunkt AVSLUTAS **/ 
+
+/** Tredje Brytpunkt **/ 
+@media all and (min-width: 768px) and (max-width: 959px) { 
+    
+    
+    /** Bildspel **/
+    #rdr2{
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #horizon{
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #fallout{
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #firstClone {
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #lastClone {
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+    }
+    #prevBtn{
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        left: 5%;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        background-color: black;
+    }
+    #nextBtn{
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        right: 5%;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        background-color: black;
+        /** Bildspel avslutas **/
+    }
+    /** Tredje Brytpunkt AVSLUTAS **/ 
+
+/** Fjärde Brytpunkt **/ 
+@media all and (max-width: 479px) { 
+    
+    
+    
+    /** Bildspel **/
+    #rdr2{
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #horizon{
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #fallout{
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #firstClone {
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+        #lastClone {
+        object-fit: cover;
+        height: 600px;
+        width:100%;
+        }
+    }
+    #prevBtn{
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        left: 5%;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        background-color: black;
+    }
+    #nextBtn{
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        right: 5%;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        background-color: black;
+        /** Bildspel avslutas **/
+    }
+/** Fjärde Brytpunk AVSLUTAS **/ 
