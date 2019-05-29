@@ -2,12 +2,26 @@
 
 /** Första Brytpunkt **/ 
 
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 600px){
 	#topNav {
 		display: none;
 	}
+	body {
+		width: 100%;
+	}	
 }
+
+/** Andra Brytpunkt **/ 
 @media screen and (max-width: 600px){
+	
+	footer > p> a {
+		font-size: 12px;
+	}
+	
+	#logo {
+		display: none;
+
+	}
     #left-container {
         width: 100%;
     }
@@ -46,7 +60,7 @@
     
     }
     .resNavigation {
-    	margin-left: 14%;
+    	margin-left: 1%;
     }
     #menuitems {
     	margin-right: 50px;
@@ -100,8 +114,7 @@
     cursor: pointer;
     background-color: black;
     /** Bildspel avslutas **/
-}
-/** Första Brytpunkt AVSLUTAS **/ 
+} 
 
 /** Tredje Brytpunkt **/ 
 @media all and (min-width: 768px) and (max-width: 959px) { 
@@ -155,7 +168,6 @@
         background-color: black;
         /** Bildspel avslutas **/
     }
-    /** Tredje Brytpunkt AVSLUTAS **/ 
 
 /** Fjärde Brytpunkt **/ 
 @media all and (max-width: 479px) { 
@@ -208,6 +220,7 @@
         color: white;
         cursor: pointer;
         background-color: black;
-        /** Bildspel avslutas **/
     }
-/** Fjärde Brytpunk AVSLUTAS **/ 
+        /** Bildspel avslutas **/
+        
+}
