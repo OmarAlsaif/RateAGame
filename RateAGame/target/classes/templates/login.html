@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="css/animate.css" />
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
@@ -86,6 +85,7 @@
     </footer>
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="js/headerFunction.js"></script>
+  <script src="js/loginFunction.js"></script>
   <script type="text/javascript">
   
   	var userExists = "$userExists";
@@ -97,7 +97,8 @@
 			if (wrongPassword == "true") {
 				swal("Oops", "Incorrect username or password", "error");
 			}
-		</script>
+        </script>
+        
 </body>
 
 </html>
