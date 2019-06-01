@@ -51,11 +51,14 @@ body, html {
 }
 #menu > ul > li.active{
     background: #DE5C3B;
+    height: 62px;
 }
 .slide{
     z-index: -1;
     transition: 0.5s all;
     opacity: 1;
+    height: 62px;
+
 
 }
 #menu > ul >li:nth-child(1).active ~ .slide {
@@ -80,7 +83,9 @@ body, html {
     margin: 0px;
     list-style-type: none;
     width: auto;
-
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
 }
 #menu > ul >li {
     float: left;
@@ -92,7 +97,7 @@ body, html {
     color: rgb(75, 75, 75);
     text-decoration: none;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 17px;
     padding: 0 19px;
     display: block;
     text-align: center;
@@ -198,7 +203,7 @@ body, html {
     z-index:100;
     color:rgb(243, 102, 67);
     cursor:pointer;
-    trainsition:background-position .3s;
+    transition:background-position .3s;
 }
 #main {	
     transition: margin-top .4s;
@@ -209,12 +214,13 @@ body, html {
 }
 
 form#searchbar input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 80%;
-  background: #f1f1f1;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 75%;
+    background: #f1f1f1;
 }
 
 
@@ -813,6 +819,7 @@ form#searchbar::after {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 0;
 }
@@ -849,7 +856,7 @@ form#searchbar::after {
     flex-direction: column;
     justify-content: space-between;
     height: 250px;
-    width: 250px;
+    width: 20%;
     border: 1px rgb(75, 75, 75) ;
     margin: 10px;
     padding: 10px;
@@ -942,11 +949,10 @@ label {
     margin-top: -20px;
     height: 40px;
     text-align: center;
-    dispaly: flex;
+    display: flex;
   }
   
   #votebutton {
-
     background-color: rgb(243, 102, 67);
     border-radius: 20px;
     border: none;

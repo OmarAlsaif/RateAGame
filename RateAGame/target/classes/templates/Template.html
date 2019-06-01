@@ -7,6 +7,7 @@
     <title>RAG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/responsive.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="shortcut icon" href="../img/RAG logo.png">
     <link rel="stylesheet" type="text/css" href="../css/animate.css" />
@@ -35,7 +36,7 @@
                         #if($loggedIn == "true")
                         <a href="logout">
                             #else
-                            <a href="login.html">
+                            <a href="../login.html">
                                 #end
 
                                 #if($loggedIn == "true")
@@ -43,12 +44,33 @@
                                 #else
                                 Sign In
                                 #end</a></li>
-                    <li><a href="../top10.html">Top Games</a></li>
+                    <li class="active"><a href="../top10.html">Top Games</a></li>
                     <li><a href="../news1.html">News</a></li>
                     <li><a href="../about.html">About</a></li>
                     <li class="slide"></li>
                 </ul>
+
             </div>
+              <div id="topNav" class="resNavigation">
+		  		<span id="closebtn" onclick="navToggle()">
+		      <span class="line1"></span>
+		      <span class="line2"></span>
+		      <span class="line3"></span>
+		  </span>
+		<div class="resLogo">
+		  <img src=""/>
+		</div>
+		
+		<ul class="menulist">
+		  <li><a class="menuitems" href="../login.html">Sign In</a></li>		
+		  <li><a class="menuitems" href="../top10.html">Top Games</a></li>				
+		  <li><a class="menuitems" href="../news1.html">News</a></li>
+		  <li><a class="menuitems" href="../about.html">About</a></li>
+		</ul>			
+	</div>
+
+<div id="main">
+</div>
         </nav>
     </header>
     <div id="wrapper">
@@ -179,6 +201,8 @@
     <script src="../js/headerFunction.js"></script>
     <script src="../js/error.js"></script>   
     <script src="../js/commentFunction.js"></script>
+    <script src="../js/hamburger.js"></script>
+
 
 
 </body>

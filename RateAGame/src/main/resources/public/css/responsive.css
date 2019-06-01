@@ -1,10 +1,16 @@
 /** Responsivitet av webbplats börjar här **/ 
 /** Första Brytpunkt **/ 
-@media screen and (min-width: 820px){
+@media screen and (min-width: 630px){
 		#topNav {
 			display: none;
 		}
+}
 
+@media screen and (max-width: 820px){
+
+        #menu > ul >li > a {
+            font-size: 13px;
+    }
 }
 @media screen and (max-width: 1100px){ 
 	body {
@@ -37,6 +43,13 @@
 		
 		}
     
+        #titlecontent {
+            width: 70%;
+        }
+
+        #votebutton {
+            margin-left: 390%;
+        }
     /** Bildspel **/
     
     #middle-container {
@@ -94,7 +107,13 @@
 
 }
 @media screen and (max-width: 630px){
-	
+    #wrapper {
+        width: 100%;
+    }
+
+    #mainwrap {
+        width: 100%;
+    }
 	footer > p> a {
 		font-size: 12px;
 	}
@@ -129,7 +148,6 @@
     }
     #searchbar {
     	width: 70%;
-    
     }
     
     .holder {
