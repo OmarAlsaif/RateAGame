@@ -620,11 +620,7 @@ form#searchbar::after {
     justify-content: space-between;
 }
 
-<<<<<<< HEAD
 #bottom-container> p {
-=======
-#bottom-container>p {
->>>>>>> f5b4c9f7ce46231a9e51ae94be18313f2f168cd8
     border-bottom: 1px solid rgba(75, 75, 75, 0.5);
     display: flex;
     display: row;
@@ -733,20 +729,20 @@ form#searchbar::after {
     background-repeat: no-repeat;
 }
 
-#news>figure>a>img {
+#news> figure > a > img {
     margin-right: 5px;
     height: 146.391px;
     width: 100%;
 }
 
-#news>figure>figcaption {
+#news> figure > figcaption {
     padding: 5px;
     font-size: 17px;
     font-weight: normal;
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-#news>figure {
+#news> figure {
     width: 20%;
     margin: 1%;
     padding: 15px;
@@ -1085,7 +1081,6 @@ label {
 
 .rating {
     float: right;
-<<<<<<< HEAD
 }
 
 .rating span {
@@ -1093,15 +1088,6 @@ label {
     position: relative;
 }
 
-=======
-}
-
-.rating span {
-    float: right;
-    position: relative;
-}
-
->>>>>>> f5b4c9f7ce46231a9e51ae94be18313f2f168cd8
 .rating span input {
     position: absolute;
     top: 0px;
@@ -1343,6 +1329,10 @@ footer>p>a {
     #votebutton {
         margin-left: 320%;
     }
+       #viewrating {
+    	margin-right: 225px;
+       }
+   
 }
 
 @media screen and (max-width: 1630px) {
@@ -1360,5 +1350,11 @@ footer>p>a {
 @media screen and (max-width: 1536px) {
     #votebutton {
         margin-left: 197%;
+    }
+}
+@media screen and (max-width: 1920px) {
+    #votebutton {
+        margin-left: 290%;
+    	margin-top: 75px;
     }
 }

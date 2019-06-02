@@ -729,20 +729,20 @@ form#searchbar::after {
     background-repeat: no-repeat;
 }
 
-#news>figure>a>img {
+#news> figure > a > img {
     margin-right: 5px;
     height: 146.391px;
     width: 100%;
 }
 
-#news>figure>figcaption {
+#news> figure > figcaption {
     padding: 5px;
     font-size: 17px;
     font-weight: normal;
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-#news>figure {
+#news> figure {
     width: 20%;
     margin: 1%;
     padding: 15px;
@@ -1329,6 +1329,10 @@ footer>p>a {
     #votebutton {
         margin-left: 320%;
     }
+       #viewrating {
+    	margin-right: 225px;
+       }
+   
 }
 
 @media screen and (max-width: 1630px) {
@@ -1346,5 +1350,11 @@ footer>p>a {
 @media screen and (max-width: 1536px) {
     #votebutton {
         margin-left: 197%;
+    }
+}
+@media screen and (max-width: 1920px) {
+    #votebutton {
+        margin-left: 290%;
+    	margin-top: 75px;
     }
 }
