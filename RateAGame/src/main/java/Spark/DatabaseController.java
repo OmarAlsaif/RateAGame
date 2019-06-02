@@ -1,10 +1,12 @@
 package Spark;
-import java.sql.Connection;
+
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+
+/**
+ * Klass som initialiserar databasen med tabeller och information som används av hemsidan
+ *
+ */
 
 public class DatabaseController extends DatabaseConnection {
 	
@@ -16,6 +18,7 @@ public class DatabaseController extends DatabaseConnection {
 					"username VARCHAR(25) NOT NULL PRIMARY KEY, " +
 					"password VARCHAR(25) NOT NULL" +
 					 ")";
+			
 			
 			String sql3 = "CREATE TABLE IF NOT EXISTS games (" +
 					"GameID INT PRIMARY KEY, " +
@@ -50,7 +53,8 @@ public class DatabaseController extends DatabaseConnection {
 			stmt.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}	
+		}
+		
 	}
 	
 	public void insertGame (int GameID, String GameTitle, String GameInfo, String ReleaseDate, String Publishers, String Genre, String GameModes, String PlayerPerspective, String LinkOfficialSite, String LinkTrailer, String LinkPoster, String LinkCover, String LinkPicture1, String LinkPicture2, String LinkPicture3) {
@@ -81,6 +85,7 @@ public class DatabaseController extends DatabaseConnection {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 	
 	public void updateGame(int GameID, String GameTitle, String GameInfo, String ReleaseDate, String Publishers,
@@ -109,6 +114,7 @@ public class DatabaseController extends DatabaseConnection {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+
 	}
 	
 	public void initializeGames() {
@@ -122,8 +128,8 @@ public class DatabaseController extends DatabaseConnection {
 			st.setInt(2, 1); //gameid 1
 			
 			st.setInt(1, 0);
-			st.setInt(2, 2); //gameid 2			
-
+			st.setInt(2, 2); //gameid 2
+			
 			st.setInt(1, 0);
 			st.setInt(2, 3); //gameid 2
 			
@@ -141,7 +147,6 @@ public class DatabaseController extends DatabaseConnection {
 			
 			st.setInt(1, 0);
 			st.setInt(2, 8); //gameid 2
-
 			st.executeUpdate();
 			st.close();
 		} catch (SQLException e) {

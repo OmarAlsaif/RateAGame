@@ -24,7 +24,7 @@
         <nav id="navigation">
             <a href="../index.html" id="title">Rate A Game</a>
             <a href="../index.html"><img id="logo" src="../img/RAG logo.png" /></a>
-            <form action="Search" id="searchbar">
+            <form action="../Search" id="searchbar">
                 <input type="text" name="searchbar" placeholder="Search here...">
                 <button type="submit" value="Search" class="Search"><i class="fa fa-search"></i></button>
             </form>
@@ -32,7 +32,7 @@
                 <ul>
                     <li>
                         #if($loggedIn == "true")
-                        <a href="logout">
+                        <a href="../logout">
                             #else
                             <a href="../login.html">
                                 #end
@@ -197,7 +197,17 @@
     <script src="../js/error.js"></script>
     <script src="../js/commentFunction.js"></script>
     <script src="../js/hamburger.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
+    	<script type="text/javascript">
+  
+  			var nullRating = "$nullRating";
+			
+  			if (nullRating == "true") {
+				swal("Vote could not be submitted", "Please select a star", "error");
+			}
+
+		</script>
 </body>
 
 </html>

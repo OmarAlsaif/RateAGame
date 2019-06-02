@@ -1,13 +1,20 @@
 package Spark;
+
 import java.sql.*;
-import java.util.List;
+
+/**
+ * Denna klass kör DatabaseController för att initialisera databasen
+ * och skickar in den information som hemsidan använder
+ */
 
 public class DatabaseConnection {
 
 	// inlogg till databas
+
 	String jdbUrl = "jdbc:postgresql://localhost:5432/postgres";
 	String username = "postgres";
 	String password = "password";
+
 	Connection conn = null;
 	Statement stmt = null;
 	ResultSet rs = null;
@@ -38,18 +45,20 @@ public class DatabaseConnection {
 
 			if (conn != null) {
 				conn.close();
-			}			
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 	}
 
 	public static void main(String[] args) {
 		System.out.println("Startar!");
+
 		DatabaseController ctrl = new DatabaseController();
 		ctrl.connect();
 		ctrl.createTables();
-		//ctrl.updateItem(1, 0, "Live the epic odyssey of a legendary Spartan hero, write your own epic odyssey and become a legendary Spartan hero in Assassin's Creed Odyssey, an inspiring adventure where you must forge your destiny and define your own path in a world on the brink of tearing itself apart. Influence how history unfolds as you experience a rich and ever-changing world shaped by your decisions.");
+//		ctrl.updateItem(1, 0, "Live the epic odyssey of a legendary Spartan hero, write your own epic odyssey and become a legendary Spartan hero in Assassin's Creed Odyssey, an inspiring adventure where you must forge your destiny and define your own path in a world on the brink of tearing itself apart. Influence how history unfolds as you experience a rich and ever-changing world shaped by your decisions.");
 
 		//GameID, Titel, Spelbeskrivning, Release Date, publishers, genre, gameModes, playerPerspective, linkOfficialSite, linkTrailer, linkPoster, linkCover, String linkPicture1, String linkPicture2, String linkPicture3
 		ctrl.insertGame(1, "Star Wars Battlefront", "Star Wars™ Battlefront™ is the ultimate Star Wars battle experience, brought to life by the creators of Battlefield. Fight in epic Star Wars battles on iconic planets and rise through the ranks playing as the heroic Rebellion or the evil Galactic Empire.", "17 november 2015", "Electronic Arts", "FPS", "Multiplayer, Singleplayer", "First Person/Third Person", "http://starwars.ea.com/starwars/battlefront", "https://www.youtube.com/embed/V2xp-qtUlsQ", "https://media.contentapi.ea.com/content/legacy/starwars-ea-com/en_US/starwars/battlefront/news-articles/future-of-battlefront-2017/_jcr_content/featuredImage/renditions/rendition1.img.jpg", "https://g2anewsprod02storage.s3.amazonaws.com/app/uploads/2018/10/star-wars-battlefront-2-cover-art.jpg", "https://miro.medium.com/max/836/1*2_SPNCD0hmTjcNU996NEMA.jpeg", "https://cdn.cdkeys.com/media/catalog/product/s/t/star_wars_battlefront_ii_2_pc_0a_0astar_wars_battlefront_ii_2_pc.jpg", "https://data3.origin.com/content/dam/originx/web/app/games/star-wars/star-wars-battlefront-2/screenshots/Walrus_pdp_screenhi_1920x1080_en_ww_KashyyykVista_v1.jpg");
@@ -72,13 +81,12 @@ public class DatabaseConnection {
 		ctrl.insertGame(18, "Fifa 19", "FIFA 19 is a football simulation video game developed by EA Vancouver as part of Electronic Arts' FIFA series. Announced on 6 June 2018 for its E3 2018 press conference, it was released on 28 September 2018 for PlayStation 3, PlayStation 4, Xbox 360, Xbox One, Nintendo Switch, and Microsoft Windows.", "28 September 2018", "EA Sports", "Sports", "Single-player, Multiplayer", "Third Person", "https://www.ea.com/games/fifa/fifa-19", "https://www.youtube.com/embed/zX0AV6yxyrQ", "https://i0.wp.com/glitched.africa/wp-content/uploads/2019/02/blog-fifa-19-cover-new-big.jpg?fit=1920%2C1080&ssl=1", "https://upload.wikimedia.org/wikipedia/en/thumb/7/71/FIFA_19_cover.jpg/220px-FIFA_19_cover.jpg", "https://media.contentapi.ea.com/content/dam/ea/fifa/fifa-19/images/2019/02/fifa19-mosaic-4up-features-01-1x1.png.adapt.crop1x1.png", "https://media.contentapi.ea.com/content/dam/ea/fifa/fifa-19/images/2019/02/fifa19-mosaic-4up-features-02-1x1.png.adapt.crop1x1.png", "https://media.contentapi.ea.com/content/dam/ea/fifa/fifa-19/images/2019/02/fifa19-mosaic-4up-features-1x1.png.adapt.crop1x1.png");
 		ctrl.insertGame(19, "Assassin's Creed Odyssey", "Assassin's Creed Odyssey is an action role-playing video game developed by Ubisoft Quebec and published by Ubisoft. It is the 11th major installment, and 21st overall, in the Assassin's Creed series and the successor to 2017's Assassin's Creed Origins. Set in the year 431 BC, the plot tells a fictional history of the Peloponnesian War between Athens and Sparta", "5 October 2019", "Ubisoft", "Action role-playing, Stealth", "Single-player", "Third Person", "https://assassinscreed.ubisoft.com/game/en-us/home", "https://www.youtube.com/embed/s_SJZSAtLBA", "https://wallpapersite.com/images/wallpapers/kassandra-3840x2160-assassins-creed-odyssey-4k-15456.jpg", "https://images.g2a.com/newlayout/323x433/1x1x0/3d2d9022872a/5b1fcc2c5bafe3ba4d26dbb4", "https://www.xboxwallpapers.net/1920x1080/assassins-creed-odyssey-action.jpg", "https://wallpapershome.com/images/wallpapers/assassin-039-s-creed-odyssey-3840x2160-assassins-creed-odyssey-e3-2018-screenshot-4k-19099.jpg", "https://twinfinite.net/wp-content/uploads/2018/09/4kwallpaper9.jpg");
 		ctrl.insertGame(20, "Rocket League", "Rocket League is a vehicular soccer video game developed and published by Psyonix. The game was first released for Microsoft Windows and PlayStation 4 in July 2015, with ports for Xbox One, macOS, Linux, and Nintendo Switch being released later on. In June 2016, 505 Games began distributing a physical retail version for PlayStation 4 and Xbox One, with Warner Bros. Interactive Entertainment taking over those duties by the end of 2017.", "7 July 2015", "Psyonix", "Sports", "Single-player, Multiplayer", "Third Person", "https://www.rocketleague.com/", "https://www.youtube.com/embed/Vawwy2eu5sA", "https://stmed.net/sites/default/files/rocket-league-hd-wallpapers-33579-2383215.jpg", "https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Rocket_League.jpg/220px-Rocket_League.jpg", "https://rocketleague.media.zestyio.com/rl_gameplay_june-2018_3_26.f44ca8609585ba611e1277fc600f5cc1.jpg", "https://rocketleague.media.zestyio.com/rl_cross-play_asset_no-text.f44ca8609585ba611e1277fc600f5cc1.jpg", "https://rocketleague.media.zestyio.com/rumble-key-art.f44ca8609585ba611e1277fc600f5cc1.jpg");
-		
 		//för att uppdatera ett spel
-		//ctrl.updateGame(1, "Star Wars Battlefront", "Star Wars™ Battlefront™ is the ultimate Star Wars battle experience, brought to life by the creators of Battlefield. Fight in epic Star Wars battles on iconic planets and rise through the ranks playing as the heroic Rebellion or the evil Galactic Empire.", "17 november 2015", "Electronic Arts", "FPS", "Multiplayer, Singleplayer", "First Person/Third Person", "http://starwars.ea.com/starwars/battlefront", "https://www.youtube.com/embed/V2xp-qtUlsQ", "https://media.contentapi.ea.com/content/legacy/starwars-ea-com/en_US/starwars/battlefront/news-articles/future-of-battlefront-2017/_jcr_content/featuredImage/renditions/rendition1.img.jpg", "https://g2anewsprod02storage.s3.amazonaws.com/app/uploads/2018/10/star-wars-battlefront-2-cover-art.jpg", "https://miro.medium.com/max/836/1*2_SPNCD0hmTjcNU996NEMA.jpeg", "https://cdn.cdkeys.com/media/catalog/product/s/t/star_wars_battlefront_ii_2_pc_0a_0astar_wars_battlefront_ii_2_pc.jpg", "https://data3.origin.com/content/dam/originx/web/app/games/star-wars/star-wars-battlefront-2/screenshots/Walrus_pdp_screenhi_1920x1080_en_ww_KashyyykVista_v1.jpg");
+//		ctrl.updateGame(1, "Star Wars Battlefront", "Star Wars™ Battlefront™ is the ultimate Star Wars battle experience, brought to life by the creators of Battlefield. Fight in epic Star Wars battles on iconic planets and rise through the ranks playing as the heroic Rebellion or the evil Galactic Empire.", "17 november 2015", "Electronic Arts", "FPS", "Multiplayer, Singleplayer", "First Person/Third Person", "http://starwars.ea.com/starwars/battlefront", "https://www.youtube.com/embed/V2xp-qtUlsQ", "https://media.contentapi.ea.com/content/legacy/starwars-ea-com/en_US/starwars/battlefront/news-articles/future-of-battlefront-2017/_jcr_content/featuredImage/renditions/rendition1.img.jpg", "https://g2anewsprod02storage.s3.amazonaws.com/app/uploads/2018/10/star-wars-battlefront-2-cover-art.jpg", "https://miro.medium.com/max/836/1*2_SPNCD0hmTjcNU996NEMA.jpeg", "https://cdn.cdkeys.com/media/catalog/product/s/t/star_wars_battlefront_ii_2_pc_0a_0astar_wars_battlefront_ii_2_pc.jpg", "https://data3.origin.com/content/dam/originx/web/app/games/star-wars/star-wars-battlefront-2/screenshots/Walrus_pdp_screenhi_1920x1080_en_ww_KashyyykVista_v1.jpg");
 		ctrl.disconnect();
 		
 	}
 		
-}
+	}
 		
 
