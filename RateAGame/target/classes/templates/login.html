@@ -15,20 +15,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/responsive.css">
     <script src="js/js libary/modernizr-2.6.2.min.js"></script>
-
 </head>
 
 <body>
     <header class="header">
         <nav id="navigation">
             <a href="index.html" id="title">Rate A Game</a>
-            <a href="index.html"><img id="logo" src="img/RAG logo.png"/></a>
-            
-			<form action="Search" id="searchbar">
-				<input type="text" name="searchbar" placeholder="Search here...">
-				<button type="submit" value="Search" class="Search"><i class="fa fa-search"></i></button>
-			</form>
-			
+            <a href="index.html"><img id="logo" src="img/RAG logo.png" /></a>
+            <form action="Search" id="searchbar">
+                <input type="text" name="searchbar" placeholder="Search here...">
+                <button type="submit" value="Search" class="Search"><i class="fa fa-search"></i></button>
+            </form>
             <div id="menu">
                 <ul>
                     <li>
@@ -37,90 +34,91 @@
                             #else
                             <a href="login.html">
                                 #end
-
                                 #if($loggedIn == "true")
                                 Sign Out
                                 #else
                                 Sign In
                                 #end</a></li>
-					<li class="active"><a href="top10.html">Top Games</a></li>
+                    <li class="active"><a href="top10.html">Top Games</a></li>
                     <li><a href="news1.html">News</a></li>
                     <li><a href="about.html">About</a></li>
-					<li class="slide"></li>
+                    <li class="slide"></li>
+                </ul>
+            </div>
 
-				</ul>
+            <div id="topNav" class="resNavigation">
+                <span id="closebtn" onclick="navToggle()">
+                    <span class="line1"></span>
+                    <span class="line2"></span>
+                    <span class="line3"></span>
+                </span>
+                <div class="resLogo">
+                    <img src="" />
+                </div>
+                <ul class="menulist">
+                	<li><a class="menuitems" href="index.html">Home</a></li>
+                    <li><a class="menuitems" href="login.html">Sign In</a></li>
+                    <li><a class="menuitems" href="top10.html">Top Games</a></li>
+                    <li><a class="menuitems" href="news1.html">News</a></li>
+                    <li><a class="menuitems" href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div id="main">
+            </div>
+        </nav>
+    </header>
 
-			</div>
-			
-		 <div id="topNav" class="resNavigation">
-		  		<span id="closebtn" onclick="navToggle()">
-		      <span class="line1"></span>
-		      <span class="line2"></span>
-		      <span class="line3"></span>
-		  </span>
-		<div class="resLogo">
-		  <img src=""/>
-		</div>
-		
-		<ul class="menulist">
-		  <li><a class="menuitems" href="login.html">Sign In</a></li>		
-		  <li><a class="menuitems" href="top10.html">Top Games</a></li>				
-		  <li><a class="menuitems" href="news1.html">News</a></li>
-		  <li><a class="menuitems" href="about.html">About</a></li>
-		</ul>			
-	</div>
-
-<div id="main">
-</div>
-		</nav>
-	</header>
     <div id="wrapper">
         <main>
             <div class="login-page">
                 <div class="form">
                     <form action="RegisterServlet" class="reg-form">
-                        <input type="text" name="txtName"placeholder="Username"pattern="[A-Za-z0-9_]{3,15}" required title="3 to 15 characters, text and numbers only"><br>
-                        <input type="password" id="txtPass1" name="txtPass1" placeholder="Enter Password..." pattern="[A-Za-z0-9_]{5,15}" required title="5 to 15 characters, text and numbers only"><br>
-                        <input type="password" id="txtPass2" name="txtPass2" placeholder="Re-Enter Password..." pattern="[A-Za-z0-9_]{5,15}" required title="5 to 15 characters, text and numbers only"><br>
+                        <input type="text" name="txtName" placeholder="Username" pattern="[A-Za-z0-9_]{3,15}" required
+                            title="3 to 15 characters, text and numbers only"><br>
+                        <input type="password" id="txtPass1" name="txtPass1" placeholder="Enter Password..."
+                            pattern="[A-Za-z0-9_]{5,15}" required title="5 to 15 characters, text and numbers only"><br>
+                        <input type="password" id="txtPass2" name="txtPass2" placeholder="Re-Enter Password..."
+                            pattern="[A-Za-z0-9_]{5,15}" required title="5 to 15 characters, text and numbers only"><br>
                         <input type="submit" value="REGISTER" class="button">
-                        <p class="message">Already Registered? <a href="#">Log In</a></p>                  
+                        <p class="message">Already Registered? <a href="#">Log In</a></p>
                     </form>
-                    <form action="LoginServlet1" class="login-form"> 
-                        <input type="text" name="loginName"placeholder="Username..."pattern="[A-Za-z0-9_]{3,15}" required title="3 to 15 characters"><br>
-                        <input type="password" id = "testbutton" name="loginPass"placeholder="Password..."pattern="[A-Za-z0-9_]{5,15}"  required title="5 to 15 characters"><br>
+                    <form action="LoginServlet1" class="login-form">
+                        <input type="text" name="loginName" placeholder="Username..." pattern="[A-Za-z0-9_]{3,15}"
+                            required title="3 to 15 characters"><br>
+                        <input type="password" id="testbutton" name="loginPass" placeholder="Password..."
+                            pattern="[A-Za-z0-9_]{5,15}" required title="5 to 15 characters"><br>
                         <input type="submit" value="Sign In" class="button">
-                        <p class="message">Not Signed Up? <a href="#">Sign Up</a></p>        
+                        <p class="message">Not Signed Up? <a href="#">Sign Up</a></p>
                     </form>
                 </div>
             </div>
         </main>
     </div>
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/pswdcheck.js"></script>
-    
+
     <footer>
         <p>
             Rate A Game<br>
             Copyright 2019
         </p>
     </footer>
-   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="js/headerFunction.js"></script>
-  <script src="js/loginFunction.js"></script>
-  <script type="text/javascript">
-  
-  	var userExists = "$userExists";
-  	var wrongPassword = "$wrongPassword";
-			if (userExists == "true") {
-				swal("Oops", "Username already exists", "error");
-			}
 
-			if (wrongPassword == "true") {
-				swal("Oops", "Incorrect username or password", "error");
-			}
-		</script>
-		<script src="js/hamburger.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/headerFunction.js"></script>
+    <script src="js/loginFunction.js"></script>
+    <script type="text/javascript">
+        var userExists = "$userExists";
+        var wrongPassword = "$wrongPassword";
+        if (userExists == "true") {
+            swal("Oops", "Username already exists", "error");
+        }
+        if (wrongPassword == "true") {
+            swal("Oops", "Incorrect username or password", "error");
+        }
+    </script>
+    <script src="js/hamburger.js"></script>
+    
 </body>
 
 </html>

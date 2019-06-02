@@ -18,7 +18,7 @@ close.addEventListener("click", function () {
 });
 
 function navToggle() {
-	if (nav.style.height <= "275px") {
+	if (nav.style.height <= "300px") {
 		nav.style.height = "50px";
 		main.style.marginTop = "50px";
 		var i = 0;
@@ -30,7 +30,7 @@ function navToggle() {
 	}
 
 	else if (nav.style.height <= "50px") {
-		nav.style.height = "275px";
+		nav.style.height = "300px";
 		main.style.marginTop = "275px";
 		var i = 0;
 		for (i = 0; i < menu.length; i++) {
