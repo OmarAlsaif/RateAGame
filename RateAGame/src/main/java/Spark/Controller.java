@@ -1,7 +1,5 @@
 package Spark;
-
 import static spark.Spark.get;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,10 +9,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
@@ -32,11 +28,9 @@ public final class Controller {
 	
     public static void main(final String[] args) {
     	
-    	DatabaseLogin login = new DatabaseLogin();
-
+		DatabaseLogin login = new DatabaseLogin();
     	staticFileLocation("/public"); 
-    
-        
+
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();        
             return new ModelAndView(model, "templates/index.html");
@@ -46,7 +40,6 @@ public final class Controller {
 			Map<String, Object> model = new HashMap<>();
 			int id = Integer.parseInt(request.params("id"));
 			model.put("id", request.params("id"));
-			
 			String userID = request.session().attribute("loginName");
             if (null != userID) {
             	model.put("loggedIn", "true");
@@ -87,7 +80,6 @@ public final class Controller {
 					} else {
 					rating = 0;
 					}
-
 				model.put("rating", rating);
 				while (rs.next()) {
 					game = new Game(
@@ -155,14 +147,12 @@ public final class Controller {
         
         get("/top10.html", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            
             try {
             	String query = "SELECT gameID, (SELECT gameTitle FROM games games WHERE gameid = ratings.gameid) as query2, (SELECT gameInfo FROM games games WHERE gameid = ratings.gameid) as query3, (SELECT linkcover FROM games games WHERE gameid = ratings.gameid) as query4, AVG(CAST(vote AS FLOAT)) AS avg_score FROM ratings GROUP BY gameID ORDER BY avg_score DESC;";
 				Connection con = DriverManager.getConnection(login.getJdbUrl(), login.getUsername(),
 						login.getPassword());
 				PreparedStatement stmt = con.prepareStatement(query);
 				ResultSet rs = stmt.executeQuery();
-
 				ArrayList<Game> games = new ArrayList<Game>();
 				while (rs.next()) {
 					Game game = new Game(
@@ -386,11 +376,10 @@ public final class Controller {
 									rs.getString("linkcover"),
 									rs.getString("linkpicture1"),
 									rs.getString("linkpicture2"),
-									rs.getString("linkpicture3"));
-							
-							games.add(game);
-							
+									rs.getString("linkpicture3"));							
+							games.add(game);							
 						}
+
 						model.put("games", games);
 						con.close();
 						rs.close();
@@ -403,8 +392,7 @@ public final class Controller {
 				
 		        get("/about.html", (request, response) -> {
 		            Map<String, Object> model = new HashMap<>();
-		            System.out.println(request.pathInfo());
-		            
+		            System.out.println(request.pathInfo());		            
 		            return new ModelAndView(model, "templates/about.html");
 		        }, new VelocityTemplateEngine());
 		

@@ -1,6 +1,5 @@
 package Spark;
 
-
 public class Game {
 	int GameID;
 	String GameTitle;
@@ -26,81 +25,107 @@ public class Game {
 	public double getRating() {
 		return rating;
 	}
+
 	public void setGameID(int gameID) {
 		GameID = gameID;
 	}
+
 	public String getGameTitle() {
 		return GameTitle;
 	}
+
 	public void setGameTitle(String gameTitle) {
 		GameTitle = gameTitle;
 	}
+
 	public String getGameInfo() {
 		return GameInfo;
 	}
+
 	public void setGameInfo(String gameInfo) {
 		GameInfo = gameInfo;
 	}
+
 	public String getReleaseDate() {
 		return ReleaseDate;
 	}
+
 	public void setReleaseDate(String releaseDate) {
 		ReleaseDate = releaseDate;
 	}
+
 	public String getPublishers() {
 		return Publishers;
 	}
+
 	public void setPublishers(String publishers) {
 		Publishers = publishers;
 	}
+
 	public String getGenre() {
 		return Genre;
 	}
+
 	public void setGenre(String genre) {
 		Genre = genre;
 	}
+
 	public String getGameModes() {
 		return GameModes;
 	}
+
 	public void setGameModes(String gameModes) {
 		GameModes = gameModes;
 	}
+
 	public String getPlayerPerspective() {
 		return PlayerPerspective;
 	}
+	
 	public void setPlayerPerspective(String playerPerspective) {
 		PlayerPerspective = playerPerspective;
 	}
+
 	public String getLinkOfficialSite() {
 		return LinkOfficialSite;
 	}
+
 	public void setLinkOfficialSite(String linkOfficialSite) {
 		LinkOfficialSite = linkOfficialSite;
 	}
+
 	public String getLinkTrailer() {
 		return LinkTrailer;
 	}
+
 	public void setLinkTrailer(String linkTrailer) {
 		LinkTrailer = linkTrailer;
 	}
+
 	public String getLinkPoster() {
 		return LinkPoster;
 	}
+
 	public void setLinkPoster(String linkPoster) {
 		LinkPoster = linkPoster;
 	}
+
 	public String getLinkPicture1() {
 		return LinkPicture1;
 	}
+
 	public void setLinkPicture1(String linkPicture1) {
 		LinkPicture1 = linkPicture1;
 	}
+
 	public String getLinkPicture2() {
 		return LinkPicture2;
 	}
+
 	public void setLinkPicture2(String linkPicture2) {
 		LinkPicture2 = linkPicture2;
 	}
+
 	public String getLinkPicture3() {
 		return LinkPicture3;
 	}
@@ -108,6 +133,7 @@ public class Game {
 	public String getLinkCover() {
 		return LinkCover;
 	}
+
 	public void setLinkPicture3(String linkPicture3) {
 		LinkPicture3 = linkPicture3;
 	}
@@ -142,13 +168,10 @@ public class Game {
 		this.LinkCover = LinkCover;
 	}
 
-	
 	//konstruktor för att skicka ett objekt till index.html
 	public Game(int gameID, String linkCover, String gameTitle) {
 		this.GameID = gameID;
 		this.LinkCover = linkCover;
 		this.GameTitle = gameTitle;
 	}
-    
-
 }

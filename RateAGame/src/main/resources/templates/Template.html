@@ -24,12 +24,10 @@
         <nav id="navigation">
             <a href="../index.html" id="title">Rate A Game</a>
             <a href="../index.html"><img id="logo" src="../img/RAG logo.png" /></a>
-
             <form action="Search" id="searchbar">
                 <input type="text" name="searchbar" placeholder="Search here...">
                 <button type="submit" value="Search" class="Search"><i class="fa fa-search"></i></button>
             </form>
-
             <div id="menu">
                 <ul>
                     <li>
@@ -38,7 +36,6 @@
                             #else
                             <a href="../login.html">
                                 #end
-
                                 #if($loggedIn == "true")
                                 Sign Out
                                 #else
@@ -49,30 +46,29 @@
                     <li><a href="../about.html">About</a></li>
                     <li class="slide"></li>
                 </ul>
-
             </div>
-              <div id="topNav" class="resNavigation">
-		  		<span id="closebtn" onclick="navToggle()">
-		      <span class="line1"></span>
-		      <span class="line2"></span>
-		      <span class="line3"></span>
-		  </span>
-		<div class="resLogo">
-		  <img src=""/>
-		</div>
-		
-		<ul class="menulist">
-		  <li><a class="menuitems" href="../login.html">Sign In</a></li>		
-		  <li><a class="menuitems" href="../top10.html">Top Games</a></li>				
-		  <li><a class="menuitems" href="../news1.html">News</a></li>
-		  <li><a class="menuitems" href="../about.html">About</a></li>
-		</ul>			
-	</div>
 
-<div id="main">
-</div>
+            <div id="topNav" class="resNavigation">
+                <span id="closebtn" onclick="navToggle()">
+                    <span class="line1"></span>
+                    <span class="line2"></span>
+                    <span class="line3"></span>
+                </span>
+                <div class="resLogo">
+                    <img src="" />
+                </div>
+                <ul class="menulist">
+                    <li><a class="menuitems" href="../login.html">Sign In</a></li>
+                    <li><a class="menuitems" href="../top10.html">Top Games</a></li>
+                    <li><a class="menuitems" href="../news1.html">News</a></li>
+                    <li><a class="menuitems" href="../about.html">About</a></li>
+                </ul>
+            </div>
+            <div id="main">
+            </div>
         </nav>
     </header>
+
     <div id="wrapper">
         <div id="titlehead">
             <img src="$game.getLinkPoster()" alt="Game picture">
@@ -116,7 +112,6 @@
                         <input type="radio" id="star1" name="rate" value="1" />
                         <label for="star1" title="text">1 star</label>
                         <div class="containerbtn">
-
                             <button type="submit" id="votebutton" value="Vote">
                                 <span>
                                     Vote!
@@ -152,16 +147,13 @@
                             target="_blank">$game.getLinkOfficialSite()</a>
                     </p>
                 </div>
-
             </div>
             <div id="titleinfo">
-
                 <p><span class="infoBold">Publishers:</span> $game.getPublishers() </p>
                 <p><span class="infoBold">Release date:</span> $game.getReleaseDate()</p>
                 <p><span class="infoBold">Genre:</span> $game.getGenre() </p>
                 <p><span class="infoBold">Game Modes:</span> $game.getGameModes()</p>
                 <p><span class="infoBold">Player Perspectives:</span> $game.getPlayerPerspective() </p>
-
             </div>
         </article>
         <div id="co-titlecontent">
@@ -178,14 +170,15 @@
                 <label for="name">Name: </label>
                 <input type="text" id="name"><br>
                 <label for="bodytext">Text: </label>
-                <textarea rows="5" cols="30" id="bodytext" maxlength="100" placeholder="(maximum 100 characters)"></textarea><br>
+                <textarea rows="5" cols="30" id="bodytext" maxlength="100"
+                    placeholder="(maximum 100 characters)"></textarea><br>
                 <input type="button" id="addComment" value="Add Comment">
             </div>
             <div id="container">
-
             </div>
         </div>
     </div>
+
     <footer>
         <p>
             Projektgrupp 6
@@ -198,13 +191,12 @@
             <a href="mailto:simon.gustafsson@gmail.com">Click to send Email</a>
         </p>
     </footer>
+
     <script src="../js/headerFunction.js"></script>
-    <script src="../js/error.js"></script>   
+    <script src="../js/error.js"></script>
     <script src="../js/commentFunction.js"></script>
     <script src="../js/hamburger.js"></script>
-
-
-
+    
 </body>
 
 </html>
