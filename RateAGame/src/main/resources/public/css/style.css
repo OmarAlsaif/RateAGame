@@ -855,7 +855,7 @@ form#searchbar::after {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 250px;
+    height: auto;
     width: 20%;
     border: 1px rgb(75, 75, 75) ;
     margin: 10px;
@@ -864,6 +864,9 @@ form#searchbar::after {
     line-height: 15px;
 }
 
+.infoBold {
+    font-weight: bold;
+}
 #co-titlecontent {
     background-color: rgb(75, 75, 75);
     display: flex;
