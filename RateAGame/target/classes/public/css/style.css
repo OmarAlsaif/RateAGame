@@ -620,7 +620,11 @@ form#searchbar::after {
     justify-content: space-between;
 }
 
+<<<<<<< HEAD
 #bottom-container> p {
+=======
+#bottom-container>p {
+>>>>>>> f5b4c9f7ce46231a9e51ae94be18313f2f168cd8
     border-bottom: 1px solid rgba(75, 75, 75, 0.5);
     display: flex;
     display: row;
@@ -1081,6 +1085,7 @@ label {
 
 .rating {
     float: right;
+<<<<<<< HEAD
 }
 
 .rating span {
@@ -1088,6 +1093,15 @@ label {
     position: relative;
 }
 
+=======
+}
+
+.rating span {
+    float: right;
+    position: relative;
+}
+
+>>>>>>> f5b4c9f7ce46231a9e51ae94be18313f2f168cd8
 .rating span input {
     position: absolute;
     top: 0px;

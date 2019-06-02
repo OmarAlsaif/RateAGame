@@ -28,8 +28,7 @@
     }
 		
 	#searchbar {
-		width: 45%;
-		margin-left: 100px;
+		width: 55%;
 			
     }
 		
@@ -266,6 +265,7 @@
 
 /** Tredje Brytpunkt **/ 
 @media screen and (min-width: 479px) { 
+	
     
     /** Bildspel **/
 
