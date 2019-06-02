@@ -19,7 +19,7 @@ for (var i in elements) {
     }
 }
 
-// timeAgo Function
+// timeAgo funktionen
 (function timeAgo(selector) {
 
     var templates = {
@@ -43,7 +43,7 @@ for (var i in elements) {
 
     var timer = function (time) {
         if (!time) return;
-        time = time.replace(/\.\d+/, ""); // remove milliseconds
+        time = time.replace(/\.\d+/, ""); // tar bort millisekond
         time = time.replace(/-/, "/").replace(/-/, "/");
         time = time.replace(/T/, " ").replace(/Z/, " UTC");
         time = time.replace(/([\+\-]\d\d)\:?(\d\d)/, " $1$2"); // -04:00 -> -0400
@@ -67,7 +67,7 @@ for (var i in elements) {
             $this.innerHTML = timer($this.getAttribute('title') || $this.getAttribute('datetime'));
         }
     }
-    // update time every minute
+    // updateras varje minut
     setTimeout(timeAgo, 60000);
 
 })();

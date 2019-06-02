@@ -585,6 +585,9 @@ form#searchbar::after {
     display: flex;
     overflow: auto;
     flex-direction: row;
+    width:100%;
+    border-bottom: 1px solid rgba(75, 75, 75, 0.5);
+    border-top: 1px solid rgba(75, 75, 75, 0.5);
 }
 
 #middle-second>p {
@@ -617,7 +620,7 @@ form#searchbar::after {
     justify-content: space-between;
 }
 
-#bottom-container>p {
+#bottom-container> p {
     border-bottom: 1px solid rgba(75, 75, 75, 0.5);
     display: flex;
     display: row;

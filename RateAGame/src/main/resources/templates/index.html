@@ -7,8 +7,9 @@
     <title>Rate A Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-    <link rel="stylesheet" href="css/preload.css">
+    <link rel="stylesheet" href="css/preload">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/picScroll.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.4.0.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="css/animate.css" />
@@ -222,74 +223,112 @@
         </div>
 
         <div id="middle-second">
-            <p>
-                <a href="game/4"><img src="$games[3].getLinkCover()" alt="Diablo 3 Cover"></a>
-                $games[3].getGameTitle()
-            </p>
-            <p>
-                <a href="game/3"><img src="$games[2].getLinkCover()" alt="GTA 5 Cover"></a>
-                $games[2].getGameTitle()
-            </p>
-            <p>
-                <a href="game/2"><img src="$games[1].getLinkCover()" alt="Anthem Cover"></a>
-                $games[1].getGameTitle()
-            </p>
-            <p>
-                <a href="game/5"><img src="$games[4].getLinkCover()" alt="Farcry New Dawn Cover"></a>
-                $games[4].getGameTitle()
-            </p>
-            <p>
-                <a href="game/6"><img src="$games[5].getLinkCover()" alt="Battlefield 5 Cover"></a>
-                $games[5].getGameTitle()
-            </p>
-            <p>
-                <a href="game/7"><img src="$games[6].getLinkCover()" alt="apexlegends cover"></a>
-                $games[6].getGameTitle()
-            </p>
-            <p>
-                <a href="game/8"><img src="$games[7].getLinkCover()" alt="mortal kombat 11 cover"></a>
-                $games[7].getGameTitle()
-            </p>
-            <p>
-                <a href="game/9"><img src="$games[8].getLinkCover()" alt="metroexodus cover"></a>
-                $games[8].getGameTitle()
-            </p>
-            <p>
-                <a href="game/11"><img src="$games[10].getLinkCover()" alt="Horizon Cover"></a>
-                $games[10].getGameTitle()
-            </p>
-            <p>
-                <a href="game/10"><img src="$games[9].getLinkCover()" alt="Halo Cover"></a>
-                $games[9].getGameTitle()
-            </p>
-            <p>
-                <a href="game/12"><img src="$games[11].getLinkCover()" alt="RDR2 Cover"></a>
-                $games[11].getGameTitle()
-            </p>
-            <p>
-                <a href="game/13"><img src="$games[12].getLinkCover()" alt="Fallout 76 Cover"></a>
-                $games[12].getGameTitle()
-            </p>
-            <p>
-                <a href="game/14"><img src="$games[13].getLinkCover()" alt="GOW Cover"></a>
-                $games[13].getGameTitle()
-            </p>
-            <p>
-                <a href="game/15"><img src="$games[14].getLinkCover()" alt="LOL Cover"></a>
-                $games[14].getGameTitle()
-            </p>
-            <p>
-                <a href="game/16"><img src="$games[15].getLinkCover()" alt="CS GO Cover"></a>
-                $games[15].getGameTitle()
-            </p>
-            <p>
-                <a href="game/17"><img src="$games[16].getLinkCover()" alt="Overwatch Cover"></a>
-                $games[16].getGameTitle()
-            </p>
-            <p>
-                <a href="game/1"><img src="$games[0].getLinkCover()" alt="Starwars Battlefront Cover"></a>
-                $games[0].getGameTitle()
-            </p>
+            <div id="jssor_1">
+                <div id="picSlide" data-u="slides">
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/4"><img src="$games[3].getLinkCover()" class="scrollImg" alt="Diablo 3 Cover"></a>
+                            $games[3].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/3"><img src="$games[2].getLinkCover()"  class="scrollImg" alt="GTA 5 Cover"></a>
+                            $games[2].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/2"><img src="$games[1].getLinkCover()" class="scrollImg" alt="Anthem Cover"></a>
+                            $games[1].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/5"><img src="$games[4].getLinkCover()" class="scrollImg" alt="Farcry New Dawn Cover"></a>
+                            $games[4].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/6"><img src="$games[5].getLinkCover()" class="scrollImg" alt="Battlefield 5 Cover"></a>
+                            $games[5].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/7"><img src="$games[6].getLinkCover()" class="scrollImg" alt="apexlegends cover"></a>
+                            $games[6].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/8"><img src="$games[7].getLinkCover()" class="scrollImg" alt="mortal kombat 11 cover"></a>
+                            $games[7].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/9"><img src="$games[8].getLinkCover()" class="scrollImg" alt="metroexodus cover"></a>
+                            $games[8].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/11"><img src="$games[10].getLinkCover()" class="scrollImg" alt="Horizon Cover"></a>
+                            $games[10].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/10"><img src="$games[9].getLinkCover()" class="scrollImg" alt="Halo Cover"></a>
+                            $games[9].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/12"><img src="$games[11].getLinkCover()" class="scrollImg" alt="RDR2 Cover"></a>
+                            $games[11].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/13"><img src="$games[12].getLinkCover()" class="scrollImg" alt="Fallout 76 Cover"></a>
+                            $games[12].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/14"><img src="$games[13].getLinkCover()" class="scrollImg" alt="GOW Cover"></a>
+                            $games[13].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/15"><img src="$games[14].getLinkCover()" class="scrollImg" alt="LOL Cover"></a>
+                            $games[14].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/16"><img src="$games[15].getLinkCover()" class="scrollImg" alt="CS GO Cover"></a>
+                            $games[15].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/17"><img src="$games[16].getLinkCover()" class="scrollImg" alt="Overwatch Cover"></a>
+                            $games[16].getGameTitle()
+                        </p>
+                    </div>
+                    <div>
+                        <p class="scrollTitle">
+                            <a href="game/1"><img src="$games[0].getLinkCover()" class="scrollImg" alt="Starwars Battlefront Cover"></a>
+                            $games[0].getGameTitle()
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="bottom-container">
@@ -342,7 +381,9 @@
     <script src="js/headerFunction.js"></script>
     <script src="js/newsScroller.js"></script>
     <script src="js/hamburger.js"></script>
-    
+    <script src="js/js libary/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="js/js libary/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
+    <script src="js/picScroll.js"></script>
 </body>
 
 </html>
