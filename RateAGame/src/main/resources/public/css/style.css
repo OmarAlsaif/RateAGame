@@ -1183,10 +1183,11 @@ label {
 
 #aboutOver {
     background-color: white;
-    height: 200px;
+    height: auto;
     width: 90%;
     margin: auto;
     margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -1209,21 +1210,22 @@ label {
 #aboutOver-Under {
     font-size: 25px;
     width: auto;
-    text-align: center
+    text-align: center;
 }
 
 #aboutUnder {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex-wrap: nowrap;
-    margin:10px auto;
+    flex-wrap: wrap;
+    margin:auto;
     width: 95%
 }
 
 .aboutPerson {
     background-color: rgb(243, 102, 67);
     width: 15%;
+    min-width: 150px;
     min-height: 300px;
     border-radius: 20px;
     border: solid 1px rgb(75, 75, 75);
