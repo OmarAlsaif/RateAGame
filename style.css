@@ -1,0 +1,74 @@
+body {
+  font-family: 'Charm', cursive;
+  background-image: url("../static/background.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: 100%;
+  text-align: center;
+  color: #e2e2e2;
+  font-size: 150%;
+}
+
+#title {
+  font-size: 50px;
+  margin: auto;
+  border: solid;
+  padding: 5px;
+  text-decoration: none;
+  color: rgb(14, 0, 143);
+}
+
+#title:hover {
+  color: rgb(0, 162, 255)
+}
+
+#header {
+  text-align: center;
+  width: auto;
+  height: 150px;
+  margin-top: 35px;
+  font-family: 'Charm', cursive;
+  color: #e2e2e2;
+}
+
+#all_articles>li>a {
+  list-style-type: none;
+  font-weight: bold;
+  text-decoration: underline;
+  color: rgb(14, 0, 143);
+}
+
+#all_articles>li {
+  list-style-type: none;
+}
+
+#all_articles {
+  padding: 0px;
+}
+
+#articles {
+  text-align: center;
+  color: #e2e2e2;
+  font-family: 'Charm', cursive;
+}
+
+#articles>a {
+  text-align: center;
+  color: #e2e2e2;
+  font-family: 'Charm', cursiv;
+  text-decoration: none;
+}
+
+#articles>a:hover {
+  color: rgb(14, 0, 143);
+}
+
+#all_articles>li>a:hover {
+  color: rgb(0, 162, 255);
+}
+
+ul {
+  padding: 0px;
+}
