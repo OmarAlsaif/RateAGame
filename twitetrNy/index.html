@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.googleapis.com/css?family=Pacifico"
+	rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Charm"
+	rel="stylesheet">
+<link rel="shortcut icon" href="../static/wikilogo.png" />
+
+<title>Twitetr</title>
+</head>
+
+<body>
+
+
+	<div class="container">
+		<header id="header">
+			<a href="#" id="title">Twitetr</a>
+		</header>
+		<h1>Write a tweet</h1>
+
+		<form action="/tweet">
+			<div class="form-group">
+				<label for="mytext"></label>
+
+				<textarea id="jabba2" rows="5" cols="50" name="userTweet">#foreach ($list in $list)$list #end</textarea>
+		
+				<button id="button" class="raise" type="submit">Tweeta</button>
+			</div>
+
+
+		</form>
+
+<form action="/index.html">
+  <h2>Correction</h2>
+  <div class="form-group">
+    <label for="mytext"> </label>
+    <div id="jabba" rows="5" cols="50" name="maintext"></div>
+  </div>
+</form>
+
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+		
+
+<script>
+var checkedwords = [];
+let changedCounter = 0;
+#foreach($word in $words)
+#if ($word.getChanged() == "changed")
+checkedwords.push("$word.getChanged()");
+#end
+checkedwords.push("$word.getWord()");
+#end
+var message = [];
+#foreach($list in $list)
+message.push("$list");
+#end
+var test = 1;
+
+for (let i = 0; i < checkedwords.length; i++) {
+	if (checkedwords[i] === 'changed') {
+		changedCounter++;
+	}
+}
+
+if (changedCounter==0) {
+	document.getElementById("button").style.borderColor = "green";
+}
+
+console.log(changedCounter);
+
+for (let i = 0; i < checkedwords.length; i++) {
+	  let element = document.createElement('div');
+      element.textContent = checkedwords[i] + " ";
+      
+	  if (checkedwords[i] === 'changed') {
+	    	document.getElementById("jabba").style.borderColor = "red";
+	    	document.getElementById("button").style.borderColor = "red";
+			element.textContent = checkedwords[i+1] + " ";  
+	    	element.style.color = 'red';
+	    	i++;
+	    	element.addEventListener('click', function () {
+	    	message[i-test] = checkedwords[i]; 
+	    	
+	    	if(changedCounter==test) {
+		    	document.getElementById("jabba").style.borderColor = "green";
+		    	document.getElementById("button").style.borderColor = "green";
+	    	}
+	    	test++;
+	    	
+	    	var myTextArea = $('#jabba2');
+	    	myTextArea.val('');
+	    	for (let iterator = 0; iterator < message.length; iterator++) {
+	    			myTextArea.val(myTextArea.val() + message[iterator] + ' ');
+	    		}
+	    	element.style.color = 'green';
+	        element.removeEventListener('click', arguments.callee);
+	       });
+	  }
+	  document.getElementById("jabba").appendChild(element); 
+	}
+	
+
+
+</script>
+
+
+</body>
+</html>

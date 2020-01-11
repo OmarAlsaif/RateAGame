@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Johans enhörningsdatabas</title>
+<meta charset="UTF-8">
+<style type="text/css">
+table {
+  border-spacing: 10px;
+  border-collapse: separate;
+  cellspacing: 100px;
+  width: 1200px;
+}
+td {
+  border: 1px solid black;
+  padding: 10px;
+}
+li {
+  cursor: pointer;
+}
+#unicornImage img {
+  max-width: 800px;
+}
+#list {
+  width: 300px;
+}
+label {
+  display: inline-block;
+  width: 150px;
+}
+form {
+  padding: 10px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript">
+function postUnicorn() {
+  return function() {
+    var data = {};
+    data.name = $('#newUnicorn input[name=name]').val();
+    data.description = $('#newUnicorn textarea[name=description]').val();
+    data.reportedBy = $('#newUnicorn input[name=reportedBy]').val();
+    data.spottedWhere = {};
+    data.spottedWhere.name = $('#newUnicorn input[name="spottedWhere.name"]').val();
+    data.spottedWhere.lat = $('#newUnicorn input[name="spottedWhere.lat"]').val();
+    data.spottedWhere.lon = $('#newUnicorn input[name="spottedWhere.lon"]').val();
+    data.spottedWhen = $('#existingUnicorn input[name=spottedWhen]').val();
+    if (data.spottedWhen.length == 10) {
+      data.spottedWhen += ' 00:00:00';
+    }
+    data.image = $('#newUnicorn input[name=image]').val();
+    
+    $.ajax({
+      method: "POST",
+      url: 'http://unicorns.idioti.se',
+      data: JSON.stringify(data),
+      headers: {"Accept": "application/json"}
+    })
+    .done(function(result) {
+    });
+  }
+}
+
+function putUnicorn(unicorn) {
+   return function() {
+     var data = {};
+     data.id = $('#existingUnicorn input[name=id]').val(); 
+     data.name = $('#existingUnicorn input[name=name]').val();
+     data.description = $('#existingUnicorn textarea[name=description]').val();
+     data.reportedBy = $('#existingUnicorn input[name=reportedBy]').val();
+     data.spottedWhere = {};
+     data.spottedWhere.name = $('#existingUnicorn input[name="spottedWhere.name"]').val();
+     data.spottedWhere.lat = $('#existingUnicorn input[name="spottedWhere.lat"]').val();
+     data.spottedWhere.lon = $('#existingUnicorn input[name="spottedWhere.lon"]').val();
+     data.spottedWhen = $('#existingUnicorn input[name=spottedWhen]').val();
+     if (data.spottedWhen.length == 10) {
+       data.spottedWhen += ' 00:00:00';
+     }
+     data.image = $('#existingUnicorn input[name=image]').val();
+     
+     $.ajax({
+       method: "PUT",
+       url: 'http://unicorns.idioti.se/' + data.id,
+       data: JSON.stringify(data),
+       headers: {"Accept": "application/json"}
+     })
+     .done(function(result) {
+     });
+   }
+}
+
+/*
+ * Det här är en väldigt enkel funktion att implementera. Delete-anrop kräver
+ * inget mer än en URL till resursen som ska tas bort. Den bygger vi snabbt
+ * ihop på samma sätt som i PUT.
+ */
+function deleteUnicorn(unicorn) {
+  return function() {
+    $.ajax({
+      method: "DELETE",
+      url: 'http://unicorns.idioti.se/' + unicorn
+    });
+  }
+}
+
+function fetchAndUpdateInfo(details) {
+  return function() {
+    $.ajax({
+      url: details,
+      headers: {"Accept": "application/json"}
+    })
+    .done(function (data) {
+      date = new Date(data['spottedWhen']);
+      sighting = 'Av: ' + data['reportedBy'] + ', '
+               + date.toLocaleDateString()
+               + ' i ' + data['spottedWhere']['name'];
+      
+      $('#unicornName').text(data['name']);
+      $('#unicornImage').html('<img src="' + data['image'] + '">');
+      $('#unicornInfo').text(data['description']);
+      $('#unicornSighting').text(sighting);
+
+      $('form').hide();
+      
+      $('#existingUnicorn input[name=id]').val(data['id']);
+      $('#existingUnicorn input[name=name]').val(data['name']);
+      $('#existingUnicorn input[name=reportedBy]').val(data['reportedBy']);
+      $('#existingUnicorn input[name="spottedWhere.name"]').val(data['spottedWhere']['name']);
+      $('#existingUnicorn input[name="spottedWhere.lat"]').val(data['spottedWhere']['lat']);
+      $('#existingUnicorn input[name="spottedWhere.lon"]').val(data['spottedWhere']['lon']);
+      $('#existingUnicorn input[name=spottedWhen]').val(date.toLocaleString());
+      $('#existingUnicorn input[name=image]').val(data['image']);
+      $('#existingUnicorn [name=description]').val(data['description']);
+      
+      $('#addUnicorn').unbind('click');
+      $('#updateUnicorn').unbind('click');
+      $('#deleteUnicorn').unbind('click');
+      
+      $('#addUnicorn').click(hideFormsAndShowOne('#newUnicorn'));
+      $('#updateUnicorn').click(hideFormsAndShowOne('#existingUnicorn'));
+      $('#deleteUnicorn').click(deleteUnicorn(data['id']));
+    });
+  }
+}
+
+function hideFormsAndShowOne(formName) {
+  return function () {
+    $('form').hide();
+    $(formName).show();
+  }
+}
+
+$(document).ready(function () {
+  $.ajax({
+    url: 'http://unicorns.idioti.se',
+    headers: {"Accept": "application/json"}
+  })
+  .done(function (data) { 
+    list = $('#unicorns');
+    
+    for (i = 0; i < data.length; i++) {
+      html = '<li id="unicorn_' + i + '">' + data[i]['name'] + '</li>';
+      list.append(html);
+      $('#unicorn_' + i).click(fetchAndUpdateInfo(data[i]['details']));
+    }
+  });
+  
+  $(".date").datepicker({ dateFormat: "yy-mm-dd" });
+  $('form').hide();
+  $('#postUnicorn').click(postUnicorn());
+  $('#putUnicorn').click(putUnicorn());
+});
+</script>
+</head>
+<body>
+<h1>Johans enhörningsdatabas</h1>
+<table>
+  <tr>
+    <td id="list">
+      <ul id="unicorns">
+      </ul>
+    </td>
+    <td id="info">
+      <h2 id="unicornName">Ingen enhörning</h2>
+      <span id="unicornImage"></span>
+      <p id="unicornInfo"></p>
+      <p id="unicornSighting"></p>
+      <button type="button" id="addUnicorn">Lägg till enhörning</button>
+      <button type="button" id="updateUnicorn">Uppdatera enhörning</button>
+      <button type="button" id="deleteUnicorn">Ta bort enhörning</button>
+
+      <form name="existingUnicorn" id="existingUnicorn">
+        <input type="hidden" name="id">
+        <label for="name">Enhörningens namn</label>
+        <input type="text" name="name"><br>
+        <label for="reportedBy">Vem såg den?</label>
+        <input type="text" name="reportedBy"><br>
+        <label for="spottedWhere.name">Var sågs den?</label>
+        <input type="text" name="spottedWhere.name"><br>
+        <label for="spottedWhere.lat">Latitud</label>
+        <input type="text" name="spottedWhere.lat"><br>
+        <label for="spottedWhere.lon">Longitud</label>
+        <input type="text" name="spottedWhere.lon"><br>
+        <label for="spottedWhen">När sågs den?</label>
+        <input type="text" name="spottedWhen" class="date"><br>
+        <label for="image">Bild</label>
+        <input type="text" name="image"><br>
+        <label for="description">Beskrivning</label>
+        <textarea name="description"></textarea><br>
+        <button type="button" id="putUnicorn">Skicka</button>
+      </form>
+
+      <form name="newUnicorn" id="newUnicorn">
+        <input type="hidden" name="id">
+        <label for="name">Enhörningens namn</label>
+        <input type="text" name="name"><br>
+        <label for="reportedBy">Vem såg den?</label>
+        <input type="text" name="reportedBy"><br>
+        <label for="spottedWhere.name">Var sågs den?</label>
+        <input type="text" name="spottedWhere.name"><br>
+        <label for="spottedWhere.lat">Latitud</label>
+        <input type="text" name="spottedWhere.lat"><br>
+        <label for="spottedWhere.lon">Longitud</label>
+        <input type="text" name="spottedWhere.lon"><br>
+        <label for="spottedWhen">När sågs den?</label>
+        <input type="text" name="spottedWhen" class="date"><br>
+        <label for="image">Bild</label>
+        <input type="text" name="image"><br>
+        <label for="description">Beskrivning</label>
+        <textarea name="description"></textarea><br>
+        <button type="button" id="postUnicorn">Skicka</button>
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
